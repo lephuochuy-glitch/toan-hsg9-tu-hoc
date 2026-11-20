@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toán HSG 9 và ôn thi chuyên · Tự học</title>
+<link rel="stylesheet" href="katex/katex.min.css">
+<style>:root{--bg:#f7f7fb;--panel:#fff;--ink:#1c1b2e;--muted:#6b6a80;--line:#e6e5f0;--acc:#6d5dfc;--acc2:#c05ce6;--accsoft:#efedff;
+--def:#f3f1ff;--defl:#d9d4ff;--note:#f4f5f8;--notel:#dcdfe8;--err:#fff1f1;--errl:#f5c9c9;--errt:#b42318;--fix:#fff6ec;--fixl:#f6d3a8;--fixt:#c2570c;
+--real:#ecfaf3;--reall:#b5e6cf;--realt:#13795b;--meth:#eef6ff;--methl:#bcd8f6;--ok:#13795b;--bad:#b42318}
+html[data-theme=dark]{--bg:#12111c;--panel:#1b1a2a;--ink:#ecebf7;--muted:#9a99b3;--line:#2c2b40;--accsoft:#26234a;
+--def:#221f3d;--defl:#3a3566;--note:#222233;--notel:#34344a;--err:#2f1c1f;--errl:#5c2c32;--errt:#ff9a93;--fix:#2e2417;--fixl:#5c4322;--fixt:#ffb877;
+--real:#142a23;--reall:#24523f;--realt:#6fe0b4;--meth:#17263a;--methl:#2c4a70;--ok:#6fe0b4;--bad:#ff9a93}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "Be Vietnam Pro","Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+a{color:var(--acc)}
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));z-index:50}
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:14px;padding:10px 22px;background:var(--panel);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-size:18px}
+.sp{flex:1}.toplink{color:var(--muted);text-decoration:none;font-weight:600;padding:6px 8px}
+.toplink:hover{color:var(--acc)}
+.icon{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;width:40px;height:40px;font-size:18px;cursor:pointer}
+#menu{display:none}
+.layout{display:flex;max-width:1500px;margin:0 auto}
+nav#side{position:sticky;top:61px;align-self:flex-start;height:calc(100vh - 61px);overflow:auto;width:310px;flex:none;padding:22px 14px}
+.side-title{font-size:13px;letter-spacing:.12em;color:var(--muted);font-weight:700;margin:6px 10px 12px}
+.nav-item{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15.5px;line-height:1.35}
+.nav-item .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--note);display:grid;place-items:center;font-size:14px;color:var(--muted)}
+.nav-item .lbl{flex:1}.nav-item:hover{background:var(--accsoft)}
+.nav-item.active{background:var(--accsoft);color:var(--acc)}
+.nav-item.active .num{background:var(--acc);color:#fff}
+.soon{font-size:12px;color:var(--muted);background:var(--note);border-radius:999px;padding:3px 9px;font-weight:600;white-space:nowrap}
+main{flex:1;min-width:0;padding:26px 28px 80px}
+.view{display:none}.view.show{display:block}
+.lesson{max-width:900px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:34px 40px 40px;
+background-image:radial-gradient(900px 260px at 100% 0,rgba(109,93,252,.08),transparent 60%)}
+.pill{display:inline-block;background:var(--acc);color:#fff;font-weight:700;border-radius:999px;padding:6px 16px;font-size:15px}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:18px 0 12px;letter-spacing:-.01em}
+h1.grad{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2.part{font-size:26px;margin:44px 0 12px;padding-top:6px}
+h3{margin:0 0 8px;font-size:18px}
+.lead{font-size:19px;color:var(--muted);margin:4px 0 18px}
+.muted{color:var(--muted)}.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 22px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:15px;font-weight:600;background:var(--panel)}
+.box{border:1px solid var(--line);border-radius:20px;padding:16px 22px;margin:18px 0}
+.box>p:first-of-type{margin-top:6px}.box p:last-child,.box ol:last-child,.box ul:last-child{margin-bottom:4px}
+.box-title{font-weight:800;font-size:17px;margin-bottom:2px}
+.box.def,.box.summary,.box.goals{background:var(--def);border-color:var(--defl)}
+.box.def .box-title,.box.summary .box-title,.box.goals .box-title{color:var(--acc)}
+.box.toc{background:var(--note);border-color:var(--notel)}
+.box.note{background:var(--note);border-color:var(--notel)}
+.box.err{background:var(--err);border-color:var(--errl)}.box.err .box-title{color:var(--errt)}
+.box.fix{background:var(--fix);border-color:var(--fixl)}.box.fix .box-title{color:var(--fixt)}
+.box.real{background:var(--real);border-color:var(--reall)}.box.real .box-title{color:var(--realt)}
+.box.method{background:var(--meth);border-color:var(--methl)}.box.method .box-title{color:#2a6db5}
+html[data-theme=dark] .box.method .box-title{color:#8cc0ff}
+.box.mynote{background:var(--panel);border:2px dashed var(--defl)}
+.box ol,.box ul{padding-left:24px;margin:8px 0}
+.box li{margin:6px 0}
+button.link{background:none;border:0;color:var(--acc);font:inherit;cursor:pointer;padding:0;text-align:left}
+button.link:hover{text-decoration:underline}
+.card{border:1px solid var(--line);border-radius:22px;padding:18px 22px;margin:20px 0;background:var(--panel);box-shadow:0 2px 10px rgba(30,20,80,.04)}
+.vd-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.tag{background:var(--accsoft);color:var(--acc);font-weight:800;border-radius:10px;padding:3px 11px;font-size:14.5px}
+.tag.real{background:var(--real);color:var(--realt)}.tag.lvN{background:var(--meth);color:#2a6db5}.tag.lvC{background:var(--fix);color:var(--fixt)}
+.src{font-size:13px;color:var(--muted)}
+.problem{font-weight:500}
+.steps{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.step{display:none;padding:8px 14px;margin:8px 0;background:var(--note);border-radius:14px;animation:in .25s ease}
+.step.on{display:block}.step.ans{background:var(--real);border:1px solid var(--reall)}
+.step p,.sol-step p,.problem p,.hint p{margin:4px 0}
+@keyframes in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.stepctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+.dots{display:flex;gap:7px}.dot{width:10px;height:10px;border-radius:50%;background:var(--defl);border:0;padding:0;cursor:pointer}
+.dot.on{background:var(--acc);width:26px;border-radius:6px}
+.btn{border:0;background:var(--acc);color:#fff;font:inherit;font-weight:700;border-radius:12px;padding:8px 16px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.4;cursor:default}.btn:hover:not(:disabled){filter:brightness(1.06)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:12px}
+.check{display:flex;gap:8px;margin-left:auto}
+input[type=text],input[type=number],textarea{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
+.check input{width:130px}
+textarea{width:100%;margin-top:8px;resize:vertical}
+.status{font-weight:700}.status.ok{color:var(--ok)}.status.bad{color:var(--bad)}
+.hidden{display:none}
+.hint,.solution{margin-top:12px;border-radius:14px;padding:10px 14px}
+.hint{background:var(--fix);border:1px solid var(--fixl)}.solution{background:var(--note);border:1px solid var(--notel)}
+.sol-step{padding:4px 0}
+.exprog{font-weight:700;color:var(--acc);margin:6px 0}
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:var(--note)}
+.toolgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.tool .row{display:flex;flex-wrap:wrap;gap:10px}.tool label{display:flex;flex-direction:column;font-size:14px;color:var(--muted);gap:3px}
+.tool input{width:96px}.out{margin-top:12px;font-size:15px;line-height:1.6}.out b{color:var(--acc)}
+.pager{margin-top:36px;text-align:right}
+.src-list{padding-left:22px}
+@media(max-width:900px){
+ #menu{display:block}.top{padding:8px 12px}.toplink{display:none}.brand .muted{display:none}
+ nav#side{position:fixed;left:0;top:57px;height:calc(100vh - 57px);background:var(--panel);z-index:45;transform:translateX(-105%);transition:transform .2s;box-shadow:4px 0 24px rgba(0,0,0,.18);width:min(310px,88vw)}
+ body.nav-open nav#side{transform:none}
+ #scrim{display:none}body.nav-open #scrim{display:block;position:fixed;inset:57px 0 0 0;background:rgba(0,0,0,.35);z-index:44}
+ main{padding:14px 10px 60px}.lesson{padding:22px 16px 28px;border-radius:20px}
+ body{font-size:16px}.check{margin-left:0;width:100%}.check input{flex:1}
+}
+@media print{.top,nav#side,#progress,.stepctl,.actions{display:none!important}.view{display:block!important}.step{display:block!important}}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<header class="top">
+ <button id="menu" class="icon" aria-label="Mở danh mục">☰</button>
+ <a class="brand" href="#trang-chu"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="9" fill="url(#g)"/><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d5dfc"/><stop offset="1" stop-color="#c05ce6"/></linearGradient></defs><text x="15" y="21" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="sans-serif">∑</text></svg>
+ <b>Toán HSG 9</b><span class="muted"> · Đếm, số học, Vi-ét</span></a>
+ <span class="sp"></span>
+ <a class="toplink" href="#trang-chu">Trang chủ</a><a class="toplink" href="#on-tap">Ôn tập</a>
+ <button id="theme" class="icon" aria-label="Chế độ tối">◐</button>
+</header>
+<div class="layout">
+ <nav id="side" aria-label="Bài học"><div class="side-title">BUỔI HỌC</div><a class="nav-item" href="#trang-chu" data-view="trang-chu"><span class="num">⌂</span><span>Trang chủ</span></a>
+<a class="nav-item" href="#buoi-1" data-view="buoi-1"><span class="num">1</span><span class="lbl">Đếm có hệ thống</span></a>
+<a class="nav-item" href="#buoi-2" data-view="buoi-2"><span class="num">2</span><span class="lbl">Chia kẹo và xác suất</span></a>
+<a class="nav-item" href="#buoi-3" data-view="buoi-3"><span class="num">3</span><span class="lbl">Nguyên lý Dirichlet</span></a>
+<a class="nav-item" href="#buoi-4" data-view="buoi-4"><span class="num">4</span><span class="lbl">Vi-ét, nghiệm nguyên và xác suất</span><span class="soon">Sắp có</span></a>
+<a class="nav-item" href="#buoi-5" data-view="buoi-5"><span class="num">5</span><span class="lbl">Dãy truy hồi và modulo</span><span class="soon">Sắp có</span></a>
+<a class="nav-item" href="#buoi-6" data-view="buoi-6"><span class="num">6</span><span class="lbl">Chia hết kiểu tích và Vieta Jumping</span><span class="soon">Sắp có</span></a>
+<a class="nav-item" href="#buoi-7" data-view="buoi-7"><span class="num">7</span><span class="lbl">Bất biến, tô màu, trò chơi, cực hạn</span><span class="soon">Sắp có</span></a>
+<a class="nav-item" href="#on-tap" data-view="on-tap"><span class="num">★</span><span class="lbl">Ôn tập và đề phân tầng</span><span class="soon">Sắp có</span></a></nav>
+ <div id="scrim"></div>
+ <main id="main">
+<section class="view" id="trang-chu"><div class="lesson">
+ <span class="pill">Tự học ở nhà</span>
+ <h1 class="grad">Toán HSG 9 và ôn thi chuyên: Đếm, số học, Vi-ét</h1>
+ <p class="lead">Bảy buổi, mỗi buổi khoảng 90 phút. Nền chung cho kỳ thi HSG Toán 9 TP.HCM, và tầng nâng cao cho đề tuyển sinh lớp 10 chuyên Toán. Các mạch kiến thức được chọn theo các đề thật gần đây.</p>
+ <div class="box def"><div class="box-title">Cách học mỗi buổi</div>
+  <ol><li>Đọc <b>Tóm tắt 30 giây</b>, tự hỏi mình đã biết được bao nhiêu.</li>
+  <li>Xem <b>ví dụ từng bước</b>. Mỗi lần chỉ bấm sang bước kế tiếp sau khi đã tự nghĩ bước đó.</li>
+  <li>Làm <b>bài luyện</b> ra giấy, rồi nhập đáp số để kiểm tra. Chỉ xem gợi ý khi đã thử đủ lâu.</li>
+  <li>Viết <b>Ghi chú của em</b> bằng lời của mình. Nếu viết không được thì quay lại phần đó.</li></ol></div>
+ <h2 class="part">Lộ trình 7 buổi</h2>
+ <div class="tablewrap"><table class="road"><thead><tr><th>Buổi</th><th>Nội dung</th><th>Đề thật liên quan</th><th></th></tr></thead><tbody><tr><td>1</td><td><b>Đếm có hệ thống</b><div class="muted small">Quy tắc cộng, nhân; hai câu hỏi lặp/thứ tự; bù trừ; giải đấu</div></td><td>HSG 9 2025–26 Câu 5.1</td><td><a href="#buoi-1">Mở</a></td></tr><tr><td>2</td><td><b>Chia kẹo và xác suất</b><div class="muted small">Vách ngăn; xác suất cổ điển; biến cố đối; cái bẫy đồng khả năng</div></td><td>HSG 9 2024–25 Câu 2.3</td><td><a href="#buoi-2">Mở</a></td></tr><tr><td>3</td><td><b>Nguyên lý Dirichlet</b><div class="muted small">Số dư, chẵn lẻ, chia miền hình học; &quot;ít nhất bao nhiêu số để chắc chắn&quot;</div></td><td>PTNK 2024–25 Bài 5b (31 thẻ vào hai hộp)</td><td><a href="#buoi-3">Mở</a></td></tr><tr><td>4</td><td><b>Vi-ét, nghiệm nguyên và xác suất</b><div class="muted small">Khử tham số, phương trình ước số, đếm cặp (a; b) để phương trình có nghiệm nguyên</div></td><td>Chuyên Sở 2025–26 Bài 5a; 2026–27 Bài 5.1; HSG 9 2025–26 Câu 5.2</td><td>Sắp có</td></tr><tr><td>5</td><td><b>Dãy truy hồi và modulo</b><div class="muted small">Sₙ = x₁ⁿ + x₂ⁿ, aₙ₊₂ = 4aₙ₊₁ − aₙ, tính tuần hoàn của số dư</div></td><td>PTNK 2024–25 Bài 3</td><td>Sắp có</td></tr><tr><td>6</td><td><b>Chia hết kiểu tích và Vieta Jumping</b><div class="muted small">Mức mở rộng cho tầng chuyên</div></td><td>PTNK 2025 Câu 3 (dạng gần)</td><td>Sắp có</td></tr><tr><td>7</td><td><b>Bất biến, tô màu, trò chơi, cực hạn</b><div class="muted small">Bảng ô, trò chơi, tổng chữ số, nguyên lý cực hạn</div></td><td>PTNK 2025 Câu 5; PTNK 2026 Câu 5; Chuyên Sở 2025–26 Bài 5b; 2026–27 Bài 5.2</td><td>Sắp có</td></tr></tbody></table></div>
+ <p class="muted small">Tiến độ và ghi chú của em được lưu ngay trong trình duyệt này. Đổi máy hoặc xóa dữ liệu trình duyệt thì sẽ mất.</p>
+</div></section>
+
+<section class="view" id="buoi-1"><div class="lesson">
+ <span class="pill">Buổi 1</span>
+ <h1 class="grad">Đếm có hệ thống</h1>
+ <p class="lead"><p>Đề HSG Toán 9 và đề chuyên ở TP.HCM luôn có một câu “đếm”: đếm cách
+xếp, đếm cặp số, đếm kết quả của một giải đấu. Buổi này dạy cách đếm
+<strong>không sót, không trùng</strong> bằng vài câu hỏi cố định, thay
+vì thuộc công thức.</p></p>
+ <div class="chips">
+  <span class="chip">⏱ 90 phút</span><span class="chip">📘 6 ví dụ từng bước</span>
+  <span class="chip">🧪 3 công cụ</span><span class="chip">📝 8 bài luyện</span>
+  <span class="chip">🎯 1 đề thật</span></div>
+ <div class="box goals"><div class="box-title">Học xong buổi này, em sẽ:</div><ol><li><p>Phân biệt được khi nào <strong>cộng</strong>, khi nào
+<strong>nhân</strong>, và xử lý ràng buộc trước khi đếm.</p></li><li><p>Trả lời <strong>hai câu hỏi</strong> (có lặp không? thứ tự có quan
+trọng không?) để chọn đúng cách đếm.</p></li><li><p>Dùng <strong>bù trừ</strong> khi các trường hợp “hoặc” bị trùng, và
+đếm <strong>bằng hai cách</strong> (tổng điểm giải đấu).</p></li></ol></div>
+ <div class="box toc"><div class="box-title">Mục lục buổi</div><ol><li><button class="link" data-goto="part-1">1. Quy tắc cộng và quy tắc nhân</button></li><li><button class="link" data-goto="part-2">2. Khung hai câu hỏi: lặp? thứ tự?</button></li><li><button class="link" data-goto="part-3">3. Bù trừ: khi &quot;hoặc&quot; bị trùng</button></li><li><button class="link" data-goto="part-4">4. Đếm bằng hai cách: giải đấu vòng tròn</button></li><li><button class="link" data-goto="tools">Phòng thử nghiệm</button></li><li><button class="link" data-goto="luyen">Bài luyện</button></li><li><button class="link" data-goto="nguon">Nguồn</button></li></ol></div>
+ <div class="box summary"><div class="box-title">Tóm tắt 30 giây</div><ul><li><p>Các trường hợp <strong>không chung nhau</strong> thì
+<strong>cộng</strong>. Công việc làm <strong>liên tiếp nhiều
+bước</strong> thì <strong>nhân</strong>.</p></li><li><p>Hỏi hai câu: <strong>Có được lặp không? Thứ tự có làm kết quả khác đi
+không?</strong></p></li><li><p>Chọn <span class="math inline">\(k\)</span> phần tử từ <span
+class="math inline">\(n\)</span>, không lặp, có thứ tự: <span
+class="math inline">\(n(n-1)\cdots(n-k+1)\)</span>. Không cần thứ tự:
+chia thêm cho <span class="math inline">\(k!\)</span>.</p></li><li><p>Hai tập có phần chung: <span class="math inline">\(|A\cup
+B|=|A|+|B|-|A\cap B|\)</span>.</p></li><li><p>Đếm “ít nhất”: thường dễ hơn nếu đếm <strong>phần bù</strong> rồi lấy
+tổng trừ đi.</p></li><li><p>Đếm <strong>bằng hai cách</strong>: nếu mỗi trận luôn cho đúng 2 điểm
+thì tổng điểm cả giải không phụ thuộc kết quả.</p></li></ul></div>
+ <h2 id="part-1" class="part">1. Quy tắc cộng và quy tắc nhân</h2>
+<aside class="box def"><div class="box-title">Định nghĩa</div><p><strong>Quy tắc cộng.</strong> Nếu một việc có thể làm theo trường
+hợp I (có <span class="math inline">\(a\)</span> cách)
+<strong>hoặc</strong> trường hợp II (có <span
+class="math inline">\(b\)</span> cách), và hai trường hợp <strong>không
+có cách nào chung</strong>, thì có <span
+class="math inline">\(a+b\)</span> cách.</p>
+<p><strong>Quy tắc nhân.</strong> Nếu một việc gồm bước 1 (có <span
+class="math inline">\(a\)</span> cách) <strong>rồi</strong> bước 2 (có
+<span class="math inline">\(b\)</span> cách), và số cách ở bước 2
+<strong>không phụ thuộc</strong> cách đã chọn ở bước 1, thì có <span
+class="math inline">\(a\cdot b\)</span> cách.</p></aside>
+<article class="vd card" id="vd1"><div class="vd-head"><span class="tag">Ví dụ 1</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Từ các chữ số <span class="math inline">\(0,1,2,3,4,5\)</span> lập
+các số tự nhiên có ba chữ số <strong>khác nhau</strong>. (a) Có bao
+nhiêu số? (b) Có bao nhiêu số chẵn?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p><strong>(a)</strong> Hàng trăm phải khác <span
+class="math inline">\(0\)</span>: có <span
+class="math inline">\(5\)</span> cách (chọn <span
+class="math inline">\(1,2,3,4,5\)</span>).</p></div><div class="step"><p>Hàng chục: khác chữ số hàng trăm, được dùng chữ số <span
+class="math inline">\(0\)</span>: có <span
+class="math inline">\(5\)</span> cách.</p></div><div class="step"><p>Hàng đơn vị: khác hai chữ số đã chọn: có <span
+class="math inline">\(4\)</span> cách. Nhân lại: <span
+class="math inline">\(5\cdot 5\cdot 4=100\)</span> số.</p></div><div class="step"><p><strong>(b)</strong> Hai ràng buộc là "chữ số cuối chẵn" và "chữ số
+đầu khác <span class="math inline">\(0\)</span>". Chia trường hợp theo
+chữ số cuối.</p></div><div class="step"><p>Cuối là <span class="math inline">\(0\)</span>: hàng trăm có <span
+class="math inline">\(5\)</span> cách, hàng chục có <span
+class="math inline">\(4\)</span> cách, được <span
+class="math inline">\(5\cdot 4=20\)</span> số.</p></div><div class="step"><p>Cuối là <span class="math inline">\(2\)</span> hoặc <span
+class="math inline">\(4\)</span> (<span class="math inline">\(2\)</span>
+cách): hàng trăm khác <span class="math inline">\(0\)</span> và khác chữ
+số cuối nên có <span class="math inline">\(4\)</span> cách, hàng chục có
+<span class="math inline">\(4\)</span> cách (được dùng <span
+class="math inline">\(0\)</span>), được <span
+class="math inline">\(2\cdot 4\cdot 4=32\)</span> số.</p></div><div class="step"><p>Hai trường hợp không chung nhau nên cộng: <span
+class="math inline">\(20+32=52\)</span> số chẵn.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
+<li><span class="math inline">\(100\)</span> số; (b) <span
+class="math inline">\(52\)</span> số.</li>
+</ol></div></div></article>
+<aside class="box method"><div class="box-title">Cách làm (đếm có ràng buộc)</div><ol><li><p>Tìm vị trí bị ràng buộc nhiều nhất (chữ số <span
+class="math inline">\(0\)</span> đứng đầu, chữ số cuối chẵn) và xử lý nó
+trước.</p></li><li><p>Nếu một lựa chọn làm số cách ở sau thay đổi (như cuối <span
+class="math inline">\(0\)</span> và cuối <span
+class="math inline">\(2\)</span>), chia thành các trường hợp.</p></li><li><p>Nhân trong từng trường hợp, cộng giữa các trường hợp.</p></li></ol></aside>
+<aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Lấy <span class="math inline">\(6\cdot 6\cdot 5=180\)</span> cho câu
+(a) là đếm cả các số bắt đầu bằng <span class="math inline">\(0\)</span>
+(như <span class="math inline">\(012\)</span>). Một số ba chữ số không
+được có hàng trăm bằng <span class="math inline">\(0\)</span>.</p></aside>
+<h2 id="part-2" class="part">2. Khung hai câu hỏi: lặp? thứ tự?</h2>
+<p>Khi đề bảo "chọn <span class="math inline">\(k\)</span> phần tử từ
+<span class="math inline">\(n\)</span> phần tử", trước khi tính hãy hỏi
+hai câu:</p>
+<div class="tablewrap"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Thứ tự quan trọng</th>
+<th>Thứ tự không quan trọng</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Không lặp</strong></td>
+<td><span
+class="math inline">\(A_n^k=n(n-1)\cdots(n-k+1)=\dfrac{n!}{(n-k)!}\)</span></td>
+<td><span
+class="math inline">\(C_n^k=\dfrac{A_n^k}{k!}=\dfrac{n!}{k!\,(n-k)!}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Có lặp</strong></td>
+<td><span class="math inline">\(n^k\)</span></td>
+<td>(học ở Buổi 2: chia kẹo)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="box def"><div class="box-title">Công thức lớp 10 (ngoài SGK lớp 9)</div><p><strong>Giai thừa:</strong> <span class="math inline">\(n!=1\cdot
+2\cdot 3\cdots n\)</span>, quy ước <span
+class="math inline">\(0!=1\)</span>. Số cách xếp <span
+class="math inline">\(n\)</span> phần tử khác nhau vào một hàng là <span
+class="math inline">\(n!\)</span> (hoán vị, kí hiệu <span
+class="math inline">\(P_n=n!\)</span>).</p>
+<p><strong>Chỉnh hợp</strong> <span class="math inline">\(A_n^k\)</span>
+(chọn <span class="math inline">\(k\)</span> trong <span
+class="math inline">\(n\)</span>, có thứ tự) và <strong>tổ hợp</strong>
+<span class="math inline">\(C_n^k\)</span> (chọn <span
+class="math inline">\(k\)</span> trong <span
+class="math inline">\(n\)</span>, không thứ tự), với <span
+class="math inline">\(0\le k\le n\)</span>.</p>
+<p><strong>Tính chất của tổ hợp:</strong> <span
+class="math inline">\(C_n^k=C_n^{n-k}\)</span> và <span
+class="math inline">\(C_n^k+C_n^{k+1}=C_{n+1}^{k+1}\)</span>.</p>
+<p><strong>Máy Casio:</strong> phím <span
+class="math inline">\(nPr\)</span> cho <span
+class="math inline">\(A_n^k\)</span>, phím <span
+class="math inline">\(nCr\)</span> cho <span
+class="math inline">\(C_n^k\)</span>, phím <span
+class="math inline">\(x!\)</span> cho giai thừa.</p></aside>
+<aside class="box err"><div class="box-title">Lưu ý khi dùng máy tính</div><p>Máy Casio cho ra con số nhưng <strong>không thay được lập
+luận</strong>. Trong bài thi tự luận, em vẫn phải nói rõ vì sao chọn
+<span class="math inline">\(A_n^k\)</span> hay <span
+class="math inline">\(C_n^k\)</span> (thứ tự có quan trọng không, và vì
+sao chia cho <span class="math inline">\(k!\)</span>), như ở Ví dụ 3 và
+Ví dụ 4. Máy cũng chỉ tính được <span class="math inline">\(n!\)</span>
+đến <span class="math inline">\(n=69\)</span>, nên với <span
+class="math inline">\(n\)</span> lớn em cần rút gọn trước khi bấm.</p></aside>
+<article class="vd card" id="vd2"><div class="vd-head"><span class="tag">Ví dụ 2</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Xếp <span class="math inline">\(7\)</span> người thành một hàng
+ngang. Có bao nhiêu cách xếp để hai người <span
+class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> <strong>đứng cạnh nhau</strong>? Có bao
+nhiêu cách xếp để <span class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> <strong>không đứng cạnh
+nhau</strong>?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Tổng số cách xếp <span class="math inline">\(7\)</span> người: <span
+class="math inline">\(7!=5040\)</span>.</p></div><div class="step"><p>"Buộc" <span class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> thành một khối. Khi đó có <span
+class="math inline">\(6\)</span> đối tượng (khối <span
+class="math inline">\(AB\)</span> và <span
+class="math inline">\(5\)</span> người còn lại): <span
+class="math inline">\(6!=720\)</span> cách xếp.</p></div><div class="step"><p>Trong khối, <span class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> đổi chỗ được: nhân <span
+class="math inline">\(2\)</span>. Số cách để <span
+class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>
+cạnh nhau là <span class="math inline">\(2\cdot 720=1440\)</span>.</p></div><div class="step"><p>"Không cạnh nhau" là phần bù: <span
+class="math inline">\(5040-1440=3600\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(1440\)</span> cách (cạnh nhau); <span
+class="math inline">\(3600\)</span> cách (không cạnh nhau).</p></div></div></article>
+<article class="vd card" id="vd3"><div class="vd-head"><span class="tag">Ví dụ 3</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Một nhóm có <span class="math inline">\(10\)</span> người. (a) Chọn
+<span class="math inline">\(3\)</span> người đi dự lễ: có bao nhiêu
+cách? (b) Chọn một trưởng đoàn, một phó đoàn, một thư ký: có bao nhiêu
+cách?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Hai câu cùng chọn <span class="math inline">\(3\)</span> người từ
+<span class="math inline">\(10\)</span>, không lặp. Điểm khác nhau là
+<strong>thứ tự</strong>.</p></div><div class="step"><p><strong>(a)</strong> Đi dự lễ thì <span
+class="math inline">\(3\)</span> người là một nhóm, đổi chỗ không thay
+đổi gì: <span class="math inline">\(C_{10}^3=\dfrac{10\cdot 9\cdot
+8}{3!}=\dfrac{720}{6}=120\)</span> cách.</p></div><div class="step"><p><strong>(b)</strong> Ba chức vụ khác nhau nên "An trưởng, Bình phó"
+khác "Bình trưởng, An phó": <span class="math inline">\(A_{10}^3=10\cdot
+9\cdot 8=720\)</span> cách.</p></div><div class="step"><p>Quan hệ: <span class="math inline">\(720=120\cdot 3!\)</span>. Mỗi
+nhóm <span class="math inline">\(3\)</span> người cho <span
+class="math inline">\(3!\)</span> cách phân chức vụ.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
+<li><span class="math inline">\(120\)</span> cách; (b) <span
+class="math inline">\(720\)</span> cách.</li>
+</ol></div></div></article>
+<aside class="box fix"><div class="box-title">Ghi chú sửa</div><p>Nhiều tài liệu dạy mẹo "tổ hợp là chọn, chỉnh hợp là xếp". Mẹo này
+sai khi đề không dùng chữ "chọn" hay "xếp" (ví dụ "lập ban gồm trưởng
+ban và phó ban"). Câu hỏi đáng tin cậy là: <strong>hoán đổi hai phần tử
+đã chọn có tạo ra kết quả khác không?</strong></p></aside>
+<article class="vd card" id="vd4"><div class="vd-head"><span class="tag">Ví dụ 4</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chia <span class="math inline">\(6\)</span> bạn thành hai nhóm, mỗi
+nhóm <span class="math inline">\(3\)</span> bạn, hai nhóm <strong>không
+có tên</strong> (không phân biệt nhóm nào là nhóm nào). Có bao nhiêu
+cách chia?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Nếu hai nhóm có tên (nhóm I, nhóm II): chọn <span
+class="math inline">\(3\)</span> bạn cho nhóm I, được <span
+class="math inline">\(\dfrac{6\cdot 5\cdot 4}{3!}=20\)</span> cách.</p></div><div class="step"><p>Nhóm không tên: cách chia "<span
+class="math inline">\(\{a,b,c\}\)</span> và <span
+class="math inline">\(\{d,e,f\}\)</span>" và cách chia "<span
+class="math inline">\(\{d,e,f\}\)</span> và <span
+class="math inline">\(\{a,b,c\}\)</span>" là <strong>một</strong>. Mỗi
+cách chia bị đếm <span class="math inline">\(2\)</span> lần.</p></div><div class="step"><p>Vậy có <span class="math inline">\(20:2=10\)</span> cách.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(10\)</span> cách.</p></div></div></article>
+<aside class="box mynote"><div class="box-title">Ghi chú của em</div><p>viết lại bằng lời của em, không nhìn bài. Vì sao ở Ví dụ 4 phải chia
+cho <span class="math inline">\(2\)</span>, còn ở Ví dụ 3(a) lại chia
+cho <span class="math inline">\(3!\)</span>?</p><textarea data-note="note1" rows="3" placeholder="Viết lại bằng lời của em..."></textarea><div class="muted small">Ghi chú được lưu trong trình duyệt của em.</div></aside>
+<h2 id="part-3" class="part">3. Bù trừ: khi &quot;hoặc&quot; bị trùng</h2>
+<aside class="box def"><div class="box-title">Định nghĩa</div><p>Với hai tập hữu hạn: <span class="math inline">\(|A\cup
+B|=|A|+|B|-|A\cap B|\)</span>.</p>
+<p>Với ba tập: <span class="math inline">\(|A\cup B\cup
+C|=|A|+|B|+|C|-|A\cap B|-|B\cap C|-|C\cap A|+|A\cap B\cap
+C|\)</span>.</p>
+<p>Trong Toán, "<span class="math inline">\(A\)</span> hoặc <span
+class="math inline">\(B\)</span>" nghĩa là xảy ra <span
+class="math inline">\(A\)</span>, hoặc xảy ra <span
+class="math inline">\(B\)</span>, hoặc xảy ra cả hai.</p></aside>
+<article class="vd card" id="vd5"><div class="vd-head"><span class="tag">Ví dụ 5</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Trong các số nguyên từ <span class="math inline">\(1\)</span> đến
+<span class="math inline">\(100\)</span>, có bao nhiêu số chia hết cho
+<span class="math inline">\(2\)</span> <strong>hoặc</strong> <span
+class="math inline">\(3\)</span> <strong>hoặc</strong> <span
+class="math inline">\(5\)</span>?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Gọi <span class="math inline">\(A\)</span>, <span
+class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>
+là tập các số chia hết cho <span class="math inline">\(2\)</span>, <span
+class="math inline">\(3\)</span>, <span
+class="math inline">\(5\)</span>. Khi đó <span
+class="math inline">\(|A|=50\)</span>, <span
+class="math inline">\(|B|=33\)</span>, <span
+class="math inline">\(|C|=20\)</span>.</p></div><div class="step"><p>Phần chung: chia hết cho <span class="math inline">\(2\)</span> và
+<span class="math inline">\(3\)</span> là chia hết cho <span
+class="math inline">\(6\)</span>, có <span
+class="math inline">\(16\)</span> số. Tương tự <span
+class="math inline">\(|A\cap C|=10\)</span> (chia hết cho <span
+class="math inline">\(10\)</span>), <span class="math inline">\(|B\cap
+C|=6\)</span> (chia hết cho <span
+class="math inline">\(15\)</span>).</p></div><div class="step"><p>Chia hết cho cả <span class="math inline">\(2,3,5\)</span> là chia
+hết cho <span class="math inline">\(30\)</span>: <span
+class="math inline">\(|A\cap B\cap C|=3\)</span>.</p></div><div class="step"><p>Áp dụng: <span
+class="math inline">\(50+33+20-16-10-6+3=74\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(74\)</span> số.</p></div></div></article>
+<aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Chỉ cộng <span class="math inline">\(50+33+20=103\)</span>, lớn hơn
+cả <span class="math inline">\(100\)</span>, là dấu hiệu đã đếm trùng.
+Khi tổng các phần lớn hơn toàn bộ, em cần bù trừ.</p></aside>
+<aside class="box method"><div class="box-title">Cách làm (bù trừ)</div><ol><li><p>Gọi tên từng tập và tính số phần tử của từng tập một mình.</p></li><li><p>Tính các phần chung (hai tập, rồi ba tập): “chia hết cho cả hai”
+nghĩa là chia hết cho <strong>bội chung nhỏ nhất</strong>.</p></li><li><p>Cộng các tập đơn, trừ các giao đôi, cộng giao ba.</p></li></ol></aside>
+<h2 id="part-4" class="part">4. Đếm bằng hai cách: giải đấu vòng tròn</h2>
+<p>Giải đấu vòng tròn một lượt: mỗi cặp đội gặp nhau <strong>đúng một
+trận</strong>. Với <span class="math inline">\(n\)</span> đội, số trận
+là số cặp đội, tức <span
+class="math inline">\(\dfrac{n(n-1)}{2}\)</span> (chọn <span
+class="math inline">\(2\)</span> đội, không thứ tự, không lặp).</p>
+<p>Nếu thắng được <span class="math inline">\(2\)</span> điểm, hòa mỗi
+đội <span class="math inline">\(1\)</span> điểm, thua <span
+class="math inline">\(0\)</span> điểm thì <strong>mỗi trận luôn cho đúng
+<span class="math inline">\(2\)</span> điểm</strong> (<span
+class="math inline">\(2+0\)</span> hoặc <span
+class="math inline">\(1+1\)</span>). Do đó tổng điểm cả giải là <span
+class="math inline">\(2\cdot\dfrac{n(n-1)}{2}=n(n-1)\)</span>,
+<strong>không phụ thuộc</strong> vào kết quả từng trận. Đây là ý "đếm
+bằng hai cách": cộng điểm theo từng đội, và cộng điểm theo từng
+trận.</p>
+<article class="vd card" id="vd6"><div class="vd-head"><span class="tag">Ví dụ 6</span><span class="tag real">Đề thật</span><span class="src">Nguồn: Đề HSG Toán 9 TP.HCM năm học 2025–2026, Câu 5.1 (đã diễn đạt lại)</span></div><div class="problem"><p>Có <span class="math inline">\(n\)</span> đội bóng thi đấu vòng tròn
+một lượt. Thắng <span class="math inline">\(2\)</span> điểm, hòa <span
+class="math inline">\(1\)</span> điểm, thua <span
+class="math inline">\(0\)</span> điểm. Cuối giải, có <span
+class="math inline">\(n-5\)</span> đội có <strong>số điểm bằng
+nhau</strong>, còn <span class="math inline">\(5\)</span> đội kia có
+tổng cộng <span class="math inline">\(27\)</span> điểm. Tìm <span
+class="math inline">\(n\)</span>.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Tổng điểm cả giải là <span class="math inline">\(n(n-1)\)</span> (mỗi
+trận đúng <span class="math inline">\(2\)</span> điểm).</p></div><div class="step"><p>Gọi <span class="math inline">\(x\)</span> là số điểm của mỗi đội
+trong nhóm <span class="math inline">\(n-5\)</span> đội. Cộng điểm hai
+nhóm: <span class="math inline">\((n-5)x+27=n(n-1)\)</span>.</p></div><div class="step"><p>Ta có <span class="math inline">\(n^2-n-27=(n-5)(n+4)-7\)</span>.
+Thay vào và chuyển vế: <span
+class="math inline">\((n-5)(n+4-x)=7\)</span>.</p></div><div class="step"><p>Vì <span class="math inline">\(n-5&gt;0\)</span> và là ước của <span
+class="math inline">\(7\)</span> nên <span
+class="math inline">\(n-5\in\{1;7\}\)</span>.</p></div><div class="step"><p><span class="math inline">\(n-5=1\)</span> cho <span
+class="math inline">\(n=6\)</span>, nhưng khi đó "nhóm các đội bằng
+điểm" chỉ có <span class="math inline">\(1\)</span> đội. Ta hiểu nhóm
+này phải có từ <span class="math inline">\(2\)</span> đội trở lên nên
+loại.</p></div><div class="step"><p><span class="math inline">\(n-5=7\)</span> cho <span
+class="math inline">\(n=12\)</span> và <span
+class="math inline">\(x=n+4-1=15\)</span>.</p></div><div class="step"><p><strong>Kiểm tra giải thật sự tồn tại</strong> (bước hay bị bỏ). Gọi
+<span class="math inline">\(7\)</span> đội mạnh <span
+class="math inline">\(M_1,\dots,M_7\)</span> và <span
+class="math inline">\(5\)</span> đội yếu <span
+class="math inline">\(Y_1,\dots,Y_5\)</span>. Các trận giữa <span
+class="math inline">\(7\)</span> đội mạnh: hòa hết, mỗi đội mạnh được
+<span class="math inline">\(6\)</span> điểm. Mỗi đội mạnh thắng <span
+class="math inline">\(4\)</span> và hòa <span
+class="math inline">\(1\)</span> trong <span
+class="math inline">\(5\)</span> trận gặp đội yếu, được thêm <span
+class="math inline">\(4\cdot 2+1=9\)</span> điểm, tổng <span
+class="math inline">\(15\)</span>. Chọn các trận hòa: <span
+class="math inline">\(M_1Y_1,\ M_2Y_1,\ M_3Y_2,\ M_4Y_2,\ M_5Y_3,\
+M_6Y_4,\ M_7Y_5\)</span>. Các trận giữa <span
+class="math inline">\(5\)</span> đội yếu: hòa hết. Điểm <span
+class="math inline">\(5\)</span> đội yếu là <span
+class="math inline">\(6,6,5,5,5\)</span>, tổng <span
+class="math inline">\(27\)</span>. Thỏa đề.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(n=12\)</span>.</p></div></div></article>
+<aside class="box real"><div class="box-title">Đề thật</div><p>Ví dụ 6 là Câu 5.1 của đề HSG Toán 9 TP.HCM 2025–2026. Tài liệu hướng
+dẫn kèm đề chỉ thử lại <span class="math inline">\(x=15\)</span>. Bước
+dựng giải (bước cuối ở trên) là phần tôi bổ sung, vì bài "tìm <span
+class="math inline">\(n\)</span> thỏa điều kiện" chỉ đủ khi chứng minh
+được <span class="math inline">\(n=12\)</span> có tồn tại.</p></aside>
+<aside class="box method"><div class="box-title">Cách làm (đếm bằng hai cách)</div><ol><li><p>Tìm đại lượng mà mỗi trận (mỗi cặp) đóng góp cố định, ví dụ <span
+class="math inline">\(2\)</span> điểm.</p></li><li><p>Viết tổng cả giải theo cách 1 (cộng theo trận) và cách 2 (cộng theo
+nhóm đội), rồi cho hai biểu thức bằng nhau.</p></li><li><p>Giải bằng ước số, sau đó <strong>dựng ví dụ</strong> để chứng tỏ
+nghiệm tìm được có thật.</p></li></ol></aside>
+<aside class="box mynote"><div class="box-title">Ghi chú của em</div><p>vì sao tổng điểm cả giải không phụ thuộc kết quả từng trận? Nếu thắng
+được <span class="math inline">\(3\)</span> điểm, hòa <span
+class="math inline">\(1\)</span> điểm thì còn đúng không?</p><textarea data-note="note2" rows="3" placeholder="Viết lại bằng lời của em..."></textarea><div class="muted small">Ghi chú được lưu trong trình duyệt của em.</div></aside>
+
+<h2 id="tools" class="part">Phòng thử nghiệm</h2>
+<p class="muted">Ba công cụ nhỏ để tự kiểm tra con số trước khi tin vào công thức. Đây chỉ là công cụ kiểm tra, trong bài thi em vẫn phải trình bày lập luận.</p>
+<div class="toolgrid">
+ <section class="card tool" id="tool1">
+  <h3>Máy đếm hai câu hỏi</h3>
+  <div class="row"><label>n <input id="t1n" type="number" min="1" max="60" value="10"></label>
+  <label>k <input id="t1k" type="number" min="0" max="60" value="3"></label></div>
+  <div id="t1out" class="out"></div>
+ </section>
+ <section class="card tool" id="tool2">
+  <h3>Bù trừ trên 1..N</h3>
+  <div class="row"><label>N <input id="t2N" type="number" min="1" max="1000000" value="100"></label>
+  <label>a <input id="t2a" type="number" min="1" value="2"></label>
+  <label>b <input id="t2b" type="number" min="1" value="3"></label>
+  <label>c <input id="t2c" type="number" min="1" value="5"></label></div>
+  <div id="t2out" class="out"></div>
+ </section>
+ <section class="card tool" id="tool3">
+  <h3>Giải đấu vòng tròn</h3>
+  <div class="row"><label>n đội <input id="t3n" type="number" min="2" max="60" value="12"></label>
+  <label>Thắng <input id="t3w" type="number" min="0" max="10" value="2"></label>
+  <label>Hòa (mỗi đội) <input id="t3d" type="number" min="0" max="10" value="1"></label></div>
+  <div id="t3out" class="out"></div>
+ </section>
+</div>
+
+<h2 id="luyen" class="part">Bài luyện</h2>
+<p class="muted">Ký hiệu <b>N</b>: nền chung HSG Toán 9. <b>C</b>: tầng chuyên. Làm vào giấy trước, rồi nhập đáp số để kiểm tra. Chỉ xem gợi ý khi đã thử ít nhất 5 phút.</p>
+<div class="exprog" data-exprog="1"></div>
+<article class="ex card" data-lesson="1" data-n="1" data-ans="420" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 1 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Từ các chữ số <span class="math inline">\(0,1,2,3,4,5,6\)</span> lập
+các số tự nhiên chẵn có bốn chữ số <strong>khác nhau</strong>. Có bao
+nhiêu số?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 1"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Chia trường hợp theo chữ số cuối: là <span
+class="math inline">\(0\)</span> hoặc là một trong <span
+class="math inline">\(2,4,6\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Cuối là <span class="math inline">\(0\)</span>: ba chữ số trước chọn
+từ <span class="math inline">\(6\)</span> chữ số <span
+class="math inline">\(1,\dots,6\)</span>, có thứ tự: <span
+class="math inline">\(6\cdot5\cdot4=120\)</span>.</p></div><div class="sol-step"><p>Cuối là <span class="math inline">\(2\)</span>, <span
+class="math inline">\(4\)</span> hoặc <span
+class="math inline">\(6\)</span> (<span class="math inline">\(3\)</span>
+cách): hàng nghìn khác <span class="math inline">\(0\)</span> và khác
+chữ số cuối nên có <span class="math inline">\(5\)</span> cách; hàng
+trăm có <span class="math inline">\(5\)</span> cách; hàng chục có <span
+class="math inline">\(4\)</span> cách. Được <span
+class="math inline">\(3\cdot5\cdot5\cdot4=300\)</span>.</p></div><div class="sol-step"><p>Tổng: <span class="math inline">\(120+300=420\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(420\)</span></p></div></div></article>
+<article class="ex card" data-lesson="1" data-n="2" data-ans="121" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 2 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Một tổ có <span class="math inline">\(5\)</span> bạn nam và <span
+class="math inline">\(4\)</span> bạn nữ. Chọn <span
+class="math inline">\(4\)</span> bạn đi trực nhật sao cho có <strong>ít
+nhất một bạn nữ</strong>. Có bao nhiêu cách?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 2"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Đếm phần bù: chọn <span class="math inline">\(4\)</span> bạn mà không
+có bạn nữ nào.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Chọn <span class="math inline">\(4\)</span> bạn bất kỳ từ <span
+class="math inline">\(9\)</span> bạn, không cần thứ tự: <span
+class="math inline">\(\dfrac{9\cdot8\cdot7\cdot6}{4!}=126\)</span>.</p></div><div class="sol-step"><p>Chọn <span class="math inline">\(4\)</span> bạn toàn nam từ <span
+class="math inline">\(5\)</span> nam: <span
+class="math inline">\(\dfrac{5\cdot4\cdot3\cdot2}{4!}=5\)</span>.</p></div><div class="sol-step"><p>Có ít nhất một nữ: <span
+class="math inline">\(126-5=121\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(121\)</span></p></div></div></article>
+<article class="ex card" data-lesson="1" data-n="3" data-ans="35" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 3 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chia <span class="math inline">\(8\)</span> bạn thành hai nhóm, mỗi
+nhóm <span class="math inline">\(4\)</span> bạn, hai nhóm <strong>không
+có tên</strong>. Có bao nhiêu cách chia?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 3"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Làm giống Ví dụ 4: tính khi hai nhóm có tên, rồi xử lý việc đổi tên
+hai nhóm.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Hai nhóm có tên: chọn <span class="math inline">\(4\)</span> bạn cho
+nhóm I, được <span
+class="math inline">\(\dfrac{8\cdot7\cdot6\cdot5}{4!}=70\)</span>.</p></div><div class="sol-step"><p>Nhóm không tên: mỗi cách chia bị đếm <span
+class="math inline">\(2\)</span> lần, nên có <span
+class="math inline">\(70:2=35\)</span> cách.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(35\)</span></p></div></div></article>
+<article class="ex card" data-lesson="1" data-n="4" data-ans="266" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 4 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Trong các số nguyên từ <span class="math inline">\(1\)</span> đến
+<span class="math inline">\(1000\)</span>, có bao nhiêu số
+<strong>không</strong> chia hết cho cả <span
+class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>
+và <span class="math inline">\(5\)</span>?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 4"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Đếm số chia hết cho ít nhất một trong ba số bằng bù trừ, rồi lấy
+<span class="math inline">\(1000\)</span> trừ đi.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Chia hết cho <span class="math inline">\(2\)</span>: <span
+class="math inline">\(500\)</span>; cho <span
+class="math inline">\(3\)</span>: <span
+class="math inline">\(333\)</span>; cho <span
+class="math inline">\(5\)</span>: <span
+class="math inline">\(200\)</span>.</p></div><div class="sol-step"><p>Chia hết cho <span class="math inline">\(6\)</span>: <span
+class="math inline">\(166\)</span>; cho <span
+class="math inline">\(10\)</span>: <span
+class="math inline">\(100\)</span>; cho <span
+class="math inline">\(15\)</span>: <span
+class="math inline">\(66\)</span>; cho <span
+class="math inline">\(30\)</span>: <span
+class="math inline">\(33\)</span>.</p></div><div class="sol-step"><p>Số chia hết cho ít nhất một số: <span
+class="math inline">\(500+333+200-166-100-66+33=734\)</span>.</p></div><div class="sol-step"><p>Số cần tìm: <span class="math inline">\(1000-734=266\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(266\)</span></p></div></div></article>
+<article class="ex card" data-lesson="1" data-n="5" data-ans="14400" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 5 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Xếp <span class="math inline">\(5\)</span> bạn nam và <span
+class="math inline">\(3\)</span> bạn nữ thành một hàng ngang sao cho
+<strong>không có hai bạn nữ đứng cạnh nhau</strong>. Có bao nhiêu cách
+xếp?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 5"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Xếp <span class="math inline">\(5\)</span> bạn nam trước. Các bạn nữ
+chỉ được đứng vào các khoảng trống giữa hoặc ngoài hai đầu.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Xếp <span class="math inline">\(5\)</span> bạn nam: <span
+class="math inline">\(5!=120\)</span> cách. Có <span
+class="math inline">\(6\)</span> khoảng trống (giữa các bạn nam và hai
+đầu hàng).</p></div><div class="sol-step"><p>Mỗi bạn nữ vào một khoảng trống khác nhau: chọn khoảng trống và xếp
+cho <span class="math inline">\(3\)</span> bạn nữ có <span
+class="math inline">\(6\cdot5\cdot4=120\)</span> cách.</p></div><div class="sol-step"><p>Nhân: <span class="math inline">\(120\cdot120=14400\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(14400\)</span></p></div></div></article>
+<article class="ex card" data-lesson="1" data-n="6" data-ans="15" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 6 · N</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 6)</span></div><div class="problem"><p>Một giải bóng đá vòng tròn một lượt có <span
+class="math inline">\(10\)</span> đội. Trận có đội thắng thì đội thắng
+được <span class="math inline">\(3\)</span> điểm, đội thua <span
+class="math inline">\(0\)</span> điểm; trận hòa mỗi đội được <span
+class="math inline">\(1\)</span> điểm. Kết thúc giải, tổng điểm của tất
+cả các đội là <span class="math inline">\(120\)</span>. Có bao nhiêu
+trận hòa?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 6"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Trận có kết quả cho tổng <span class="math inline">\(3\)</span> điểm,
+trận hòa cho tổng <span class="math inline">\(2\)</span> điểm. Số trận
+cả giải là bao nhiêu?</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Số trận cả giải: <span
+class="math inline">\(\dfrac{10\cdot9}{2}=45\)</span>. Gọi <span
+class="math inline">\(h\)</span> là số trận hòa, còn <span
+class="math inline">\(45-h\)</span> trận có đội thắng.</p></div><div class="sol-step"><p>Tổng điểm: <span class="math inline">\(3(45-h)+2h=135-h\)</span>.</p></div><div class="sol-step"><p>Cho <span class="math inline">\(135-h=120\)</span> được <span
+class="math inline">\(h=15\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(15\)</span> trận hòa</p></div></div></article>
+<article class="ex card" data-lesson="1" data-n="7" data-ans="80" data-kind="int"><div class="vd-head"><span class="tag lvC">Bài 7 · C</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Trong các số nguyên từ <span class="math inline">\(1\)</span> đến
+<span class="math inline">\(300\)</span>, có bao nhiêu số chia hết cho
+<span class="math inline">\(4\)</span> <strong>hoặc</strong> <span
+class="math inline">\(6\)</span> nhưng <strong>không</strong> chia hết
+cho <span class="math inline">\(10\)</span>?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 7"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Đếm các số chia hết cho <span class="math inline">\(4\)</span> hoặc
+<span class="math inline">\(6\)</span> (bù trừ hai tập), rồi trừ đi
+những số trong đó chia hết cho <span class="math inline">\(10\)</span>
+(bù trừ lần nữa).</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Chia hết cho <span class="math inline">\(4\)</span>: <span
+class="math inline">\(75\)</span>; cho <span
+class="math inline">\(6\)</span>: <span
+class="math inline">\(50\)</span>; cho <span
+class="math inline">\(12\)</span>: <span
+class="math inline">\(25\)</span>. Số chia hết cho <span
+class="math inline">\(4\)</span> hoặc <span
+class="math inline">\(6\)</span> là <span
+class="math inline">\(75+50-25=100\)</span>.</p></div><div class="sol-step"><p>Trong số đó, chia hết cho <span class="math inline">\(10\)</span>:
+chia hết cho <span class="math inline">\(4\)</span> và <span
+class="math inline">\(10\)</span> (tức <span
+class="math inline">\(20\)</span>): <span
+class="math inline">\(15\)</span> số; chia hết cho <span
+class="math inline">\(6\)</span> và <span
+class="math inline">\(10\)</span> (tức <span
+class="math inline">\(30\)</span>): <span
+class="math inline">\(10\)</span> số; chia hết cho cả ba (tức <span
+class="math inline">\(60\)</span>): <span
+class="math inline">\(5\)</span> số. Được <span
+class="math inline">\(15+10-5=20\)</span> số.</p></div><div class="sol-step"><p>Đáp số: <span class="math inline">\(100-20=80\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(80\)</span></p></div></div></article>
+<article class="ex card" data-lesson="1" data-n="8" data-ans="105" data-kind="int"><div class="vd-head"><span class="tag lvC">Bài 8 · C</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chia <span class="math inline">\(8\)</span> người thành <span
+class="math inline">\(4\)</span> cặp (mỗi cặp <span
+class="math inline">\(2\)</span> người), các cặp <strong>không có thứ
+tự</strong>. Có bao nhiêu cách chia?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 8"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Xét người thứ nhất: người đó có thể ghép với bao nhiêu người? Sau đó
+xét người đầu tiên còn lại.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Người thứ nhất chọn bạn cặp trong <span
+class="math inline">\(7\)</span> người còn lại: <span
+class="math inline">\(7\)</span> cách.</p></div><div class="sol-step"><p>Trong <span class="math inline">\(6\)</span> người còn lại, lấy một
+người bất kỳ làm "người đầu tiên", người đó chọn bạn cặp trong <span
+class="math inline">\(5\)</span> người: <span
+class="math inline">\(5\)</span> cách. Tiếp theo <span
+class="math inline">\(3\)</span> cách, rồi <span
+class="math inline">\(1\)</span> cách.</p></div><div class="sol-step"><p>Nhân: <span
+class="math inline">\(7\cdot5\cdot3\cdot1=105\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(105\)</span></p></div></div></article>
+<h2 id="nguon" class="part">Nguồn</h2><ul class="src-list"><li><p>Ví dụ 1–5 và Bài 1–8: sáng tác cho tài liệu này (dạng quen thuộc,
+không trích từ sách hay đề).</p></li><li><p>Ví dụ 6: đề HSG Toán 9 TP.HCM năm học 2025–2026, Câu 5.1 (diễn đạt
+lại; phần dựng giải thật là bổ sung).</p></li><li><p>Khung hai câu hỏi (lặp? thứ tự?): tham khảo cách dẫn của bài 1 “Giải
+tích tổ hợp”, trang XSTK YHCT (thangvannguyen.github.io); cách trình bày
+và ví dụ ở đây là của riêng tài liệu này.</p></li></ul>
+ <div class="pager"><a class="btn" href="#buoi-2">Buổi 2 →</a></div>
+</div></section>
+
+<section class="view" id="buoi-2"><div class="lesson">
+ <span class="pill">Buổi 2</span>
+ <h1 class="grad">Chia kẹo và xác suất</h1>
+ <p class="lead"><p>Đề HSG hay hỏi hai việc đi liền nhau: đếm số cách chia (kẹo, bi,
+nghiệm nguyên), rồi tính xác suất bằng tỉ số của hai phép đếm. Buổi này
+dạy đếm bằng <strong>vách ngăn</strong>, tính xác suất bằng <strong>biến
+cố đối</strong>, và tránh một sai lầm rất hay gặp: coi mọi cách chia đều
+có khả năng xảy ra như nhau.</p></p>
+ <div class="chips">
+  <span class="chip">⏱ 90 phút</span><span class="chip">📘 7 ví dụ từng bước</span>
+  <span class="chip">🧪 2 công cụ</span><span class="chip">📝 8 bài luyện</span>
+  <span class="chip">🎯 1 đề thật</span></div>
+ <div class="box goals"><div class="box-title">Học xong buổi này, em sẽ:</div><ol><li><p>Đếm được số nghiệm nguyên không âm của <span
+class="math inline">\(x_1+x_2+\cdots+x_k=n\)</span> bằng vách ngăn, kể
+cả khi có điều kiện "ít nhất" hay "nhiều nhất".</p></li><li><p>Tính xác suất cổ điển <span
+class="math inline">\(P(A)=\dfrac{n(A)}{n(\Omega)}\)</span>, và dùng
+<strong>biến cố đối</strong> khi đề có chữ "ít nhất".</p></li><li><p>Nhận ra khi nào các kết quả <strong>không đồng khả năng</strong>, để
+không chia nhầm cho tổng số cách chia.</p></li></ol></div>
+ <div class="box toc"><div class="box-title">Mục lục buổi</div><ol><li><button class="link" data-goto="b2-part-1">1. Chia kẹo bằng vách ngăn</button></li><li><button class="link" data-goto="b2-part-2">2. Xác suất cổ điển và biến cố đối</button></li><li><button class="link" data-goto="b2-part-3">3. Cái bẫy: các cách chia có đồng khả năng không?</button></li><li><button class="link" data-goto="b2-part-4">4. Đề thật: ba bạn viết số</button></li><li><button class="link" data-goto="b2-tools">Phòng thử nghiệm</button></li><li><button class="link" data-goto="b2-luyen">Bài luyện</button></li><li><button class="link" data-goto="b2-nguon">Nguồn</button></li></ol></div>
+ <div class="box summary"><div class="box-title">Tóm tắt 30 giây</div><ul><li><p>Chia <span class="math inline">\(n\)</span> vật giống nhau cho <span
+class="math inline">\(k\)</span> người (được nhận <span
+class="math inline">\(0\)</span>): <span
+class="math inline">\(C_{n+k-1}^{k-1}\)</span> cách. Đó là số nghiệm
+nguyên không âm của <span
+class="math inline">\(x_1+\cdots+x_k=n\)</span>.</p></li><li><p>Điều kiện "ít nhất <span class="math inline">\(m\)</span>": đặt <span
+class="math inline">\(y_i=x_i-m\)</span> để đưa về dạng không âm.</p></li><li><p>Điều kiện "nhiều nhất": đếm tất cả rồi <strong>bù trừ</strong> (như
+Buổi 1) những cách vi phạm.</p></li><li><p>Xác suất cổ điển: <span
+class="math inline">\(P(A)=\dfrac{n(A)}{n(\Omega)}\)</span>, chỉ dùng
+khi các kết quả của <span class="math inline">\(\Omega\)</span>
+<strong>đồng khả năng</strong>.</p></li><li><p>Đề có chữ "ít nhất": thường dễ hơn nếu tính <span
+class="math inline">\(P(\overline{A})\)</span> rồi lấy <span
+class="math inline">\(1-P(\overline{A})\)</span>.</p></li><li><p>Đếm tử và mẫu <strong>cùng một cách</strong> (cùng có thứ tự hoặc
+cùng không có thứ tự).</p></li></ul></div>
+ <h2 id="b2-part-1" class="part">1. Chia kẹo bằng vách ngăn</h2>
+<p>Ở Buổi 1, bảng "lặp? thứ tự?" còn một ô trống: <strong>có lặp, không
+thứ tự</strong>. Bài toán chia kẹo chính là ô đó.</p>
+<aside class="box def"><div class="box-title">Định nghĩa</div><p><strong>Bài toán chia kẹo.</strong> Chia <span
+class="math inline">\(n\)</span> vật giống nhau cho <span
+class="math inline">\(k\)</span> người, người nào cũng có thể nhận <span
+class="math inline">\(0\)</span> vật. Gọi <span
+class="math inline">\(x_i\)</span> là số vật của người thứ <span
+class="math inline">\(i\)</span>. Cách chia là một bộ số nguyên không âm
+<span class="math inline">\((x_1;x_2;\dots;x_k)\)</span> thỏa <span
+class="math inline">\(x_1+x_2+\cdots+x_k=n\)</span>.</p>
+<p><strong>Vách ngăn.</strong> Xếp <span
+class="math inline">\(n\)</span> ngôi sao ★ thành hàng, rồi chèn <span
+class="math inline">\(k-1\)</span> vách | để ngăn thành <span
+class="math inline">\(k\)</span> phần. Ví dụ <span
+class="math inline">\(n=5\)</span>, <span
+class="math inline">\(k=3\)</span>: ★★ | ★ | ★★ ứng với <span
+class="math inline">\((2;1;2)\)</span>, và ★★★★★ | | ứng với <span
+class="math inline">\((5;0;0)\)</span>. Mỗi cách chia ứng với đúng một
+cách xếp, và ngược lại.</p>
+<p>Hàng có <span class="math inline">\(n+k-1\)</span> vị trí; ta chọn
+<span class="math inline">\(k-1\)</span> vị trí cho vách. Số cách chia
+là <span class="math inline">\(C_{n+k-1}^{k-1}\)</span>.</p></aside>
+<article class="vd card" id="b2-vd1"><div class="vd-head"><span class="tag">Ví dụ 1</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chia <span class="math inline">\(10\)</span> chiếc kẹo giống nhau cho
+<span class="math inline">\(4\)</span> bạn, bạn nào cũng có thể không
+nhận được kẹo nào. Có bao nhiêu cách chia?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Gọi <span class="math inline">\(x_1,x_2,x_3,x_4\)</span> là số kẹo
+của bốn bạn. Ta đếm nghiệm nguyên không âm của <span
+class="math inline">\(x_1+x_2+x_3+x_4=10\)</span>.</p></div><div class="step"><p>Xếp <span class="math inline">\(10\)</span> ngôi sao và <span
+class="math inline">\(3\)</span> vách: hàng có <span
+class="math inline">\(10+3=13\)</span> vị trí.</p></div><div class="step"><p>Chọn <span class="math inline">\(3\)</span> vị trí cho vách: <span
+class="math inline">\(C_{13}^3=\dfrac{13\cdot 12\cdot
+11}{3!}=286\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(286\)</span> cách.</p></div></div></article>
+<article class="vd card" id="b2-vd2"><div class="vd-head"><span class="tag">Ví dụ 2</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Vẫn <span class="math inline">\(10\)</span> chiếc kẹo giống nhau và
+<span class="math inline">\(4\)</span> bạn, nhưng <strong>mỗi bạn nhận
+ít nhất <span class="math inline">\(1\)</span> chiếc</strong>. Có bao
+nhiêu cách chia?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Phát trước cho mỗi bạn <span class="math inline">\(1\)</span> chiếc,
+hết <span class="math inline">\(4\)</span> chiếc. Còn <span
+class="math inline">\(6\)</span> chiếc để chia tự do.</p></div><div class="step"><p>Về hình thức: đặt <span class="math inline">\(y_i=x_i-1\ge
+0\)</span>. Khi đó <span
+class="math inline">\(y_1+y_2+y_3+y_4=10-4=6\)</span>.</p></div><div class="step"><p>Số nghiệm không âm của phương trình này là <span
+class="math inline">\(C_{6+3}^{3}=C_9^3=\dfrac{9\cdot 8\cdot
+7}{3!}=84\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(84\)</span> cách.</p></div></div></article>
+<aside class="box method"><div class="box-title">Cách làm (chia kẹo có điều kiện &quot;ít nhất&quot;)</div><ol><li><p>Đặt <span class="math inline">\(y_i=x_i-m_i\)</span> với <span
+class="math inline">\(m_i\)</span> là mức tối thiểu của người thứ <span
+class="math inline">\(i\)</span>.</p></li><li><p>Tính tổng mới <span
+class="math inline">\(n-(m_1+\cdots+m_k)\)</span>, nếu âm thì không có
+cách nào.</p></li><li><p>Áp dụng <span class="math inline">\(C_{n&#39;+k-1}^{k-1}\)</span> với
+<span class="math inline">\(n&#39;\)</span> là tổng mới.</p></li></ol></aside>
+<aside class="box def"><div class="box-title">Mẹo: bất đẳng thức thành phương trình</div><p>Số bộ nguyên không âm <span class="math inline">\((x;y;z)\)</span>
+thỏa <span class="math inline">\(x+y+z\le 15\)</span>: thêm biến phụ
+<span class="math inline">\(w=15-(x+y+z)\ge 0\)</span>. Mỗi bộ <span
+class="math inline">\((x;y;z)\)</span> ứng với đúng một <span
+class="math inline">\(w\)</span>, nên đếm nghiệm không âm của <span
+class="math inline">\(x+y+z+w=15\)</span>.</p></aside>
+<article class="vd card" id="b2-vd3"><div class="vd-head"><span class="tag">Ví dụ 3</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chia <span class="math inline">\(10\)</span> chiếc kẹo giống nhau cho
+<span class="math inline">\(3\)</span> bạn sao cho <strong>mỗi bạn nhận
+không quá <span class="math inline">\(5\)</span> chiếc</strong> (được
+nhận <span class="math inline">\(0\)</span>). Có bao nhiêu cách
+chia?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Không có giới hạn trên: <span
+class="math inline">\(C_{12}^2=66\)</span> cách. Trong đó có những cách
+có bạn nhận từ <span class="math inline">\(6\)</span> chiếc trở lên, cần
+loại.</p></div><div class="step"><p>Gọi <span class="math inline">\(A_i\)</span> là tập các cách mà bạn
+thứ <span class="math inline">\(i\)</span> nhận ít nhất <span
+class="math inline">\(6\)</span> chiếc. Phát trước <span
+class="math inline">\(6\)</span> chiếc cho bạn đó, còn <span
+class="math inline">\(4\)</span> chiếc chia tự do cho <span
+class="math inline">\(3\)</span> bạn: <span
+class="math inline">\(|A_i|=C_6^2=15\)</span>.</p></div><div class="step"><p>Hai bạn cùng nhận ít nhất <span class="math inline">\(6\)</span>
+chiếc cần ít nhất <span class="math inline">\(12&gt;10\)</span> chiếc,
+không xảy ra: <span class="math inline">\(|A_i\cap A_j|=0\)</span>.</p></div><div class="step"><p>Bù trừ: số cách vi phạm là <span class="math inline">\(3\cdot
+15-0=45\)</span>.</p></div><div class="step"><p>Số cách chia thỏa đề: <span
+class="math inline">\(66-45=21\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(21\)</span> cách.</p></div></div></article>
+<aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Quên rằng mỗi biến cũng bị giới hạn <strong>trên</strong>. Đếm <span
+class="math inline">\(C_{12}^2=66\)</span> rồi dừng lại là đếm cả cách
+chia <span class="math inline">\((10;0;0)\)</span>, trong đó một bạn
+nhận <span class="math inline">\(10&gt;5\)</span> chiếc.</p></aside>
+<aside class="box mynote"><div class="box-title">Ghi chú của em</div><p>viết lại bằng lời của em, không nhìn bài. Vì sao số vách ngăn là
+<span class="math inline">\(k-1\)</span> chứ không phải <span
+class="math inline">\(k\)</span>? Và vì sao phát trước <span
+class="math inline">\(1\)</span> chiếc cho mỗi bạn lại đưa bài "ít nhất
+<span class="math inline">\(1\)</span>" về bài "được nhận <span
+class="math inline">\(0\)</span>"?</p><textarea data-note="b2-note1" rows="3" placeholder="Viết lại bằng lời của em..."></textarea><div class="muted small">Ghi chú được lưu trong trình duyệt của em.</div></aside>
+<h2 id="b2-part-2" class="part">2. Xác suất cổ điển và biến cố đối</h2>
+<aside class="box def"><div class="box-title">Định nghĩa</div><p><strong>Xác suất cổ điển.</strong> Một phép thử có <span
+class="math inline">\(n(\Omega)\)</span> kết quả có thể, các kết quả
+<strong>đồng khả năng</strong> (khả năng xảy ra như nhau). Biến cố <span
+class="math inline">\(A\)</span> có <span
+class="math inline">\(n(A)\)</span> kết quả thuận lợi thì <span
+class="math inline">\(P(A)=\dfrac{n(A)}{n(\Omega)}\)</span>.</p>
+<p><strong>Biến cố đối.</strong> <span
+class="math inline">\(\overline{A}\)</span> là biến cố "<span
+class="math inline">\(A\)</span> không xảy ra". Khi đó <span
+class="math inline">\(P(A)+P(\overline{A})=1\)</span>, tức <span
+class="math inline">\(P(A)=1-P(\overline{A})\)</span>.</p></aside>
+<article class="vd card" id="b2-vd4"><div class="vd-head"><span class="tag">Ví dụ 4</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chọn ngẫu nhiên đồng thời <span class="math inline">\(3\)</span> số
+khác nhau từ <span class="math inline">\(20\)</span> số nguyên <span
+class="math inline">\(1,2,\dots,20\)</span>. Tính xác suất để tổng ba số
+chia hết cho <span class="math inline">\(3\)</span>.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Chọn đồng thời nên không có thứ tự: <span
+class="math inline">\(n(\Omega)=C_{20}^3=1140\)</span>.</p></div><div class="step"><p>Chia <span class="math inline">\(20\)</span> số theo số dư khi chia
+cho <span class="math inline">\(3\)</span>: dư <span
+class="math inline">\(0\)</span> có <span
+class="math inline">\(6\)</span> số (<span
+class="math inline">\(3,6,\dots,18\)</span>); dư <span
+class="math inline">\(1\)</span> có <span
+class="math inline">\(7\)</span> số (<span
+class="math inline">\(1,4,\dots,19\)</span>); dư <span
+class="math inline">\(2\)</span> có <span
+class="math inline">\(7\)</span> số (<span
+class="math inline">\(2,5,\dots,20\)</span>).</p></div><div class="step"><p>Tổng chia hết cho <span class="math inline">\(3\)</span> chỉ khi ba
+số cùng nhóm hoặc mỗi nhóm có một số. Thử các kiểu còn lại: <span
+class="math inline">\(0+0+1,\ 0+0+2,\ 1+1+0,\ 1+1+2,\ 2+2+0,\
+2+2+1\)</span> đều có tổng dư khác <span
+class="math inline">\(0\)</span>.</p></div><div class="step"><p>Cùng nhóm: <span
+class="math inline">\(C_6^3+C_7^3+C_7^3=20+35+35=90\)</span>. Mỗi nhóm
+một số: <span class="math inline">\(6\cdot 7\cdot 7=294\)</span>. Vậy
+<span class="math inline">\(n(A)=384\)</span>.</p></div><div class="step"><p><span
+class="math inline">\(P(A)=\dfrac{384}{1140}=\dfrac{32}{95}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{32}{95}\)</span>.</p></div></div></article>
+<article class="vd card" id="b2-vd5"><div class="vd-head"><span class="tag">Ví dụ 5</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Năm người được chọn ngẫu nhiên. Coi mỗi người sinh vào một trong
+<span class="math inline">\(12\)</span> tháng với khả năng như nhau, các
+người độc lập. Tính xác suất để <strong>có ít nhất hai người cùng tháng
+sinh</strong>.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Mỗi người có <span class="math inline">\(12\)</span> lựa chọn tháng
+sinh, các người phân biệt nhau: <span
+class="math inline">\(n(\Omega)=12^5=248832\)</span>.</p></div><div class="step"><p>Chữ "ít nhất hai người cùng tháng" khó đếm trực tiếp. Biến cố đối
+<span class="math inline">\(\overline{A}\)</span>: năm người có năm
+tháng sinh <strong>đôi một khác nhau</strong>.</p></div><div class="step"><p><span class="math inline">\(n(\overline{A})=12\cdot 11\cdot 10\cdot
+9\cdot 8=95040\)</span>, nên <span
+class="math inline">\(P(\overline{A})=\dfrac{95040}{248832}=\dfrac{55}{144}\)</span>.</p></div><div class="step"><p><span
+class="math inline">\(P(A)=1-\dfrac{55}{144}=\dfrac{89}{144}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{89}{144}\)</span> (khoảng <span
+class="math inline">\(0{,}62\)</span>).</p></div></div></article>
+<aside class="box note"><div class="box-title">Giả thiết mô hình</div><p>Đề nói "coi mỗi tháng như nhau", nên ta mới được dùng <span
+class="math inline">\(12^5\)</span> kết quả đồng khả năng. Thực tế số
+người sinh mỗi tháng không đều; khi đề không nêu giả thiết, em cần tự
+ghi rõ giả thiết mình dùng.</p></aside>
+<aside class="box method"><div class="box-title">Cách làm (xác suất cổ điển)</div><ol><li><p>Nói rõ một kết quả là gì, và kiểm tra các kết quả có đồng khả năng
+không.</p></li><li><p>Đếm <span class="math inline">\(n(\Omega)\)</span> và <span
+class="math inline">\(n(A)\)</span> theo cùng một cách (cùng có thứ tự
+hoặc cùng không có thứ tự).</p></li><li><p>Thấy chữ “ít nhất” thì thử đếm biến cố đối.</p></li></ol></aside>
+<aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Tính <span class="math inline">\(n(\Omega)\)</span> theo kiểu
+<strong>không thứ tự</strong> (<span
+class="math inline">\(C_{20}^3\)</span>) nhưng đếm <span
+class="math inline">\(n(A)\)</span> theo kiểu <strong>có thứ tự</strong>
+(chọn số thứ nhất, rồi số thứ hai…). Hai bên lệch nhau <span
+class="math inline">\(3!\)</span> lần, kết quả sai mà không có dấu hiệu
+nào báo.</p></aside>
+<h2 id="b2-part-3" class="part">3. Cái bẫy: các cách chia có đồng khả năng không?</h2>
+<p>Đề hay cho bài chia kẹo <strong>ngẫu nhiên</strong>. Có hai cách đếm
+đều quen thuộc (vách ngăn và quy tắc nhân), và chúng cho hai đáp số khác
+nhau. Chỉ một cách đúng.</p>
+<article class="vd card" id="b2-vd6"><div class="vd-head"><span class="tag">Ví dụ 6</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Có <span class="math inline">\(6\)</span> viên kẹo khác nhau (đánh số
+<span class="math inline">\(1\)</span> đến <span
+class="math inline">\(6\)</span>). Lần lượt trao từng viên cho một trong
+ba bạn An, Bình, Chi, mỗi viên trao ngẫu nhiên và độc lập với các viên
+khác. Tính xác suất để <strong>mỗi bạn nhận ít nhất một
+viên</strong>.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Một kết quả là: viên <span class="math inline">\(1\)</span> trao cho
+ai, viên <span class="math inline">\(2\)</span> trao cho ai, …, viên
+<span class="math inline">\(6\)</span> trao cho ai. Mỗi viên có <span
+class="math inline">\(3\)</span> lựa chọn: <span
+class="math inline">\(n(\Omega)=3^6=729\)</span>, các kết quả đồng khả
+năng.</p></div><div class="step"><p>Gọi <span class="math inline">\(A\)</span>: "An không nhận viên nào",
+<span class="math inline">\(B\)</span>, <span
+class="math inline">\(C\)</span> tương tự. Khi An không nhận, mỗi viên
+chỉ trao cho Bình hoặc Chi: <span
+class="math inline">\(|A|=2^6=64\)</span>; tương tự <span
+class="math inline">\(|B|=|C|=64\)</span>.</p></div><div class="step"><p>An và Bình đều không nhận thì mọi viên về Chi: <span
+class="math inline">\(|A\cap B|=1\)</span>, tương tự cho hai cặp còn
+lại. <span class="math inline">\(|A\cap B\cap C|=0\)</span> vì mỗi viên
+phải có người nhận.</p></div><div class="step"><p>Bù trừ: số kết quả có bạn không nhận gì là <span
+class="math inline">\(3\cdot 64-3\cdot 1+0=189\)</span>. Số kết quả
+thuận lợi: <span class="math inline">\(729-189=540\)</span>.</p></div><div class="step"><p><span
+class="math inline">\(P=\dfrac{540}{729}=\dfrac{20}{27}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{20}{27}\)</span>.</p></div></div></article>
+<aside class="box fix"><div class="box-title">Ghi chú sửa</div><p>Cách làm sai quen thuộc: "Chia <span class="math inline">\(6\)</span>
+kẹo giống nhau cho <span class="math inline">\(3\)</span> bạn có <span
+class="math inline">\(C_8^2=28\)</span> cách, trong đó mỗi bạn nhận ít
+nhất <span class="math inline">\(1\)</span> chiếc có <span
+class="math inline">\(C_5^2=10\)</span> cách, nên xác suất là <span
+class="math inline">\(\dfrac{10}{28}=\dfrac{5}{14}\)</span>." Cách này
+<strong>sai</strong> vì <span class="math inline">\(28\)</span> cách
+chia <strong>không đồng khả năng</strong>. Cách chia <span
+class="math inline">\((6;0;0)\)</span> chỉ ứng với <span
+class="math inline">\(1\)</span> cách trao thật (cả <span
+class="math inline">\(6\)</span> viên về một bạn), còn cách chia <span
+class="math inline">\((2;2;2)\)</span> ứng với <span
+class="math inline">\(\dfrac{6!}{2!\,2!\,2!}=90\)</span> cách trao
+thật.</p>
+<p>Quy tắc cần nhớ: tính "đồng khả năng" gắn với <strong>việc từng viên
+kẹo đi đâu</strong> (có <span class="math inline">\(3^6\)</span> kết quả
+như nhau), không gắn với <strong>mỗi bạn được mấy viên</strong>.</p></aside>
+<aside class="box mynote"><div class="box-title">Ghi chú của em</div><p>vì sao ở Ví dụ 6 ta không được lấy <span
+class="math inline">\(10\)</span> chia <span
+class="math inline">\(28\)</span>? Hãy so sánh với Ví dụ 4, nơi lấy
+<span class="math inline">\(C_{20}^3\)</span> làm mẫu thì đúng.</p><textarea data-note="b2-note2" rows="3" placeholder="Viết lại bằng lời của em..."></textarea><div class="muted small">Ghi chú được lưu trong trình duyệt của em.</div></aside>
+<h2 id="b2-part-4" class="part">4. Đề thật: ba bạn viết số</h2>
+<article class="vd card" id="b2-vd7"><div class="vd-head"><span class="tag">Ví dụ 7</span><span class="tag real">Đề thật</span><span class="src">Nguồn: Đề HSG Toán 9 TP.HCM năm học 2024–2025, Câu 2.3 (đã diễn đạt lại, đã đối chiếu hướng dẫn chấm)</span></div><div class="problem"><p>Ba bạn Phúc, Lộc, Thọ lần lượt viết lên bảng một số tự nhiên từ <span
+class="math inline">\(1\)</span> đến <span
+class="math inline">\(9\)</span>, sao cho ba số viết ra <strong>đôi một
+khác nhau</strong>. Tính xác suất để số của Phúc chia hết cho số của
+Lộc, và số của Lộc chia hết cho số của Thọ.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Một kết quả là bộ có thứ tự <span
+class="math inline">\((a;b;c)\)</span>: số của Phúc, Lộc, Thọ. Ba số đôi
+một khác nhau: <span class="math inline">\(n(\Omega)=9\cdot 8\cdot
+7=504\)</span>.</p></div><div class="step"><p>Cần <span class="math inline">\(b\mid a\)</span> và <span
+class="math inline">\(c\mid b\)</span>. Vì các số khác nhau nên <span
+class="math inline">\(a\ge 2b\)</span> và <span
+class="math inline">\(b\ge 2c\)</span>, tức <span
+class="math inline">\(a&gt;b&gt;c\)</span>.</p></div><div class="step"><p>Với <span class="math inline">\(c=1\)</span>: <span
+class="math inline">\(b=2\)</span> cho <span
+class="math inline">\(a\in\{4;6;8\}\)</span>; <span
+class="math inline">\(b=3\)</span> cho <span
+class="math inline">\(a\in\{6;9\}\)</span>; <span
+class="math inline">\(b=4\)</span> cho <span
+class="math inline">\(a=8\)</span>. <span class="math inline">\(b\ge
+5\)</span> thì <span class="math inline">\(a\ge 10\)</span>, loại. Được
+<span class="math inline">\(3+2+1=6\)</span> bộ.</p></div><div class="step"><p>Với <span class="math inline">\(c=2\)</span>: <span
+class="math inline">\(b\)</span> là bội của <span
+class="math inline">\(2\)</span> và <span
+class="math inline">\(b&gt;2\)</span>, lại có <span
+class="math inline">\(2b\le a\le 9\)</span> nên <span
+class="math inline">\(b\le 4\)</span>. Vậy <span
+class="math inline">\(b=4\)</span>, <span
+class="math inline">\(a=8\)</span>. Được <span
+class="math inline">\(1\)</span> bộ <span
+class="math inline">\((8;4;2)\)</span>.</p></div><div class="step"><p>Với <span class="math inline">\(c\ge 3\)</span>: <span
+class="math inline">\(b\ge 6\)</span> nên <span
+class="math inline">\(a\ge 12&gt;9\)</span>, không có bộ nào. Vậy <span
+class="math inline">\(n(A)=7\)</span>: <span
+class="math inline">\((4;2;1),(6;2;1),(8;2;1),(6;3;1),(9;3;1),(8;4;1),(8;4;2)\)</span>.</p></div><div class="step"><p><span
+class="math inline">\(P(A)=\dfrac{7}{504}=\dfrac{1}{72}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{1}{72}\)</span>.</p></div></div></article>
+<aside class="box real"><div class="box-title">Đề thật</div><p>Hướng dẫn chấm của Sở lấy <span
+class="math inline">\(n(\Omega)=9\cdot 8\cdot 7=504\)</span> (ba số đôi
+một khác nhau) và <span class="math inline">\(n(A)=7\)</span>, đáp số
+<span class="math inline">\(\dfrac{1}{72}\)</span>, đúng như lời giải
+trên. Câu chữ gốc "số người trước không trùng số người sau" có thể đọc
+theo cách khác: chỉ hai người <strong>viết liền nhau</strong> khác số,
+khi đó <span class="math inline">\(n(\Omega)=9\cdot 8\cdot
+8=576\)</span> và đáp số là <span
+class="math inline">\(\dfrac{7}{576}\)</span> (vì <span
+class="math inline">\(n(A)=7\)</span> vẫn đúng). <strong>Bài
+học:</strong> đáp số phụ thuộc cách chọn <span
+class="math inline">\(\Omega\)</span>, nên em luôn viết rõ mình hiểu đề
+thế nào ngay dòng đầu của bài làm.</p></aside>
+<aside class="box method"><div class="box-title">Cách làm (xác suất kèm điều kiện chia hết)</div><ol><li><p>Viết rõ <span class="math inline">\(\Omega\)</span> và đếm <span
+class="math inline">\(n(\Omega)\)</span> theo cách hiểu của đề.</p></li><li><p>Dùng điều kiện chia hết để suy ra thứ tự lớn nhỏ, rồi chia trường hợp
+theo số nhỏ nhất.</p></li><li><p>Liệt kê hết các bộ thuận lợi và đối chiếu lại với điều kiện đề.</p></li></ol></aside>
+
+<h2 id="b2-tools" class="part">Phòng thử nghiệm</h2>
+<p class="muted">Hai công cụ nhỏ để tự kiểm tra con số. Đây chỉ là công cụ kiểm tra, trong bài thi em vẫn phải trình bày lập luận.</p>
+<div class="toolgrid">
+ <section class="card tool" id="tool4">
+  <h3>Máy chia kẹo</h3>
+  <div class="row"><label>n (số kẹo) <input id="t4n" type="number" min="0" max="40" value="10"></label>
+  <label>k (số bạn) <input id="t4k" type="number" min="1" max="8" value="4"></label>
+  <label>Mỗi bạn ít nhất <input id="t4m" type="number" min="0" max="10" value="1"></label>
+  <label>Mỗi bạn nhiều nhất <input id="t4M" type="number" min="0" max="40" value="40"></label></div>
+  <div id="t4out" class="out"></div>
+ </section>
+ <section class="card tool" id="tool5">
+  <h3>Chia kẹo ngẫu nhiên: sự thật và cái bẫy</h3>
+  <div class="row"><label>n (kẹo khác nhau) <input id="t5n" type="number" min="1" max="30" value="6"></label>
+  <label>k (số bạn) <input id="t5k" type="number" min="1" max="8" value="3"></label></div>
+  <div class="row"><button class="btn" id="t5run" type="button">Mô phỏng 20 000 lần</button></div>
+  <div id="t5out" class="out"></div>
+ </section>
+</div>
+
+<h2 id="b2-luyen" class="part">Bài luyện</h2>
+<p class="muted">Ký hiệu <b>N</b>: nền chung HSG Toán 9. <b>C</b>: tầng chuyên. Làm vào giấy trước, rồi nhập đáp số để kiểm tra. Chỉ xem gợi ý khi đã thử ít nhất 5 phút.</p>
+<div class="exprog" data-exprog="2"></div>
+<article class="ex card" data-lesson="2" data-n="1" data-ans="330" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 1 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chia <span class="math inline">\(12\)</span> chiếc bút giống nhau cho
+<span class="math inline">\(5\)</span> bạn sao cho <strong>mỗi bạn nhận
+ít nhất <span class="math inline">\(1\)</span> chiếc</strong>. Có bao
+nhiêu cách chia?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 1"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Phát trước cho mỗi bạn <span class="math inline">\(1\)</span> chiếc,
+rồi chia số còn lại tự do.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Phát trước <span class="math inline">\(5\)</span> chiếc, còn <span
+class="math inline">\(12-5=7\)</span> chiếc chia tự do cho <span
+class="math inline">\(5\)</span> bạn.</p></div><div class="sol-step"><p>Số cách: <span
+class="math inline">\(C_{7+4}^{4}=C_{11}^4=\dfrac{11\cdot 10\cdot 9\cdot
+8}{4!}=330\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(330\)</span></p></div></div></article>
+<article class="ex card" data-lesson="2" data-n="2" data-ans="816" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 2 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Có bao nhiêu bộ số nguyên không âm <span
+class="math inline">\((x;y;z)\)</span> thỏa <span
+class="math inline">\(x+y+z\le 15\)</span>?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 2"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Thêm biến phụ <span class="math inline">\(w=15-(x+y+z)\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Đặt <span class="math inline">\(w=15-(x+y+z)\ge 0\)</span>. Mỗi bộ
+<span class="math inline">\((x;y;z)\)</span> ứng với đúng một <span
+class="math inline">\(w\)</span>, nên cần đếm nghiệm không âm của <span
+class="math inline">\(x+y+z+w=15\)</span>.</p></div><div class="sol-step"><p>Số nghiệm: <span
+class="math inline">\(C_{15+3}^{3}=C_{18}^3=\dfrac{18\cdot 17\cdot
+16}{3!}=816\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(816\)</span></p></div></div></article>
+<article class="ex card" data-lesson="2" data-n="3" data-ans="220" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 3 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Chia <span class="math inline">\(14\)</span> viên bi giống nhau cho
+bốn bạn An, Bình, Chi, Dũng sao cho An nhận ít nhất <span
+class="math inline">\(2\)</span> viên, và mỗi bạn còn lại nhận ít nhất
+<span class="math inline">\(1\)</span> viên. Có bao nhiêu cách chia?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 3"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Mức tối thiểu của bốn bạn là <span
+class="math inline">\(2,1,1,1\)</span>. Tính tổng mới sau khi phát
+trước.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Phát trước <span class="math inline">\(2+1+1+1=5\)</span> viên, còn
+<span class="math inline">\(14-5=9\)</span> viên chia tự do cho <span
+class="math inline">\(4\)</span> bạn.</p></div><div class="sol-step"><p>Số cách: <span
+class="math inline">\(C_{9+3}^{3}=C_{12}^3=\dfrac{12\cdot 11\cdot
+10}{3!}=220\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(220\)</span></p></div></div></article>
+<article class="ex card" data-lesson="2" data-n="4" data-ans="68/203" data-kind="frac"><div class="vd-head"><span class="tag lvN">Bài 4 · N</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 4)</span></div><div class="problem"><p>Chọn ngẫu nhiên đồng thời <span class="math inline">\(3\)</span> số
+khác nhau từ <span class="math inline">\(30\)</span> số nguyên <span
+class="math inline">\(1,2,\dots,30\)</span>. Tính xác suất để tổng ba số
+chia hết cho <span class="math inline">\(3\)</span>. (Nhập phân số tối
+giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 4"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Chia <span class="math inline">\(30\)</span> số thành ba nhóm theo số
+dư khi chia cho <span class="math inline">\(3\)</span>. Mỗi nhóm có bao
+nhiêu số?</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=C_{30}^3=4060\)</span>.</p></div><div class="sol-step"><p>Mỗi nhóm số dư <span class="math inline">\(0,1,2\)</span> có <span
+class="math inline">\(10\)</span> số. Ba số cùng nhóm: <span
+class="math inline">\(3\cdot C_{10}^3=3\cdot 120=360\)</span>. Mỗi nhóm
+một số: <span class="math inline">\(10^3=1000\)</span>.</p></div><div class="sol-step"><p><span class="math inline">\(n(A)=1360\)</span>, <span
+class="math inline">\(P=\dfrac{1360}{4060}=\dfrac{68}{203}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{68}{203}\)</span></p></div></div></article>
+<article class="ex card" data-lesson="2" data-n="5" data-ans="290/323" data-kind="frac"><div class="vd-head"><span class="tag lvN">Bài 5 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Một lớp có <span class="math inline">\(20\)</span> bạn, trong đó có
+<span class="math inline">\(12\)</span> bạn nữ. Chọn ngẫu nhiên <span
+class="math inline">\(4\)</span> bạn đi trực nhật. Tính xác suất để
+<strong>có ít nhất một bạn nam</strong>. (Nhập phân số tối giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 5"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Biến cố đối: cả <span class="math inline">\(4\)</span> bạn được chọn
+đều là nữ.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=C_{20}^4=4845\)</span>.</p></div><div class="sol-step"><p>Biến cố đối: chọn <span class="math inline">\(4\)</span> bạn toàn nữ,
+<span class="math inline">\(C_{12}^4=495\)</span> cách. <span
+class="math inline">\(P(\overline{A})=\dfrac{495}{4845}=\dfrac{33}{323}\)</span>.</p></div><div class="sol-step"><p><span
+class="math inline">\(P(A)=1-\dfrac{33}{323}=\dfrac{290}{323}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{290}{323}\)</span></p></div></div></article>
+<article class="ex card" data-lesson="2" data-n="6" data-ans="1/8" data-kind="frac"><div class="vd-head"><span class="tag lvC">Bài 6 · C</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Gieo ba con xúc xắc cân đối và phân biệt nhau (ví dụ ba màu khác
+nhau). Tính xác suất để tổng số chấm bằng <span
+class="math inline">\(10\)</span>. (Nhập phân số tối giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 6"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Gọi số chấm là <span
+class="math inline">\(x,y,z\in\{1;\dots;6\}\)</span>. Đặt <span
+class="math inline">\(a=x-1\)</span>,… rồi đếm nghiệm có cận trên, như
+Ví dụ 3.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=6^3=216\)</span>. Ba con xúc
+xắc phân biệt nên mỗi bộ <span class="math inline">\((x;y;z)\)</span> là
+một kết quả, đồng khả năng.</p></div><div class="sol-step"><p>Đặt <span class="math inline">\(a=x-1\)</span>, <span
+class="math inline">\(b=y-1\)</span>, <span
+class="math inline">\(c=z-1\)</span> thì <span
+class="math inline">\(0\le a,b,c\le 5\)</span> và <span
+class="math inline">\(a+b+c=7\)</span>.</p></div><div class="sol-step"><p>Không giới hạn trên: <span class="math inline">\(C_9^2=36\)</span>.
+Có biến từ <span class="math inline">\(6\)</span> trở lên (ví dụ <span
+class="math inline">\(a=6+a&#39;\)</span>): <span
+class="math inline">\(a&#39;+b+c=1\)</span> có <span
+class="math inline">\(C_3^2=3\)</span> nghiệm, nhân <span
+class="math inline">\(3\)</span> biến được <span
+class="math inline">\(9\)</span>. Hai biến cùng từ <span
+class="math inline">\(6\)</span> thì tổng <span
+class="math inline">\(\ge 12&gt;7\)</span>, không xảy ra.</p></div><div class="sol-step"><p><span class="math inline">\(n(A)=36-9=27\)</span>, <span
+class="math inline">\(P=\dfrac{27}{216}=\dfrac{1}{8}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{1}{8}\)</span></p></div></div></article>
+<article class="ex card" data-lesson="2" data-n="7" data-ans="223/343" data-kind="frac"><div class="vd-head"><span class="tag lvC">Bài 7 · C</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 5)</span></div><div class="problem"><p>Bốn người được chọn ngẫu nhiên. Coi mỗi người sinh vào một trong
+<span class="math inline">\(7\)</span> ngày trong tuần với khả năng như
+nhau, các người độc lập. Tính xác suất để <strong>có ít nhất hai người
+sinh cùng thứ trong tuần</strong>. (Nhập phân số tối giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 7"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Tính xác suất của biến cố đối: bốn người sinh vào bốn thứ khác
+nhau.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=7^4=2401\)</span>.</p></div><div class="sol-step"><p>Biến cố đối: <span class="math inline">\(4\)</span> thứ đôi một khác
+nhau, <span class="math inline">\(7\cdot 6\cdot 5\cdot 4=840\)</span>
+cách. <span
+class="math inline">\(P(\overline{A})=\dfrac{840}{2401}=\dfrac{120}{343}\)</span>.</p></div><div class="sol-step"><p><span
+class="math inline">\(P(A)=1-\dfrac{120}{343}=\dfrac{223}{343}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{223}{343}\)</span></p></div></div></article>
+<article class="ex card" data-lesson="2" data-n="8" data-ans="195/512" data-kind="frac"><div class="vd-head"><span class="tag lvC">Bài 8 · C</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 6)</span></div><div class="problem"><p>Có <span class="math inline">\(6\)</span> viên kẹo khác nhau. Lần
+lượt trao từng viên cho một trong <span class="math inline">\(4\)</span>
+bạn, mỗi viên trao ngẫu nhiên và độc lập. Tính xác suất để <strong>mỗi
+bạn nhận ít nhất một viên</strong>. (Nhập phân số tối giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 8"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Bù trừ trên <span class="math inline">\(4\)</span> biến cố "bạn thứ
+<span class="math inline">\(i\)</span> không nhận viên nào". Chú ý <span
+class="math inline">\(|A_i|=3^6\)</span>, <span
+class="math inline">\(|A_i\cap A_j|=2^6\)</span>, …</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=4^6=4096\)</span>.</p></div><div class="sol-step"><p>Gọi <span class="math inline">\(A_i\)</span>: "bạn <span
+class="math inline">\(i\)</span> không nhận". <span
+class="math inline">\(|A_i|=3^6=729\)</span>, <span
+class="math inline">\(|A_i\cap A_j|=2^6=64\)</span>, <span
+class="math inline">\(|A_i\cap A_j\cap A_k|=1\)</span>, <span
+class="math inline">\(|A_1\cap A_2\cap A_3\cap A_4|=0\)</span>.</p></div><div class="sol-step"><p>Số kết quả có bạn không nhận: <span class="math inline">\(4\cdot
+729-6\cdot 64+4\cdot 1-0=2916-384+4=2536\)</span>.</p></div><div class="sol-step"><p>Số kết quả thuận lợi: <span
+class="math inline">\(4096-2536=1560\)</span>. <span
+class="math inline">\(P=\dfrac{1560}{4096}=\dfrac{195}{512}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{195}{512}\)</span></p></div></div></article>
+<h2 id="b2-nguon" class="part">Nguồn</h2><ul class="src-list"><li><p>Ví dụ 1–6 và Bài 1–8: sáng tác cho tài liệu này (dạng quen thuộc,
+không trích từ sách hay đề).</p></li><li><p>Ví dụ 7: đề chọn học sinh giỏi Toán 9 TP.HCM năm học 2024–2025, bài
+ba bạn Phúc, Lộc, Thọ viết số (diễn đạt lại; đã đối chiếu đề và hướng
+dẫn chấm trong bản PDF đăng ở thcs.toanmath.com, tháng 3/2025: n(Ω) =
+504, đáp số 1/72).</p></li><li><p>Phương pháp vách ngăn là kiến thức chuẩn của tổ hợp; cách trình bày,
+ví dụ và phần “cái bẫy đồng khả năng” là của riêng tài liệu này.</p></li></ul>
+ <div class="pager"><a class="btn ghost" href="#buoi-1">← Buổi 1</a> <a class="btn" href="#buoi-3">Buổi 3 →</a></div>
+</div></section>
+
+<section class="view" id="buoi-3"><div class="lesson">
+ <span class="pill">Buổi 3</span>
+ <h1 class="grad">Nguyên lý Dirichlet</h1>
+ <p class="lead"><p>Nguyên lý Dirichlet nói một điều rất đơn giản: nhốt nhiều thỏ hơn số
+lồng thì có lồng chứa từ hai thỏ trở lên. Cái khó nằm ở việc
+<strong>chọn thỏ và chọn lồng</strong> sao cho kết luận cần chứng minh
+hiện ra. Buổi này luyện ba kiểu chọn lồng quen thuộc: theo <strong>số
+dư</strong>, theo <strong>loại</strong> (màu, nhóm), và theo <strong>cấu
+hình</strong> (tam giác, vòng 5), rồi dùng tất cả để giải một đề thật
+của Trường PTNK.</p></p>
+ <div class="chips">
+  <span class="chip">⏱ 90 phút</span><span class="chip">📘 7 ví dụ từng bước</span>
+  <span class="chip">🧪 2 công cụ</span><span class="chip">📝 8 bài luyện</span>
+  <span class="chip">🎯 1 đề thật</span></div>
+ <div class="box goals"><div class="box-title">Học xong buổi này, em sẽ:</div><ol><li><p>Phát biểu và dùng nguyên lý Dirichlet dạng tổng quát: <span
+class="math inline">\(N\)</span> vật vào <span
+class="math inline">\(k\)</span> hộp thì có hộp chứa ít nhất <span
+class="math inline">\(\left\lceil\dfrac{N}{k}\right\rceil\)</span>
+vật.</p></li><li><p>Trả lời câu hỏi “lấy ít nhất bao nhiêu để <strong>chắc chắn</strong>”
+bằng cách xét trường hợp xấu nhất.</p></li><li><p>Chọn "lồng" là các lớp số dư (kể cả ghép hai lớp dư vào một lồng) và
+dùng <strong>tổng liên tiếp</strong> <span
+class="math inline">\(S_k\)</span> để chứng minh chia hết.</p></li><li><p>Chọn lồng theo cấu trúc trong bài tổ hợp: phân tích <span
+class="math inline">\(n=2^k m\)</span> (<span
+class="math inline">\(m\)</span> lẻ), tô màu, tam giác, vòng <span
+class="math inline">\(5\)</span>.</p></li></ol></div>
+ <div class="box toc"><div class="box-title">Mục lục buổi</div><ol><li><button class="link" data-goto="b3-part-1">1. Nguyên lý Dirichlet và &quot;trường hợp xấu nhất&quot;</button></li><li><button class="link" data-goto="b3-part-2">2. Dirichlet và số dư</button></li><li><button class="link" data-goto="b3-part-3">3. Dirichlet trong tổ hợp: chọn lồng theo cấu trúc</button></li><li><button class="link" data-goto="b3-part-4">4. Đề thật: 31 tấm thẻ vào hai chiếc hộp</button></li><li><button class="link" data-goto="b3-tools">Phòng thử nghiệm</button></li><li><button class="link" data-goto="b3-luyen">Bài luyện</button></li><li><button class="link" data-goto="b3-nguon">Nguồn</button></li></ol></div>
+ <div class="box summary"><div class="box-title">Tóm tắt 30 giây</div><ul><li><p>Dirichlet cơ bản: nhốt <span class="math inline">\(n+1\)</span> thỏ
+vào <span class="math inline">\(n\)</span> lồng thì có lồng chứa ít nhất
+<span class="math inline">\(2\)</span> thỏ.</p></li><li><p>Tổng quát: <span class="math inline">\(N\)</span> thỏ vào <span
+class="math inline">\(k\)</span> lồng thì có lồng chứa ít nhất <span
+class="math inline">\(\left\lceil\dfrac{N}{k}\right\rceil\)</span> thỏ
+(<span class="math inline">\(\lceil x\rceil\)</span> là <span
+class="math inline">\(x\)</span> làm tròn <strong>lên</strong>).</p></li><li><p>Muốn <strong>chắc chắn</strong> có lồng chứa <span
+class="math inline">\(m\)</span> thỏ cần ít nhất <span
+class="math inline">\(k(m-1)+1\)</span> thỏ. Số này là kết quả của
+"trường hợp xấu nhất": mỗi lồng chứa <span
+class="math inline">\(m-1\)</span> thỏ.</p></li><li><p>Số dư khi chia cho <span class="math inline">\(m\)</span> cho <span
+class="math inline">\(m\)</span> lồng. Hai số cùng dư thì
+<strong>hiệu</strong> chia hết cho <span
+class="math inline">\(m\)</span>.</p></li><li><p>Tổng liên tiếp <span
+class="math inline">\(S_k=a_1+\cdots+a_k\)</span>: hai tổng cùng dư thì
+các số ở giữa có tổng chia hết cho <span
+class="math inline">\(m\)</span>.</p></li><li><p>Dirichlet chỉ cho biết <strong>có tồn tại</strong>, không cho biết nó
+nằm ở đâu và không đếm được có bao nhiêu.</p></li></ul></div>
+ <h2 id="b3-part-1" class="part">1. Nguyên lý Dirichlet và &quot;trường hợp xấu nhất&quot;</h2>
+<p>Ở Buổi 2, ta tính <strong>xác suất</strong> để có hai người cùng
+tháng sinh. Với đủ người thì không cần xác suất nữa: khi có <span
+class="math inline">\(13\)</span> người trở lên, <strong>chắc
+chắn</strong> có hai người cùng tháng sinh. Đó là nguyên lý
+Dirichlet.</p>
+<aside class="box def"><div class="box-title">Nguyên lý Dirichlet</div><p><strong>Dạng cơ bản.</strong> Nhốt <span
+class="math inline">\(n+1\)</span> con thỏ vào <span
+class="math inline">\(n\)</span> cái lồng thì có ít nhất một lồng chứa
+từ <span class="math inline">\(2\)</span> con thỏ trở lên.</p>
+<p><strong>Dạng tổng quát.</strong> Nhốt <span
+class="math inline">\(N\)</span> con thỏ vào <span
+class="math inline">\(k\)</span> cái lồng thì có ít nhất một lồng chứa
+từ <span
+class="math inline">\(\left\lceil\dfrac{N}{k}\right\rceil\)</span> con
+trở lên. Ở đây <span class="math inline">\(\lceil x\rceil\)</span> là số
+nguyên nhỏ nhất không bé hơn <span class="math inline">\(x\)</span> (làm
+tròn lên), ví dụ <span class="math inline">\(\lceil
+3{,}2\rceil=4\)</span>.</p>
+<p><strong>Vì sao đúng.</strong> Nếu lồng nào cũng chứa ít hơn <span
+class="math inline">\(m\)</span> thỏ, tức nhiều nhất <span
+class="math inline">\(m-1\)</span> thỏ, thì <span
+class="math inline">\(k\)</span> lồng chứa nhiều nhất <span
+class="math inline">\(k(m-1)\)</span> thỏ. Vậy khi <span
+class="math inline">\(N&gt;k(m-1)\)</span> thì phải có lồng chứa ít nhất
+<span class="math inline">\(m\)</span> thỏ.</p></aside>
+<article class="vd card" id="b3-vd1"><div class="vd-head"><span class="tag">Ví dụ 1</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Một trường có <span class="math inline">\(41\)</span> học sinh đi dự
+trại. Chứng minh có ít nhất <span class="math inline">\(4\)</span> học
+sinh sinh cùng một tháng.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Thỏ là <span class="math inline">\(41\)</span> học sinh. Lồng là
+<span class="math inline">\(12\)</span> tháng sinh. Mỗi học sinh vào
+đúng lồng tháng sinh của mình.</p></div><div class="step"><p>Giả sử tháng nào cũng có nhiều nhất <span
+class="math inline">\(3\)</span> học sinh. Khi đó tổng số học sinh không
+quá <span class="math inline">\(12\cdot 3=36&lt;41\)</span>, vô lý.</p></div><div class="step"><p>Vậy có một tháng có ít nhất <span class="math inline">\(4\)</span>
+học sinh sinh trong tháng đó.</p></div><div class="step"><p>Nhận xét: không thể khẳng định <span class="math inline">\(5\)</span>
+vì <span class="math inline">\(41=5\cdot 4+7\cdot 3\)</span>, tức có thể
+chia <span class="math inline">\(41\)</span> em sao cho tháng nào cũng
+có nhiều nhất <span class="math inline">\(4\)</span> em.</p></div><div class="step ans"><b>Đáp số:</b> <p>Có ít nhất <span class="math inline">\(4\)</span> học sinh cùng tháng
+sinh (<span class="math inline">\(=\lceil 41/12\rceil\)</span>).</p></div></div></article>
+<aside class="box method"><div class="box-title">Cách làm (bài Dirichlet)</div><ol><li><p>Gọi tên thỏ (các đối tượng đề cho) và lồng (tiêu chí phân loại).</p></li><li><p>Đếm: số thỏ <span class="math inline">\(&gt;k(m-1)\)</span> thì có
+lồng chứa ít nhất <span class="math inline">\(m\)</span> thỏ.</p></li><li><p>Hai thỏ cùng lồng phải thỏa điều kiện của đề.</p></li></ol></aside>
+<article class="vd card" id="b3-vd2"><div class="vd-head"><span class="tag">Ví dụ 2</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Một túi có <span class="math inline">\(10\)</span> viên bi đỏ, <span
+class="math inline">\(8\)</span> viên bi xanh và <span
+class="math inline">\(6\)</span> viên bi vàng. Lấy ngẫu nhiên từng viên,
+không nhìn. Hỏi phải lấy ít nhất bao nhiêu viên để <strong>chắc
+chắn</strong> có: a) <span class="math inline">\(4\)</span> viên cùng
+màu; b) <span class="math inline">\(4\)</span> viên bi đỏ?</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Ta xét trường hợp xấu nhất: người lấy bi "xui" nhất, lấy hoài mà chưa
+đủ điều kiện.</p></div><div class="step"><ol type="a">
+<li>Xấu nhất là mỗi màu lấy <span class="math inline">\(3\)</span> viên:
+<span class="math inline">\(3+3+3=9\)</span> viên, chưa có <span
+class="math inline">\(4\)</span> viên cùng màu. Viên thứ <span
+class="math inline">\(10\)</span> phải làm một màu đủ <span
+class="math inline">\(4\)</span> viên. Vậy cần lấy <span
+class="math inline">\(10\)</span> viên.</li>
+</ol></div><div class="step"><ol start="2" type="a">
+<li>Xấu nhất là lấy hết bi xanh và bi vàng (<span
+class="math inline">\(8+6=14\)</span> viên) rồi mới lấy <span
+class="math inline">\(3\)</span> viên đỏ: <span
+class="math inline">\(14+3=17\)</span> viên mà vẫn chưa đủ <span
+class="math inline">\(4\)</span> viên đỏ. Viên thứ <span
+class="math inline">\(18\)</span> chắc chắn là đỏ và đủ <span
+class="math inline">\(4\)</span>. Vậy cần lấy <span
+class="math inline">\(18\)</span> viên.</li>
+</ol></div><div class="step"><p>Lưu ý: câu a) dùng được công thức <span
+class="math inline">\(k(m-1)+1=3\cdot 3+1\)</span>. Câu b) thì không, vì
+người xui nhất phải lấy hết <span class="math inline">\(14\)</span> viên
+không phải màu đỏ trước.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
+<li><span class="math inline">\(10\)</span> viên; b) <span
+class="math inline">\(18\)</span> viên.</li>
+</ol></div></div></article>
+<aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Lấy công thức <span class="math inline">\(k(m-1)+1\)</span> cho mọi
+bài. Công thức đúng khi <strong>mỗi lồng đủ chỗ</strong> (<span
+class="math inline">\(m-1\)</span> vật). Nếu có màu ít bi hơn <span
+class="math inline">\(m-1\)</span> viên (hoặc đề hỏi một màu cụ thể),
+phải lấy <strong>hết</strong> màu đó trong trường hợp xấu nhất. Hãy luôn
+vẽ trường hợp xấu nhất ra rồi mới cộng.</p></aside>
+<h2 id="b3-part-2" class="part">2. Dirichlet và số dư</h2>
+<p>Khi đề nói đến <strong>chia hết</strong>, lồng thường là các
+<strong>lớp số dư</strong>. Chia cho <span
+class="math inline">\(m\)</span> có đúng <span
+class="math inline">\(m\)</span> lớp dư <span
+class="math inline">\(0,1,\dots,m-1\)</span>. Hai số cùng dư khi chia
+cho <span class="math inline">\(m\)</span> thì <strong>hiệu</strong> của
+chúng chia hết cho <span class="math inline">\(m\)</span>.</p>
+<article class="vd card" id="b3-vd3"><div class="vd-head"><span class="tag">Ví dụ 3</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><ol type="a">
+<li><p>Chứng minh trong <span class="math inline">\(7\)</span> số nguyên
+bất kỳ luôn có hai số có hiệu chia hết cho <span
+class="math inline">\(6\)</span>.</p></li>
+<li><p>Chứng minh trong <span class="math inline">\(5\)</span> số nguyên
+bất kỳ luôn có hai số có <strong>tổng hoặc hiệu</strong> chia hết cho
+<span class="math inline">\(7\)</span>.</p></li>
+</ol></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><ol type="a">
+<li>Thỏ là <span class="math inline">\(7\)</span> số. Lồng là <span
+class="math inline">\(6\)</span> lớp dư khi chia cho <span
+class="math inline">\(6\)</span> (dư <span
+class="math inline">\(0,1,2,3,4,5\)</span>). Theo Dirichlet có hai số
+cùng dư, nên hiệu chia hết cho <span
+class="math inline">\(6\)</span>.</li>
+</ol></div><div class="step"><ol start="2" type="a">
+<li>Có <span class="math inline">\(7\)</span> lớp dư khi chia cho <span
+class="math inline">\(7\)</span>, nhưng chỉ <span
+class="math inline">\(5\)</span> số, chưa đủ để dùng Dirichlet. Ta
+<strong>ghép lồng</strong>: <span class="math inline">\(\{0\}\)</span>,
+<span class="math inline">\(\{1;6\}\)</span>, <span
+class="math inline">\(\{2;5\}\)</span>, <span
+class="math inline">\(\{3;4\}\)</span>. Có <span
+class="math inline">\(4\)</span> lồng.</li>
+</ol></div><div class="step"><p><span class="math inline">\(5\)</span> số vào <span
+class="math inline">\(4\)</span> lồng, nên có hai số cùng lồng. Nếu hai
+số cùng dư thì hiệu chia hết cho <span
+class="math inline">\(7\)</span>.</p></div><div class="step"><p>Nếu hai số có dư <span class="math inline">\(r\)</span> và <span
+class="math inline">\(7-r\)</span> (hai dư khác nhau trong cùng một
+lồng) thì tổng có dư <span class="math inline">\(r+(7-r)=7\)</span>,
+chia hết cho <span class="math inline">\(7\)</span>.</p></div><div class="step"><p>Với <span class="math inline">\(4\)</span> số thì chưa chắc: bốn số
+có dư <span class="math inline">\(0,1,2,3\)</span> không có cặp nào
+thỏa. Vậy con số <span class="math inline">\(5\)</span> là tốt nhất.</p></div><div class="step ans"><b>Đáp số:</b> <p>a), b) được chứng minh như trên.</p></div></div></article>
+<aside class="box note"><div class="box-title">Ghép lồng</div><p>Số lồng quyết định số thỏ cần có. Ở câu b), ghép hai lớp dư "đối
+nhau" <span class="math inline">\(r\)</span> và <span
+class="math inline">\(m-r\)</span> vào một lồng làm giảm số lồng từ
+<span class="math inline">\(7\)</span> xuống <span
+class="math inline">\(4\)</span>, và vì vậy chỉ cần <span
+class="math inline">\(5\)</span> số. Hãy tự hỏi: lồng có thể ghép thêm
+để ít lồng hơn mà kết luận vẫn đúng không?</p></aside>
+<article class="vd card" id="b3-vd4"><div class="vd-head"><span class="tag">Ví dụ 4</span><span class="src">Nguồn: Sáng tác (dạng kinh điển)</span></div><div class="problem"><p>Cho <span class="math inline">\(10\)</span> số nguyên bất kỳ <span
+class="math inline">\(a_1,a_2,\dots,a_{10}\)</span>. Chứng minh có thể
+chọn ra một số số <strong>liên tiếp</strong> (ít nhất một số) trong dãy
+sao cho tổng của chúng chia hết cho <span
+class="math inline">\(10\)</span>.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Lập các tổng tiền tố: <span class="math inline">\(S_1=a_1\)</span>,
+<span class="math inline">\(S_2=a_1+a_2\)</span>, …, <span
+class="math inline">\(S_{10}=a_1+\cdots+a_{10}\)</span>.</p></div><div class="step"><p>Nếu có <span class="math inline">\(S_k\)</span> chia hết cho <span
+class="math inline">\(10\)</span> thì chọn <span
+class="math inline">\(a_1,\dots,a_k\)</span> là xong.</p></div><div class="step"><p>Nếu không, <span class="math inline">\(10\)</span> tổng <span
+class="math inline">\(S_1,\dots,S_{10}\)</span> đều có dư trong <span
+class="math inline">\(\{1;2;\dots;9\}\)</span>, chỉ có <span
+class="math inline">\(9\)</span> lồng. Theo Dirichlet có <span
+class="math inline">\(i&lt;j\)</span> mà <span
+class="math inline">\(S_i\)</span> và <span
+class="math inline">\(S_j\)</span> cùng dư khi chia cho <span
+class="math inline">\(10\)</span>.</p></div><div class="step"><p>Khi đó <span
+class="math inline">\(S_j-S_i=a_{i+1}+a_{i+2}+\cdots+a_j\)</span> chia
+hết cho <span class="math inline">\(10\)</span>. Đó là các số liên tiếp
+cần tìm.</p></div><div class="step"><p>Con số <span class="math inline">\(10\)</span> không giảm được: <span
+class="math inline">\(9\)</span> số <span
+class="math inline">\(1,1,\dots,1\)</span> có mọi khối liên tiếp tổng từ
+<span class="math inline">\(1\)</span> đến <span
+class="math inline">\(9\)</span>, không chia hết cho <span
+class="math inline">\(10\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p>Luôn chọn được (chứng minh trên).</p></div></div></article>
+<aside class="box method"><div class="box-title">Cách làm (chứng minh chia hết bằng Dirichlet)</div><ol><li><p>Lập các số cần so sánh (số đề cho, hoặc tổng tiền tố) và lập lớp số
+dư làm lồng.</p></li><li><p>Nếu có lồng “đặc biệt” (ví dụ dư <span
+class="math inline">\(0\)</span>) thì xét riêng, giảm số lồng.</p></li><li><p>Hai số cùng lồng thì hiệu (hoặc tổng) chia hết, và đó chính là điều
+cần tìm.</p></li></ol></aside>
+<aside class="box mynote"><div class="box-title">Ghi chú của em</div><p>viết lại bằng lời của em, không nhìn bài. Ở Ví dụ 4 vì sao ta xét
+riêng trường hợp có <span class="math inline">\(S_k\)</span> chia hết
+cho <span class="math inline">\(10\)</span>? Nếu không tách trường hợp
+đó thì lồng và thỏ thế nào?</p><textarea data-note="b3-note1" rows="3" placeholder="Viết lại bằng lời của em..."></textarea><div class="muted small">Ghi chú được lưu trong trình duyệt của em.</div></aside>
+<h2 id="b3-part-3" class="part">3. Dirichlet trong tổ hợp: chọn lồng theo cấu trúc</h2>
+<article class="vd card" id="b3-vd5"><div class="vd-head"><span class="tag">Ví dụ 5</span><span class="src">Nguồn: Sáng tác (dạng kinh điển)</span></div><div class="problem"><p>Chọn <span class="math inline">\(51\)</span> số nguyên khác nhau
+trong tập <span class="math inline">\(\{1;2;\dots;100\}\)</span>. Chứng
+minh có hai số mà một số chia hết cho số kia.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Mỗi số nguyên dương <span class="math inline">\(n\)</span> viết được
+duy nhất dưới dạng <span class="math inline">\(n=2^k\cdot m\)</span> với
+<span class="math inline">\(m\)</span> lẻ. Ví dụ <span
+class="math inline">\(12=2^2\cdot 3\)</span>, <span
+class="math inline">\(75=2^0\cdot 75\)</span>.</p></div><div class="step"><p>Với <span class="math inline">\(n\le 100\)</span>, <span
+class="math inline">\(m\)</span> là số lẻ từ <span
+class="math inline">\(1\)</span> đến <span
+class="math inline">\(99\)</span>: có <span
+class="math inline">\(50\)</span> giá trị. Lấy <span
+class="math inline">\(50\)</span> lồng, lồng thứ <span
+class="math inline">\(m\)</span> chứa các số <span
+class="math inline">\(m,2m,4m,\dots\)</span> không vượt quá <span
+class="math inline">\(100\)</span>.</p></div><div class="step"><p>Thỏ là <span class="math inline">\(51\)</span> số đã chọn. Theo
+Dirichlet có hai số cùng lồng: <span class="math inline">\(a=2^i
+m\)</span> và <span class="math inline">\(b=2^j m\)</span> với <span
+class="math inline">\(i&lt;j\)</span>.</p></div><div class="step"><p>Khi đó <span class="math inline">\(b=a\cdot 2^{j-i}\)</span>, tức
+<span class="math inline">\(a\mid b\)</span>.</p></div><div class="step"><p>Con số <span class="math inline">\(51\)</span> không giảm được: <span
+class="math inline">\(50\)</span> số <span
+class="math inline">\(51,52,\dots,100\)</span> không có số nào chia hết
+cho số khác (số lớn nhất chia số bé nhất cho thương nhỏ hơn <span
+class="math inline">\(2\)</span>).</p></div><div class="step ans"><b>Đáp số:</b> <p>Có hai số mà một số chia hết số kia.</p></div></div></article>
+<article class="vd card" id="b3-vd6"><div class="vd-head"><span class="tag">Ví dụ 6</span><span class="src">Nguồn: Sáng tác (dạng kinh điển)</span></div><div class="problem"><p>Trong một nhóm <span class="math inline">\(6\)</span> người, hai
+người bất kỳ hoặc quen nhau hoặc lạ nhau. Chứng minh có <span
+class="math inline">\(3\)</span> người đôi một quen nhau, hoặc <span
+class="math inline">\(3\)</span> người đôi một lạ nhau.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Chọn một người, gọi là An. Năm người còn lại, mỗi người hoặc quen An
+hoặc lạ An. Thỏ là <span class="math inline">\(5\)</span> người, lồng là
+hai nhóm (quen, lạ).</p></div><div class="step"><p>Theo Dirichlet có nhóm chứa ít nhất <span
+class="math inline">\(\lceil 5/2\rceil=3\)</span> người. Giả sử <span
+class="math inline">\(3\)</span> người B, C, D đều quen An (trường hợp
+lạ làm tương tự).</p></div><div class="step"><p>Nếu hai trong ba người B, C, D quen nhau, ví dụ B quen C, thì An, B,
+C đôi một quen nhau.</p></div><div class="step"><p>Nếu không, B, C, D đôi một lạ nhau, đó là <span
+class="math inline">\(3\)</span> người đôi một lạ.</p></div><div class="step ans"><b>Đáp số:</b> <p>Luôn có <span class="math inline">\(3\)</span> người đôi một quen
+hoặc đôi một lạ.</p></div></div></article>
+<aside class="box note"><div class="box-title">Sáu là con số nhỏ nhất</div><p>Với <span class="math inline">\(5\)</span> người thì chưa chắc. Xếp
+<span class="math inline">\(5\)</span> người ở <span
+class="math inline">\(5\)</span> đỉnh một hình ngũ giác, hai người kề
+nhau thì quen, hai người không kề thì lạ: không có <span
+class="math inline">\(3\)</span> người đôi một quen, cũng không có <span
+class="math inline">\(3\)</span> người đôi một lạ. Đây là bài "tô hai
+màu các cạnh của hình đầy đủ" quen thuộc.</p></aside>
+<h2 id="b3-part-4" class="part">4. Đề thật: 31 tấm thẻ vào hai chiếc hộp</h2>
+<p>Đề thật dưới đây dùng Dirichlet <strong>hai lần</strong>, mỗi lần với
+một cấu hình khác nhau: một <strong>tam giác</strong> (ba thẻ đôi một có
+tổng chính phương) và một <strong>vòng <span
+class="math inline">\(5\)</span> thẻ</strong>.</p>
+<article class="vd card" id="b3-vd7"><div class="vd-head"><span class="tag">Ví dụ 7</span><span class="tag real">Đề thật</span><span class="src">Nguồn: Đề tuyển sinh lớp 10 chuyên Toán, Trường PTNK (ĐHQG-HCM) năm học 2024–2025, Bài 5b (diễn đạt lại; xem hộp &quot;Đề thật&quot;)</span></div><div class="problem"><p>Có <span class="math inline">\(31\)</span> tấm thẻ, mỗi thẻ ghi một
+trong các số <span class="math inline">\(1,2,\dots,31\)</span> (mỗi số
+một thẻ). Người ta bỏ <span class="math inline">\(31\)</span> thẻ này
+vào hai chiếc hộp. Khi kiểm tra một hộp thì thấy trong hộp đó
+<strong>không có hai thẻ nào</strong> mà tổng hai số ghi trên chúng là
+số chính phương. Chứng minh rằng trong hộp còn lại có thể chọn ra bốn
+thẻ và chia thành hai cặp, tổng hai số trong mỗi cặp là số chính
+phương.</p></div><div class="steps" data-title="Lời giải từng bước"><div class="step"><p>Gọi <span class="math inline">\(H_1\)</span> là hộp đã kiểm tra
+(không có cặp thẻ nào tổng chính phương) và <span
+class="math inline">\(H_2\)</span> là hộp còn lại. Ta gọi hai thẻ là
+"bạn" nếu tổng hai số trên chúng là số chính phương.</p></div><div class="step"><p><strong>Tam giác.</strong> Ba thẻ <span
+class="math inline">\(6,19,30\)</span> đôi một là bạn: <span
+class="math inline">\(6+19=25\)</span>, <span
+class="math inline">\(6+30=36\)</span>, <span
+class="math inline">\(19+30=49\)</span>. Ba thẻ vào hai hộp nên có hai
+thẻ cùng hộp, hai thẻ đó là bạn. Vì <span
+class="math inline">\(H_1\)</span> không có hai thẻ là bạn, hai thẻ đó
+nằm ở <span class="math inline">\(H_2\)</span>. Ta được <strong>cặp thứ
+nhất</strong> nằm trong <span
+class="math inline">\(\{6;19;30\}\)</span>.</p></div><div class="step"><p><strong>Vòng <span class="math inline">\(5\)</span> thẻ.</strong> Xếp
+các thẻ <span class="math inline">\(1,3,13,12,24\)</span> thành vòng.
+Hai thẻ kề nhau (kể cả <span class="math inline">\(24\)</span> và <span
+class="math inline">\(1\)</span>) đều là bạn: <span
+class="math inline">\(1+3=4\)</span>, <span
+class="math inline">\(3+13=16\)</span>, <span
+class="math inline">\(13+12=25\)</span>, <span
+class="math inline">\(12+24=36\)</span>, <span
+class="math inline">\(24+1=25\)</span>.</p></div><div class="step"><p>Năm thẻ vào hai hộp nên có hộp chứa ít nhất <span
+class="math inline">\(\lceil 5/2\rceil=3\)</span> thẻ. Trong <span
+class="math inline">\(3\)</span> thẻ bất kỳ của vòng <span
+class="math inline">\(5\)</span> thẻ luôn có hai thẻ kề nhau (vì chọn
+<span class="math inline">\(3\)</span> điểm trên vòng <span
+class="math inline">\(5\)</span> điểm mà không có hai điểm kề nhau thì
+không được). Hai thẻ kề nhau là bạn.</p></div><div class="step"><p>Hộp đó có hai thẻ là bạn, nên không phải <span
+class="math inline">\(H_1\)</span>. Vậy đó là <span
+class="math inline">\(H_2\)</span>. Ta được <strong>cặp thứ hai</strong>
+nằm trong <span class="math inline">\(\{1;3;13;12;24\}\)</span>.</p></div><div class="step"><p>Hai tập <span class="math inline">\(\{6;19;30\}\)</span> và <span
+class="math inline">\(\{1;3;13;12;24\}\)</span> không có thẻ chung nên
+hai cặp tìm được là bốn thẻ khác nhau trong <span
+class="math inline">\(H_2\)</span>, tổng mỗi cặp là số chính phương.</p></div><div class="step ans"><b>Đáp số:</b> <p>Điều cần chứng minh.</p></div></div></article>
+<aside class="box real"><div class="box-title">Đề thật</div><p><strong>Cách tìm cấu hình.</strong> Nối hai số trong <span
+class="math inline">\(\{1;\dots;31\}\)</span> khi tổng là số chính
+phương (<span class="math inline">\(4,9,16,25,36,49\)</span>). Đồ thị
+này chỉ có <strong>một</strong> tam giác là <span
+class="math inline">\(\{6;19;30\}\)</span>, và có các vòng <span
+class="math inline">\(5\)</span> như <span
+class="math inline">\(1-3-13-12-24\)</span>. Điều cần là <strong>hai cấu
+hình lẻ rời nhau</strong>: mỗi vòng lẻ buộc hộp còn lại có một cặp bạn,
+và hai cấu hình rời nhau cho hai cặp rời nhau.</p>
+<p><strong>Lưu ý nguồn.</strong> Em lấy đề từ bản PDF đề PTNK 2024–2025.
+Phần yêu cầu cuối của câu b) ở trên là diễn đạt lại theo mạch lời giải;
+thầy nên đối chiếu câu chữ gốc trong bản đề trước khi phát cho học sinh.
+Tính đúng của kết luận đã được kiểm bằng cách thử mọi cách chia khả dĩ
+cho hộp thứ nhất.</p></aside>
+<aside class="box method"><div class="box-title">Cách làm (Dirichlet với cấu hình)</div><ol><li><p>Tìm các nhóm nhỏ “ép buộc” (tam giác, vòng lẻ) mà mọi cách chia hai
+hộp đều tạo cặp cùng hộp.</p></li><li><p>Dùng điều kiện đề (hộp nào không có cặp) để biết cặp đó nằm ở hộp
+nào.</p></li><li><p>Chọn các nhóm rời nhau để các cặp tìm được không dùng chung phần
+tử.</p></li></ol></aside>
+
+<h2 id="b3-tools" class="part">Phòng thử nghiệm</h2>
+<p class="muted">Hai công cụ nhỏ để tự kiểm tra con số. Đây chỉ là công cụ kiểm tra, trong bài thi em vẫn phải trình bày lập luận.</p>
+<div class="toolgrid">
+ <section class="card tool" id="tool6">
+  <h3>Máy thỏ và lồng</h3>
+  <div class="row"><label>N (số thỏ) <input id="t6N" type="number" min="0" max="100000" value="41"></label>
+  <label>k (số lồng) <input id="t6k" type="number" min="1" max="1000" value="12"></label>
+  <label>m (muốn có lồng ≥ m thỏ) <input id="t6m" type="number" min="1" max="1000" value="4"></label></div>
+  <div id="t6out" class="out"></div>
+ </section>
+ <section class="card tool" id="tool7">
+  <h3>Máy chia lồng theo số dư</h3>
+  <div class="row"><label>Các số (cách nhau bởi dấu phẩy) <input id="t7list" type="text" value="3, 8, 12, 5, 17, 2, 9, 4, 6, 10"></label>
+  <label>Chia cho m <input id="t7m" type="number" min="2" max="1000" value="10"></label></div>
+  <div id="t7out" class="out"></div>
+ </section>
+</div>
+
+<h2 id="b3-luyen" class="part">Bài luyện</h2>
+<p class="muted">Ký hiệu <b>N</b>: nền chung HSG Toán 9. <b>C</b>: tầng chuyên. Làm vào giấy trước, rồi nhập đáp số để kiểm tra. Chỉ xem gợi ý khi đã thử ít nhất 5 phút.</p>
+<div class="exprog" data-exprog="3"></div>
+<article class="ex card" data-lesson="3" data-n="1" data-ans="290" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 1 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Trong <span class="math inline">\(2026\)</span> người, chắc chắn có
+ít nhất <span class="math inline">\(k\)</span> người sinh cùng một thứ
+trong tuần (Thứ Hai đến Chủ Nhật). Tìm giá trị lớn nhất của <span
+class="math inline">\(k\)</span> luôn đảm bảo.</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 1"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Chia <span class="math inline">\(2026\)</span> cho <span
+class="math inline">\(7\)</span> rồi làm tròn lên. Kiểm tra bằng cách
+xem <span class="math inline">\(k-1\)</span> có đủ chỗ không.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Thỏ là <span class="math inline">\(2026\)</span> người, lồng là <span
+class="math inline">\(7\)</span> thứ. <span
+class="math inline">\(2026=7\cdot 289+3\)</span>, nên <span
+class="math inline">\(\left\lceil\dfrac{2026}{7}\right\rceil=290\)</span>.</p></div><div class="sol-step"><p>Thật vậy, nếu mỗi thứ có nhiều nhất <span
+class="math inline">\(289\)</span> người thì tổng nhiều nhất <span
+class="math inline">\(7\cdot 289=2023&lt;2026\)</span>, vô lý. Vậy có
+thứ có ít nhất <span class="math inline">\(290\)</span> người.</p></div><div class="sol-step"><p>Không thể khẳng định <span class="math inline">\(291\)</span>: có thể
+chia <span class="math inline">\(3\)</span> thứ mỗi thứ <span
+class="math inline">\(290\)</span> người và <span
+class="math inline">\(4\)</span> thứ mỗi thứ <span
+class="math inline">\(289\)</span> người (<span
+class="math inline">\(3\cdot 290+4\cdot 289=2026\)</span>).</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(290\)</span></p></div></div></article>
+<article class="ex card" data-lesson="3" data-n="2" data-ans="16" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 2 · N</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 2)</span></div><div class="problem"><p>Một hộp có <span class="math inline">\(15\)</span> viên bi đỏ, <span
+class="math inline">\(12\)</span> viên bi xanh, <span
+class="math inline">\(9\)</span> viên bi vàng và <span
+class="math inline">\(3\)</span> viên bi trắng. Phải lấy ngẫu nhiên ít
+nhất bao nhiêu viên để <strong>chắc chắn</strong> có <span
+class="math inline">\(5\)</span> viên cùng màu?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 2"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Trường hợp xấu nhất: mỗi màu lấy được tối đa bao nhiêu viên mà chưa
+có <span class="math inline">\(5\)</span> viên cùng màu? Chú ý màu trắng
+chỉ có <span class="math inline">\(3\)</span> viên.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Xấu nhất: bi đỏ lấy <span class="math inline">\(4\)</span> viên, bi
+xanh <span class="math inline">\(4\)</span> viên, bi vàng <span
+class="math inline">\(4\)</span> viên, bi trắng lấy hết <span
+class="math inline">\(3\)</span> viên. Tổng <span
+class="math inline">\(4+4+4+3=15\)</span> viên mà chưa có <span
+class="math inline">\(5\)</span> viên cùng màu.</p></div><div class="sol-step"><p>Viên thứ <span class="math inline">\(16\)</span> thuộc đỏ, xanh hoặc
+vàng (vì bi trắng đã hết), nên màu đó đủ <span
+class="math inline">\(5\)</span> viên.</p></div><div class="sol-step"><p>Vậy cần lấy ít nhất <span class="math inline">\(16\)</span> viên.
+(Không phải <span class="math inline">\(4\cdot 4+1=17\)</span>, vì màu
+trắng không đủ <span class="math inline">\(4\)</span> viên.)</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(16\)</span></p></div></div></article>
+<article class="ex card" data-lesson="3" data-n="3" data-ans="6" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 3 · N</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 3)</span></div><div class="problem"><p>Cần chọn ít nhất bao nhiêu số nguyên bất kỳ để <strong>chắc
+chắn</strong> có hai số mà tổng hoặc hiệu của chúng chia hết cho <span
+class="math inline">\(9\)</span>?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 3"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Ghép các lớp dư khi chia cho <span class="math inline">\(9\)</span>
+thành các lồng: <span class="math inline">\(\{0\}\)</span>, <span
+class="math inline">\(\{1;8\}\)</span>, … Có bao nhiêu lồng? Rồi kiểm
+tra rằng chọn thiếu một số thì có cách tránh.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Các lồng: <span class="math inline">\(\{0\}\)</span>, <span
+class="math inline">\(\{1;8\}\)</span>, <span
+class="math inline">\(\{2;7\}\)</span>, <span
+class="math inline">\(\{3;6\}\)</span>, <span
+class="math inline">\(\{4;5\}\)</span>. Có <span
+class="math inline">\(5\)</span> lồng.</p></div><div class="sol-step"><p>Chọn <span class="math inline">\(6\)</span> số thì có hai số cùng
+lồng: cùng dư (hiệu chia hết cho <span class="math inline">\(9\)</span>)
+hoặc dư <span class="math inline">\(r\)</span> và <span
+class="math inline">\(9-r\)</span> (tổng chia hết cho <span
+class="math inline">\(9\)</span>).</p></div><div class="sol-step"><p>Chọn <span class="math inline">\(5\)</span> số thì chưa chắc: các số
+có dư <span class="math inline">\(0,1,2,3,4\)</span> không có cặp nào
+thỏa. Vậy nhỏ nhất là <span class="math inline">\(6\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(6\)</span></p></div></div></article>
+<article class="ex card" data-lesson="3" data-n="4" data-ans="31" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 4 · N</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 5)</span></div><div class="problem"><p>Cần chọn ít nhất bao nhiêu số khác nhau trong tập <span
+class="math inline">\(\{1;2;\dots;60\}\)</span> để <strong>chắc
+chắn</strong> có hai số mà một số chia hết cho số kia?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 4"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Viết mỗi số dạng <span class="math inline">\(2^k\cdot m\)</span> với
+<span class="math inline">\(m\)</span> lẻ, có bao nhiêu giá trị <span
+class="math inline">\(m\)</span>? Rồi tìm một tập không có cặp chia hết
+để thấy số đó không giảm được.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Mỗi số <span class="math inline">\(n\le 60\)</span> viết được <span
+class="math inline">\(n=2^k m\)</span>, <span
+class="math inline">\(m\)</span> lẻ từ <span
+class="math inline">\(1\)</span> đến <span
+class="math inline">\(59\)</span>: có <span
+class="math inline">\(30\)</span> giá trị của <span
+class="math inline">\(m\)</span>, tức <span
+class="math inline">\(30\)</span> lồng.</p></div><div class="sol-step"><p>Chọn <span class="math inline">\(31\)</span> số thì có hai số cùng
+lồng, số này bằng số kia nhân với lũy thừa của <span
+class="math inline">\(2\)</span>, nên một số chia hết số kia.</p></div><div class="sol-step"><p><span class="math inline">\(30\)</span> số <span
+class="math inline">\(31,32,\dots,60\)</span> không có hai số nào chia
+hết nhau (số lớn chia số bé cho thương nhỏ hơn <span
+class="math inline">\(2\)</span>). Vậy nhỏ nhất là <span
+class="math inline">\(31\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(31\)</span></p></div></div></article>
+<article class="ex card" data-lesson="3" data-n="5" data-ans="5" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 5 · N</span><span class="src">Nguồn: Sáng tác (dạng kinh điển)</span></div><div class="problem"><p>Cần đặt ít nhất bao nhiêu điểm trong một tam giác đều cạnh <span
+class="math inline">\(2\)</span> (kể cả cạnh và đỉnh) để <strong>chắc
+chắn</strong> có hai điểm cách nhau không quá <span
+class="math inline">\(1\)</span>?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 5"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Nối ba trung điểm các cạnh để chia tam giác thành <span
+class="math inline">\(4\)</span> tam giác đều cạnh <span
+class="math inline">\(1\)</span>. Hai điểm trong cùng một tam giác cạnh
+<span class="math inline">\(1\)</span> cách nhau tối đa bao nhiêu? Rồi
+tìm <span class="math inline">\(4\)</span> điểm đôi một cách nhau hơn
+<span class="math inline">\(1\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Chia tam giác đều cạnh <span class="math inline">\(2\)</span> thành
+<span class="math inline">\(4\)</span> tam giác đều cạnh <span
+class="math inline">\(1\)</span> (lồng). Hai điểm cùng nằm trong một tam
+giác cạnh <span class="math inline">\(1\)</span> cách nhau không quá
+<span class="math inline">\(1\)</span>.</p></div><div class="sol-step"><p><span class="math inline">\(5\)</span> điểm vào <span
+class="math inline">\(4\)</span> lồng, có hai điểm cùng lồng, nên cách
+nhau không quá <span class="math inline">\(1\)</span>.</p></div><div class="sol-step"><p>Với <span class="math inline">\(4\)</span> điểm thì chưa chắc: lấy
+<span class="math inline">\(3\)</span> đỉnh và tâm của tam giác. Ba đỉnh
+đôi một cách nhau <span class="math inline">\(2\)</span>, còn tâm cách
+mỗi đỉnh <span class="math inline">\(\dfrac{2}{\sqrt{3}}\approx
+1{,}15&gt;1\)</span>. Vậy nhỏ nhất là <span
+class="math inline">\(5\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(5\)</span></p></div></div></article>
+<article class="ex card" data-lesson="3" data-n="6" data-ans="11" data-kind="int"><div class="vd-head"><span class="tag lvC">Bài 6 · C</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Cần chọn ít nhất bao nhiêu số khác nhau trong tập <span
+class="math inline">\(\{1;2;\dots;20\}\)</span> để <strong>chắc
+chắn</strong> có hai số hơn kém nhau đúng <span
+class="math inline">\(5\)</span>?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 6"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Chia <span class="math inline">\(20\)</span> số theo số dư khi chia
+cho <span class="math inline">\(5\)</span>. Trong mỗi nhóm, các số nối
+với nhau thành một dãy <span
+class="math inline">\(r,r+5,r+10,r+15\)</span>. Từ mỗi dãy <span
+class="math inline">\(4\)</span> số chọn nhiều nhất bao nhiêu số mà
+không có hai số kề nhau?</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Chia thành <span class="math inline">\(5\)</span> nhóm theo dư khi
+chia cho <span class="math inline">\(5\)</span>. Mỗi nhóm có <span
+class="math inline">\(4\)</span> số, ví dụ <span
+class="math inline">\(\{1;6;11;16\}\)</span>. Hai số hơn kém <span
+class="math inline">\(5\)</span> chỉ có thể cùng nhóm và <strong>kề
+nhau</strong> trong nhóm.</p></div><div class="sol-step"><p>Chia mỗi nhóm thành hai lồng: <span
+class="math inline">\(\{1;6\}\)</span> và <span
+class="math inline">\(\{11;16\}\)</span> (hai số của một lồng hơn kém
+đúng <span class="math inline">\(5\)</span>). Có <span
+class="math inline">\(10\)</span> lồng.</p></div><div class="sol-step"><p>Chọn <span class="math inline">\(11\)</span> số thì có hai số cùng
+lồng, hơn kém <span class="math inline">\(5\)</span>.</p></div><div class="sol-step"><p>Với <span class="math inline">\(10\)</span> số thì chưa chắc: chọn
+<span class="math inline">\(1,2,3,4,5,11,12,13,14,15\)</span>. Hai số
+bất kỳ hoặc cùng dãy <span class="math inline">\(1..5\)</span>, hoặc
+<span class="math inline">\(11..15\)</span> (hơn kém nhỏ hơn <span
+class="math inline">\(5\)</span>), hoặc khác dãy (hơn kém từ <span
+class="math inline">\(6\)</span> đến <span
+class="math inline">\(14\)</span> khác <span
+class="math inline">\(5\)</span>). Vậy nhỏ nhất là <span
+class="math inline">\(11\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(11\)</span></p></div></div></article>
+<article class="ex card" data-lesson="3" data-n="7" data-ans="5" data-kind="int"><div class="vd-head"><span class="tag lvC">Bài 7 · C</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 6)</span></div><div class="problem"><p>Trong một nhóm <span class="math inline">\(n\)</span> người, hai
+người bất kỳ hoặc quen hoặc lạ nhau. Tìm giá trị lớn nhất của <span
+class="math inline">\(n\)</span> để vẫn <strong>có thể</strong> xảy ra
+tình huống không có <span class="math inline">\(3\)</span> người đôi một
+quen và cũng không có <span class="math inline">\(3\)</span> người đôi
+một lạ.</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 7"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Ví dụ 6 cho biết <span class="math inline">\(n=6\)</span> không thể.
+Hãy dựng cho <span class="math inline">\(n=5\)</span> bằng hình ngũ
+giác.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Với <span class="math inline">\(n\ge 6\)</span>: chọn <span
+class="math inline">\(6\)</span> người trong nhóm, theo Ví dụ 6 có <span
+class="math inline">\(3\)</span> người đôi một quen hoặc đôi một lạ. Vậy
+tình huống đề không xảy ra.</p></div><div class="sol-step"><p>Với <span class="math inline">\(n=5\)</span>: xếp <span
+class="math inline">\(5\)</span> người ở đỉnh ngũ giác, hai người kề
+nhau thì quen, hai người không kề thì lạ. Ba người bất kỳ có hai người
+kề nhau và hai người không kề nhau, nên không có <span
+class="math inline">\(3\)</span> người đôi một quen hay đôi một lạ.</p></div><div class="sol-step"><p>Vậy <span class="math inline">\(n\)</span> lớn nhất là <span
+class="math inline">\(5\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(5\)</span></p></div></div></article>
+<article class="ex card" data-lesson="3" data-n="8" data-ans="10" data-kind="int"><div class="vd-head"><span class="tag lvC">Bài 8 · C</span><span class="src">Nguồn: Sáng tác (dạng kinh điển)</span></div><div class="problem"><p>Cho <span class="math inline">\(n\)</span> số nguyên dương, mỗi số
+không vượt quá <span class="math inline">\(100\)</span>. Em chứng minh
+được rằng có hai tập con <strong>khác nhau</strong> có cùng tổng khi
+<span class="math inline">\(2^n-1&gt;100n\)</span>. Tìm <span
+class="math inline">\(n\)</span> nhỏ nhất thỏa bất đẳng thức đó.</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 8"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Thỏ là các tập con khác rỗng, có <span
+class="math inline">\(2^n-1\)</span> tập. Lồng là các giá trị tổng có
+thể có, từ <span class="math inline">\(1\)</span> đến <span
+class="math inline">\(100n\)</span>. Thử <span
+class="math inline">\(n=9\)</span>, <span
+class="math inline">\(10\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Có <span class="math inline">\(2^n-1\)</span> tập con khác rỗng
+(thỏ). Tổng của mỗi tập là số nguyên từ <span
+class="math inline">\(1\)</span> đến <span
+class="math inline">\(100n\)</span> (lồng, có <span
+class="math inline">\(100n\)</span> lồng).</p></div><div class="sol-step"><p>Nếu <span class="math inline">\(2^n-1&gt;100n\)</span> thì có hai tập
+khác nhau cùng tổng (Dirichlet). Bỏ các phần tử chung của hai tập thì
+được hai tập rời nhau có cùng tổng.</p></div><div class="sol-step"><p><span class="math inline">\(n=9\)</span>: <span
+class="math inline">\(2^9-1=511&lt;900\)</span>, chưa đủ. <span
+class="math inline">\(n=10\)</span>: <span
+class="math inline">\(2^{10}-1=1023&gt;1000\)</span>, đủ. Vậy <span
+class="math inline">\(n=10\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(10\)</span></p></div></div></article>
+<h2 id="b3-nguon" class="part">Nguồn</h2><ul class="src-list"><li><p>Ví dụ 1–6 và Bài 1–8: sáng tác cho tài liệu này (dạng kinh điển của
+nguyên lý Dirichlet, không trích từ sách hay đề).</p></li><li><p>Ví dụ 7: đề tuyển sinh lớp 10 chuyên Toán, Trường Phổ thông Năng
+khiếu (ĐHQG-HCM) năm học 2024–2025, Bài 5b, bản PDF đăng trên
+image.plo.vn (diễn đạt lại; phần “hai cặp, tổng mỗi cặp là số chính
+phương” suy ra từ mạch lời giải, nên đối chiếu đề gốc). Lời giải trong
+tài liệu được viết lại theo cấu hình tam giác + vòng 5 và đã được kiểm
+bằng vét cạn.</p></li><li><p>Nguyên lý Dirichlet là kiến thức chuẩn của tổ hợp; cách trình bày, ví
+dụ, hộp “ghép lồng” và cách đặt tên cấu hình là của riêng tài liệu
+này.</p></li></ul>
+ <div class="pager"><a class="btn ghost" href="#buoi-2">← Buổi 2</a> <a class="btn" href="#buoi-4">Buổi 4 (sắp có) →</a></div>
+</div></section>
+<section class="view" id="buoi-4"><div class="lesson"><span class="pill">Buổi 4</span><h1>Vi-ét, nghiệm nguyên và xác suất</h1><p class="lead">Khử tham số, phương trình ước số, đếm cặp (a; b) để phương trình có nghiệm nguyên.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>Chuyên Sở 2025–26 Bài 5a; 2026–27 Bài 5.1; HSG 9 2025–26 Câu 5.2</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="buoi-5"><div class="lesson"><span class="pill">Buổi 5</span><h1>Dãy truy hồi và modulo</h1><p class="lead">Sₙ = x₁ⁿ + x₂ⁿ, aₙ₊₂ = 4aₙ₊₁ − aₙ, tính tuần hoàn của số dư.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2024–25 Bài 3</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="buoi-6"><div class="lesson"><span class="pill">Buổi 6</span><h1>Chia hết kiểu tích và Vieta Jumping</h1><p class="lead">Mức mở rộng cho tầng chuyên.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2025 Câu 3 (dạng gần)</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="buoi-7"><div class="lesson"><span class="pill">Buổi 7</span><h1>Bất biến, tô màu, trò chơi, cực hạn</h1><p class="lead">Bảng ô, trò chơi, tổng chữ số, nguyên lý cực hạn.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2025 Câu 5; PTNK 2026 Câu 5; Chuyên Sở 2025–26 Bài 5b; 2026–27 Bài 5.2</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="on-tap"><div class="lesson"><span class="pill">★</span><h1>Ôn tập và đề phân tầng</h1>
+<p class="lead">Bộ đề tổng hợp hai tầng (nền chung và chuyên) sẽ có sau khi hoàn thành các buổi.</p>
+<div class="box note"><div class="box-title">Sắp có</div><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section></main>
+</div>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+function sget(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function sset(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+
+/* ---- giao diện sáng/tối ---- */
+var root=document.documentElement;
+var saved=sget("theme");
+if(saved==="dark"||saved==="light"){root.setAttribute("data-theme",saved)}
+else if(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches){root.setAttribute("data-theme","dark")}
+$("#theme").addEventListener("click",function(){
+  var t=root.getAttribute("data-theme")==="dark"?"light":"dark";root.setAttribute("data-theme",t);sset("theme",t);
+});
+
+/* ---- menu điện thoại ---- */
+$("#menu").addEventListener("click",function(){document.body.classList.toggle("nav-open")});
+$("#scrim").addEventListener("click",function(){document.body.classList.remove("nav-open")});
+
+/* ---- điều hướng theo hash ---- */
+function route(){
+  var h=(location.hash||"").replace("#","")||"trang-chu";
+  var el=document.getElementById(h);
+  if(!el||!el.classList.contains("view")){h="trang-chu";el=document.getElementById(h)}
+  $$(".view").forEach(function(v){v.classList.remove("show")});
+  el.classList.add("show");
+  $$(".nav-item").forEach(function(a){a.classList.toggle("active",a.getAttribute("data-view")===h)});
+  document.body.classList.remove("nav-open");
+  window.scrollTo(0,0);
+  sset("lastView",h);
+}
+window.addEventListener("hashchange",route);
+route();
+
+/* ---- thanh tiến độ cuộn ---- */
+var bar=$("#progress");
+function prog(){
+  var d=document.documentElement;var max=d.scrollHeight-d.clientHeight;
+  bar.style.width=(max>0?Math.min(100,d.scrollTop/max*100):0)+"%";
+}
+window.addEventListener("scroll",prog,{passive:true});window.addEventListener("resize",prog);prog();
+
+/* ---- mục lục cuộn tới phần ---- */
+$$("[data-goto]").forEach(function(b){
+  b.addEventListener("click",function(){var t=document.getElementById(b.getAttribute("data-goto"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"})});
+});
+
+/* ---- ví dụ từng bước ---- */
+$$(".steps").forEach(function(box){
+  var items=$$(":scope > .step",box);var i=0;
+  var ctl=document.createElement("div");ctl.className="stepctl";
+  var prev=document.createElement("button");prev.className="btn ghost";prev.textContent="‹ Lùi";
+  var next=document.createElement("button");next.className="btn";next.textContent="Bước tiếp ›";
+  var dots=document.createElement("div");dots.className="dots";
+  var again=document.createElement("button");again.className="btn ghost";again.textContent="Xem lại";
+  var all=document.createElement("button");all.className="btn ghost";all.textContent="Hiện tất cả";
+  var ds=items.map(function(_,k){var d=document.createElement("button");d.className="dot";d.setAttribute("aria-label","Bước "+(k+1));d.addEventListener("click",function(){go(k)});dots.appendChild(d);return d});
+  function go(k){i=Math.max(0,Math.min(items.length-1,k));
+    items.forEach(function(s,j){s.classList.toggle("on",j<=i)});
+    ds.forEach(function(d,j){d.classList.toggle("on",j===i)});
+    prev.disabled=i===0;next.disabled=i===items.length-1}
+  prev.addEventListener("click",function(){go(i-1)});next.addEventListener("click",function(){go(i+1)});
+  again.addEventListener("click",function(){go(0)});all.addEventListener("click",function(){go(items.length-1)});
+  [prev,dots,next,again,all].forEach(function(e){ctl.appendChild(e)});box.appendChild(ctl);go(0);
+});
+
+/* ---- ghi chú của em ---- */
+$$("textarea[data-note]").forEach(function(t){
+  var k="note:"+t.getAttribute("data-note");var v=sget(k);if(v)t.value=v;
+  t.addEventListener("input",function(){sset(k,t.value)});
+});
+
+/* ---- bài luyện (mỗi buổi một bộ khóa riêng; Buổi 1 giữ khóa cũ "ok:n") ---- */
+function norm(s){return String(s).replace(/[\s.,]/g,"").trim()}
+function okKey(l,n){return (l==="1"?"":"b"+l+":")+"ok:"+n}
+function fracOf(s){
+  s=String(s).replace(/\s/g,"");
+  var m=s.match(/^(-?\d+)(?:\/(\d+))?$/);
+  if(!m)return null;
+  var d=BigInt(m[2]||"1");if(d===0n)return null;
+  return [BigInt(m[1]),d];
+}
+var exs=$$(".ex");
+function updProg(l){
+  var list=exs.filter(function(e){return e.getAttribute("data-lesson")===l});
+  var done=list.filter(function(e){return sget(okKey(l,e.getAttribute("data-n")))==="1"}).length;
+  var p=$("[data-exprog='"+l+"']");if(p)p.textContent="Đã làm đúng "+done+"/"+list.length+" bài";
+}
+exs.forEach(function(e){
+  var l=e.getAttribute("data-lesson")||"1",n=e.getAttribute("data-n"),ans=e.getAttribute("data-ans"),kind=e.getAttribute("data-kind")||"int";
+  var st=$(".status",e),inp=$("input",e);
+  if(sget(okKey(l,n))==="1"){st.textContent="✓ Đúng";st.className="status ok"}
+  e.addEventListener("click",function(ev){
+    var a=ev.target.getAttribute&&ev.target.getAttribute("data-act");if(!a)return;
+    if(a==="hint")$(".hint",e).classList.toggle("hidden");
+    if(a==="sol")$(".solution",e).classList.toggle("hidden");
+    if(a==="check"){
+      if(!inp.value.trim()){st.textContent="Hãy nhập đáp số";st.className="status";return}
+      var good;
+      if(kind==="frac"){
+        var u=fracOf(inp.value),v=fracOf(ans);
+        if(!u){st.textContent="Nhập dạng a/b (ví dụ 3/8)";st.className="status bad";return}
+        good=u[0]*v[1]===v[0]*u[1];
+      }else{good=norm(inp.value)===norm(ans)}
+      if(good){st.textContent="✓ Đúng";st.className="status ok";sset(okKey(l,n),"1")}
+      else{st.textContent="Chưa đúng, thử lại";st.className="status bad"}
+      updProg(l);
+    }
+  });
+  inp.addEventListener("keydown",function(ev){if(ev.key==="Enter")$("[data-act=check]",e).click()});
+});
+$$("[data-exprog]").forEach(function(p){updProg(p.getAttribute("data-exprog"))});
+
+/* ---- công cụ ---- */
+function big(n){return BigInt(n)}
+function fact(n){var r=1n;for(var i=2n;i<=n;i++)r*=i;return r}
+function gcd(a,b){while(b){var t=a%b;a=b;b=t}return a}
+function lcm(a,b){return a/gcd(a,b)*b}
+function t1(){
+  var n=parseInt($("#t1n").value,10),k=parseInt($("#t1k").value,10),o=$("#t1out");
+  if(!(n>=1&&k>=0)){o.textContent="Nhập n ≥ 1 và k ≥ 0.";return}
+  var pw=big(n)**big(k);
+  if(k>n){o.innerHTML="Có lặp, có thứ tự: <b>"+pw+"</b><br>Không lặp: không thể chọn (k > n).";return}
+  var p=1n;for(var i=0;i<k;i++)p*=big(n-i);
+  o.innerHTML="Không lặp, có thứ tự (A): <b>"+p+"</b><br>Không lặp, không thứ tự (C): <b>"+(p/fact(big(k)))+"</b> (= A chia "+k+"!)<br>Có lặp, có thứ tự (n^k): <b>"+pw+"</b>";
+}
+function t2(){
+  var N=parseInt($("#t2N").value,10),a=parseInt($("#t2a").value,10),b=parseInt($("#t2b").value,10),c=parseInt($("#t2c").value,10),o=$("#t2out");
+  if(!(N>=1&&N<=1000000&&a>=1&&b>=1&&c>=1)){o.textContent="Nhập số nguyên dương (N ≤ 1 000 000).";return}
+  var cnt=0;for(var x=1;x<=N;x++){if(x%a===0||x%b===0||x%c===0)cnt++}
+  var f=function(m){return Math.floor(N/m)};
+  var ab=lcm(a,b),ac=lcm(a,c),bc=lcm(b,c),abc=lcm(ab,c);
+  var formula=f(a)+f(b)+f(c)-f(ab)-f(ac)-f(bc)+f(abc);
+  o.innerHTML="|A|+|B|+|C| = "+(f(a)+f(b)+f(c))+"<br>trừ các giao đôi: "+(f(ab)+f(ac)+f(bc))+"; cộng giao ba: "+f(abc)+
+   "<br>Công thức bù trừ: <b>"+formula+"</b><br>Đếm trực tiếp: <b>"+cnt+"</b> "+(formula===cnt?"✓ khớp":"✗ lệch")+
+   "<br>Không chia hết số nào: <b>"+(N-cnt)+"</b>";
+}
+function t3(){
+  var n=parseInt($("#t3n").value,10),w=parseInt($("#t3w").value,10),d=parseInt($("#t3d").value,10),o=$("#t3out");
+  if(!(n>=2&&w>=0&&d>=0)){o.textContent="Nhập n ≥ 2.";return}
+  var m=n*(n-1)/2;
+  var all=m*w,draw=m*2*d;
+  var same=(w===2*d);
+  o.innerHTML="Số trận: <b>"+m+"</b><br>Nếu mọi trận có đội thắng: tổng điểm = "+all+"<br>Nếu mọi trận hòa: tổng điểm = "+draw+
+   "<br>"+(same?"Hai con số bằng nhau: tổng điểm cả giải không phụ thuộc kết quả (= <b>"+all+"</b>).":"Hai con số khác nhau: tổng điểm phụ thuộc số trận hòa.");
+}
+[["t1n","t1k"],["t2N","t2a","t2b","t2c"],["t3n","t3w","t3d"]].forEach(function(ids,ix){
+  var fn=[t1,t2,t3][ix];ids.forEach(function(id){$("#"+id).addEventListener("input",fn)});fn();
+});
+
+
+/* ---- công cụ Buổi 2 ---- */
+function binom(n,k){if(k<0||k>n||n<0)return 0n;var r=1n;for(var i=1;i<=k;i++){r=r*BigInt(n-k+i)/BigInt(i)}return r}
+function t4(){
+  var n=parseInt($("#t4n").value,10),k=parseInt($("#t4k").value,10),m=parseInt($("#t4m").value,10),M=parseInt($("#t4M").value,10),o=$("#t4out");
+  if(!(n>=0&&k>=1&&k<=8&&n<=40&&m>=0&&M>=m)){o.textContent="Nhập n từ 0 đến 40, k từ 1 đến 8, mức ít nhất ≤ mức nhiều nhất.";return}
+  var dp=new Array(n+1).fill(0n);dp[0]=1n;
+  for(var i=0;i<k;i++){var nx=new Array(n+1).fill(0n);
+    for(var s=0;s<=n;s++){if(dp[s]===0n)continue;for(var x=m;x<=M&&s+x<=n;x++)nx[s+x]+=dp[s]}
+    dp=nx}
+  var direct=dp[n];
+  var np=n-k*m,formula=0n,width=M-m+1;
+  if(np>=0){for(var j=0;j<=k;j++){var r=np-j*width;if(r<0)break;var t=binom(k,j)*binom(r+k-1,k-1);formula+=(j%2===0)?t:-t}}
+  o.innerHTML="Vách ngăn kèm bù trừ: <b>"+formula+"</b><br>Đếm trực tiếp (vét cạn): <b>"+direct+"</b> "+(formula===direct?"✓ khớp":"✗ lệch")+
+   (np>=0?"<br>Sau khi phát trước: còn "+np+" vật để chia tự do cho "+k+" bạn.":"<br>Không đủ vật để phát mức tối thiểu.");
+}
+function t5(){
+  var n=parseInt($("#t5n").value,10),k=parseInt($("#t5k").value,10),o=$("#t5out");
+  if(!(n>=1&&n<=30&&k>=1&&k<=8)){o.textContent="Nhập n từ 1 đến 30, k từ 1 đến 8.";return}
+  var exact=0;for(var j=0;j<=k;j++){var c=Number(binom(k,j));exact+=((j%2===0)?1:-1)*c*Math.pow((k-j)/k,n)}
+  var wrong=n>=k?Number(binom(n-1,k-1))/Number(binom(n+k-1,k-1)):0;
+  var T=20000,hit=0;
+  for(var t=0;t<T;t++){var seen=0,mask=0;for(var i=0;i<n;i++){var b=1<<Math.floor(Math.random()*k);if(!(mask&b)){mask|=b;seen++}}if(seen===k)hit++}
+  var f=function(x){return x.toFixed(4).replace(".",",")};
+  o.innerHTML="Xác suất đúng (bù trừ, mỗi kẹo đi đâu): <b>"+f(exact)+"</b><br>Mô phỏng "+T+" lần: <b>"+f(hit/T)+"</b><br>"+
+   "Cách sai (chia số cách chia mỗi bạn ≥ 1 cho số cách chia): <b>"+f(wrong)+"</b><br>"+
+   (Math.abs(wrong-exact)>0.01?"Hai con số lệch nhau: các cách chia không đồng khả năng.":"Hai con số gần nhau (trường hợp hiếm).");
+}
+$$("#t4n,#t4k,#t4m,#t4M").forEach(function(e){e.addEventListener("input",t4)});t4();
+var r5=$("#t5run");if(r5){r5.addEventListener("click",t5);t5()}
+
+/* ---- công cụ Buổi 3 ---- */
+function t6(){
+  var N=parseInt($("#t6N").value,10),k=parseInt($("#t6k").value,10),m=parseInt($("#t6m").value,10),o=$("#t6out");
+  if(!(N>=0&&k>=1&&m>=1)){o.textContent="Nhập N ≥ 0, k ≥ 1, m ≥ 1.";return}
+  var c=Math.ceil(N/k),q=Math.floor(N/k),r=N%k,need=k*(m-1)+1;
+  o.innerHTML="Có lồng chứa ít nhất <b>"+c+"</b> thỏ (= N/k làm tròn lên).<br>"+
+   "Chia đều nhất: "+r+" lồng chứa "+(q+1)+" thỏ, "+(k-r)+" lồng chứa "+q+" thỏ.<br>"+
+   "Để chắc chắn có lồng ≥ "+m+" thỏ cần ít nhất <b>"+need+"</b> thỏ (= k(m−1)+1). "+
+   (N>=need?"Với N="+N+" thì <b>chắc chắn</b>.":"Với N="+N+" thì <b>chưa chắc</b>: có cách xếp mỗi lồng ≤ "+(m-1)+" thỏ.");
+}
+function t7(){
+  var m=parseInt($("#t7m").value,10),o=$("#t7out");
+  var a=($("#t7list").value||"").split(/[\s,;]+/).filter(function(x){return x!==""}).map(Number);
+  if(!(m>=2&&a.length>=1&&a.every(function(x){return Number.isInteger(x)}))){o.textContent="Nhập các số nguyên cách nhau bởi dấu phẩy, và m ≥ 2.";return}
+  if(a.length>60){o.textContent="Nhập tối đa 60 số.";return}
+  var md=function(x){return ((x%m)+m)%m};
+  var g={};a.forEach(function(x,i){var r=md(x);(g[r]=g[r]||[]).push(x)});
+  var rows=Object.keys(g).sort(function(u,v){return u-v}).map(function(r){return "dư "+r+": "+g[r].join(", ")});
+  var pair="";
+  Object.keys(g).forEach(function(r){if(!pair&&g[r].length>=2)pair="Hai số cùng dư "+r+": "+g[r][0]+" và "+g[r][1]+", hiệu "+Math.abs(g[r][1]-g[r][0])+" chia hết cho "+m+"."});
+  var S=0,seen={"0":0},blk="",pre=[];
+  for(var i=0;i<a.length;i++){S+=a[i];var r=md(S);pre.push(r);
+    if(!blk&&Object.prototype.hasOwnProperty.call(seen,r)){var s=seen[r];blk="Khối liên tiếp a"+(s+1)+"…a"+(i+1)+" ("+a.slice(s,i+1).join(" + ")+" = "+a.slice(s,i+1).reduce(function(x,y){return x+y},0)+") chia hết cho "+m+"."}
+    if(!Object.prototype.hasOwnProperty.call(seen,r))seen[r]=i+1}
+  o.innerHTML="<b>Các lồng (lớp dư khi chia cho "+m+"):</b><br>"+rows.join("<br>")+"<br>"+(pair||"Chưa có hai số nào cùng dư.")+
+   "<br><b>Tổng tiền tố S₀=0, S₁, S₂, … theo dư:</b> 0, "+pre.join(", ")+"<br>"+(blk||"Chưa tìm thấy khối liên tiếp có tổng chia hết (cần ít nhất "+m+" số để chắc chắn).");
+}
+if($("#t6N")){$$("#t6N,#t6k,#t6m").forEach(function(e){e.addEventListener("input",t6)});t6()}
+if($("#t7list")){$$("#t7list,#t7m").forEach(function(e){e.addEventListener("input",t7)});t7()}
+
+/* ---- công thức ---- */
+function renderMath(){
+  if(typeof renderMathInElement!=="function")return;
+  renderMathInElement(document.body,{delimiters:[{left:"\\(",right:"\\)",display:false},{left:"\\[",right:"\\]",display:true}],throwOnError:false});
+}
+renderMath();
+})();
+</script>
+</body></html>
