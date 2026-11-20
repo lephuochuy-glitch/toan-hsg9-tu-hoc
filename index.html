@@ -236,9 +236,10 @@ hai câu:</p>
 <tbody>
 <tr class="odd">
 <td><strong>Không lặp</strong></td>
-<td><span class="math inline">\(n(n-1)\cdots(n-k+1)\)</span></td>
 <td><span
-class="math inline">\(\dfrac{n(n-1)\cdots(n-k+1)}{k!}\)</span></td>
+class="math inline">\(A_n^k=n(n-1)\cdots(n-k+1)=\dfrac{n!}{(n-k)!}\)</span></td>
+<td><span
+class="math inline">\(C_n^k=\dfrac{A_n^k}{k!}=\dfrac{n!}{k!\,(n-k)!}\)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Có lặp</strong></td>
@@ -248,12 +249,36 @@ class="math inline">\(\dfrac{n(n-1)\cdots(n-k+1)}{k!}\)</span></td>
 </tbody>
 </table>
 </div>
-<aside class="box note"><div class="box-title">Ghi chú về ký hiệu (ngoài SGK lớp 9)</div><p>Sách giáo khoa lớp 10 viết <span class="math inline">\(A_n^k\)</span>
-cho ô thứ nhất và <span class="math inline">\(C_n^k\)</span> cho ô thứ
-hai. Kí hiệu này <strong>ngoài chương trình lớp 9</strong>. Trong bài
-thi em nên viết rõ tích <span
-class="math inline">\(n(n-1)\cdots\)</span> và phép chia <span
-class="math inline">\(k!\)</span> như trong bảng.</p></aside>
+<aside class="box def"><div class="box-title">Công thức lớp 10 (ngoài SGK lớp 9)</div><p><strong>Giai thừa:</strong> <span class="math inline">\(n!=1\cdot
+2\cdot 3\cdots n\)</span>, quy ước <span
+class="math inline">\(0!=1\)</span>. Số cách xếp <span
+class="math inline">\(n\)</span> phần tử khác nhau vào một hàng là <span
+class="math inline">\(n!\)</span> (hoán vị, kí hiệu <span
+class="math inline">\(P_n=n!\)</span>).</p>
+<p><strong>Chỉnh hợp</strong> <span class="math inline">\(A_n^k\)</span>
+(chọn <span class="math inline">\(k\)</span> trong <span
+class="math inline">\(n\)</span>, có thứ tự) và <strong>tổ hợp</strong>
+<span class="math inline">\(C_n^k\)</span> (chọn <span
+class="math inline">\(k\)</span> trong <span
+class="math inline">\(n\)</span>, không thứ tự), với <span
+class="math inline">\(0\le k\le n\)</span>.</p>
+<p><strong>Tính chất của tổ hợp:</strong> <span
+class="math inline">\(C_n^k=C_n^{n-k}\)</span> và <span
+class="math inline">\(C_n^k+C_n^{k+1}=C_{n+1}^{k+1}\)</span>.</p>
+<p><strong>Máy Casio:</strong> phím <span
+class="math inline">\(nPr\)</span> cho <span
+class="math inline">\(A_n^k\)</span>, phím <span
+class="math inline">\(nCr\)</span> cho <span
+class="math inline">\(C_n^k\)</span>, phím <span
+class="math inline">\(x!\)</span> cho giai thừa.</p></aside>
+<aside class="box err"><div class="box-title">Lưu ý khi dùng máy tính</div><p>Máy Casio cho ra con số nhưng <strong>không thay được lập
+luận</strong>. Trong bài thi tự luận, em vẫn phải nói rõ vì sao chọn
+<span class="math inline">\(A_n^k\)</span> hay <span
+class="math inline">\(C_n^k\)</span> (thứ tự có quan trọng không, và vì
+sao chia cho <span class="math inline">\(k!\)</span>), như ở Ví dụ 3 và
+Ví dụ 4. Máy cũng chỉ tính được <span class="math inline">\(n!\)</span>
+đến <span class="math inline">\(n=69\)</span>, nên với <span
+class="math inline">\(n\)</span> lớn em cần rút gọn trước khi bấm.</p></aside>
 <article class="vd card" id="vd2"><div class="vd-head"><span class="tag">Ví dụ 2</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Xếp <span class="math inline">\(7\)</span> người thành một hàng
 ngang. Có bao nhiêu cách xếp để hai người <span
 class="math inline">\(A\)</span> và <span
@@ -280,10 +305,10 @@ cách?</p></div><div class="steps" data-title="Lời giải từng bước"><div
 <span class="math inline">\(10\)</span>, không lặp. Điểm khác nhau là
 <strong>thứ tự</strong>.</p></div><div class="step"><p><strong>(a)</strong> Đi dự lễ thì <span
 class="math inline">\(3\)</span> người là một nhóm, đổi chỗ không thay
-đổi gì: <span class="math inline">\(\dfrac{10\cdot 9\cdot
+đổi gì: <span class="math inline">\(C_{10}^3=\dfrac{10\cdot 9\cdot
 8}{3!}=\dfrac{720}{6}=120\)</span> cách.</p></div><div class="step"><p><strong>(b)</strong> Ba chức vụ khác nhau nên "An trưởng, Bình phó"
-khác "Bình trưởng, An phó": <span class="math inline">\(10\cdot 9\cdot
-8=720\)</span> cách.</p></div><div class="step"><p>Quan hệ: <span class="math inline">\(720=120\cdot 3!\)</span>. Mỗi
+khác "Bình trưởng, An phó": <span class="math inline">\(A_{10}^3=10\cdot
+9\cdot 8=720\)</span> cách.</p></div><div class="step"><p>Quan hệ: <span class="math inline">\(720=120\cdot 3!\)</span>. Mỗi
 nhóm <span class="math inline">\(3\)</span> người cho <span
 class="math inline">\(3!\)</span> cách phân chức vụ.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
 <li><span class="math inline">\(120\)</span> cách; (b) <span
@@ -678,7 +703,7 @@ function t1(){
   var pw=big(n)**big(k);
   if(k>n){o.innerHTML="Có lặp, có thứ tự: <b>"+pw+"</b><br>Không lặp: không thể chọn (k > n).";return}
   var p=1n;for(var i=0;i<k;i++)p*=big(n-i);
-  o.innerHTML="Không lặp, có thứ tự: <b>"+p+"</b><br>Không lặp, không thứ tự: <b>"+(p/fact(big(k)))+"</b> (= trên chia "+k+"!)<br>Có lặp, có thứ tự (n^k): <b>"+pw+"</b>";
+  o.innerHTML="Không lặp, có thứ tự (A): <b>"+p+"</b><br>Không lặp, không thứ tự (C): <b>"+(p/fact(big(k)))+"</b> (= A chia "+k+"!)<br>Có lặp, có thứ tự (n^k): <b>"+pw+"</b>";
 }
 function t2(){
   var N=parseInt($("#t2N").value,10),a=parseInt($("#t2a").value,10),b=parseInt($("#t2b").value,10),c=parseInt($("#t2c").value,10),o=$("#t2out");
