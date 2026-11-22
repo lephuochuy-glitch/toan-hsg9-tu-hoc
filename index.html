@@ -1852,7 +1852,164 @@ rút có hoàn lại thì mẫu và tử số thay đổi thế nào?</p><textar
   <label>b <input id="t8b" type="number" step="any" value="-3"></label>
   <label>c <input id="t8c" type="number" step="any" value="-1"></label></div>
   <div id="t8out" class="out"></div>
- </section><section class="view" id="buoi-5"><div class="lesson"><span class="pill">Buổi 5</span><h1>Dãy truy hồi và modulo</h1><p class="lead">Sₙ = x₁ⁿ + x₂ⁿ, aₙ₊₂ = 4aₙ₊₁ − aₙ, tính tuần hoàn của số dư.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2024–25 Bài 3</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="buoi-6"><div class="lesson"><span class="pill">Buổi 6</span><h1>Chia hết kiểu tích và Vieta Jumping</h1><p class="lead">Mức mở rộng cho tầng chuyên.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2025 Câu 3 (dạng gần)</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="buoi-7"><div class="lesson"><span class="pill">Buổi 7</span><h1>Bất biến, tô màu, trò chơi, cực hạn</h1><p class="lead">Bảng ô, trò chơi, tổng chữ số, nguyên lý cực hạn.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2025 Câu 5; PTNK 2026 Câu 5; Chuyên Sở 2025–26 Bài 5b; 2026–27 Bài 5.2</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="on-tap"><div class="lesson"><span class="pill">★</span><h1>Ôn tập và đề phân tầng</h1>
+ </section>
+ <section class="card tool" id="tool9">
+  <h3>Máy đếm cặp (a; b)</h3>
+  <div class="row"><label>Số thẻ N (thẻ ghi 1 đến N) <input id="t9N" type="number" min="2" max="60" value="15"></label>
+  <label>Cách rút <select id="t9mode"><option value="no">lần lượt, không hoàn lại (a khác b)</option><option value="yes">có hoàn lại (a có thể bằng b)</option></select></label>
+  <label>Điều kiện <select id="t9cond"><option value="int">x² − ax + b = 0 có nghiệm nguyên</option><option value="real">x² − ax + b = 0 có nghiệm thực</option></select></label></div>
+  <div id="t9out" class="out"></div>
+ </section>
+</div>
+
+<h2 id="b4-luyen" class="part">Bài luyện</h2>
+<p class="muted">Ký hiệu <b>N</b>: nền chung HSG Toán 9. <b>C</b>: tầng chuyên. Làm vào giấy trước, rồi nhập đáp số để kiểm tra. Chỉ xem gợi ý khi đã thử ít nhất 5 phút.</p>
+<div class="exprog" data-exprog="4"></div>
+<article class="ex card" data-lesson="4" data-n="1" data-ans="80" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 1 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Cho phương trình <span class="math inline">\(x^2-5x+3=0\)</span> có
+hai nghiệm <span class="math inline">\(x_1,x_2\)</span>. Không giải
+phương trình, tính <span class="math inline">\(x_1^3+x_2^3\)</span>.</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 1"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Dùng <span class="math inline">\(x_1^3+x_2^3=S^3-3SP\)</span>. Nhớ
+kiểm tra <span class="math inline">\(\Delta\ge0\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(\Delta=25-12=13&gt;0\)</span>. Vi-ét:
+<span class="math inline">\(S=5\)</span>, <span
+class="math inline">\(P=3\)</span>.</p></div><div class="sol-step"><p><span
+class="math inline">\(x_1^3+x_2^3=S^3-3SP=125-45=80\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(80\)</span></p></div></div></article>
+<article class="ex card" data-lesson="4" data-n="2" data-ans="8" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 2 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Cho phương trình <span class="math inline">\(x^2-6x+m=0\)</span> có
+hai nghiệm <span class="math inline">\(x_1,x_2\)</span> thỏa <span
+class="math inline">\(x_1=2x_2\)</span>. Tìm <span
+class="math inline">\(m\)</span>.</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 2"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Kết hợp <span class="math inline">\(x_1+x_2=6\)</span> với <span
+class="math inline">\(x_1=2x_2\)</span> để tìm từng nghiệm, rồi dùng
+<span class="math inline">\(m=x_1x_2\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Vi-ét: <span class="math inline">\(x_1+x_2=6\)</span>. Thay <span
+class="math inline">\(x_1=2x_2\)</span>: <span
+class="math inline">\(3x_2=6\)</span>, nên <span
+class="math inline">\(x_2=2\)</span>, <span
+class="math inline">\(x_1=4\)</span>.</p></div><div class="sol-step"><p><span class="math inline">\(m=x_1x_2=8\)</span>. Thử lại: <span
+class="math inline">\(\Delta=36-32=4&gt;0\)</span>, phương trình <span
+class="math inline">\(x^2-6x+8=0\)</span> có nghiệm <span
+class="math inline">\(2;4\)</span> đúng.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(8\)</span></p></div></div></article>
+<article class="ex card" data-lesson="4" data-n="3" data-ans="17" data-kind="int"><div class="vd-head"><span class="tag lvN">Bài 3 · N</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Có bao nhiêu số nguyên <span class="math inline">\(m\)</span> thuộc
+đoạn <span class="math inline">\([-10;10]\)</span> để phương trình <span
+class="math inline">\(x^2-2mx+m+6=0\)</span> có nghiệm?</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 3"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Tính <span class="math inline">\(\Delta&#39;\)</span> rồi phân tích
+thành nhân tử để giải bất phương trình.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span
+class="math inline">\(\Delta&#39;=m^2-(m+6)=m^2-m-6=(m-3)(m+2)\)</span>.
+Có nghiệm khi <span class="math inline">\(\Delta&#39;\ge0\)</span>, tức
+<span class="math inline">\(m\le-2\)</span> hoặc <span
+class="math inline">\(m\ge3\)</span>.</p></div><div class="sol-step"><p>Trong <span class="math inline">\([-10;10]\)</span>: <span
+class="math inline">\(m=-10;\dots;-2\)</span> có <span
+class="math inline">\(9\)</span> giá trị, <span
+class="math inline">\(m=3;\dots;10\)</span> có <span
+class="math inline">\(8\)</span> giá trị. Tổng <span
+class="math inline">\(17\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(17\)</span></p></div></div></article>
+<article class="ex card" data-lesson="4" data-n="4" data-ans="2/3" data-kind="frac"><div class="vd-head"><span class="tag lvN">Bài 4 · N</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 5)</span></div><div class="problem"><p>Gieo một con xúc xắc cân đối một lần, được <span
+class="math inline">\(b\)</span> chấm. Tính xác suất để phương trình
+<span class="math inline">\(x^2-4x+b=0\)</span> có nghiệm. (Nhập phân số
+tối giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 4"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Điều kiện có nghiệm là <span
+class="math inline">\(\Delta&#39;\ge0\)</span>. Tìm các giá trị <span
+class="math inline">\(b\)</span> từ <span
+class="math inline">\(1\)</span> đến <span
+class="math inline">\(6\)</span> thỏa điều kiện.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=6\)</span>. <span
+class="math inline">\(\Delta&#39;=4-b\ge0\)</span> khi <span
+class="math inline">\(b\le4\)</span>, có <span
+class="math inline">\(4\)</span> giá trị <span
+class="math inline">\(b=1;2;3;4\)</span>.</p></div><div class="sol-step"><p><span class="math inline">\(P=\dfrac{4}{6}=\dfrac{2}{3}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{2}{3}\)</span></p></div></div></article>
+<article class="ex card" data-lesson="4" data-n="5" data-ans="17/132" data-kind="frac"><div class="vd-head"><span class="tag lvC">Bài 5 · C</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 6)</span></div><div class="problem"><p>Một hộp chứa <span class="math inline">\(12\)</span> thẻ ghi các số
+<span class="math inline">\(1;2;\dots;12\)</span>. An rút một thẻ rồi
+Bình rút một thẻ (không hoàn lại), được <span
+class="math inline">\(a\)</span> và <span
+class="math inline">\(b\)</span>. Tính xác suất để phương trình <span
+class="math inline">\(x^2-ax+b=0\)</span> có nghiệm nguyên. (Nhập phân
+số tối giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 5"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Nghiệm nguyên dương <span class="math inline">\(r\le s\)</span> với
+<span class="math inline">\(r+s=a\)</span>, <span
+class="math inline">\(rs=b\)</span>. Liệt kê theo <span
+class="math inline">\(r\)</span>, nhớ loại <span
+class="math inline">\(a=b\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=12\cdot11=132\)</span>. Cần
+<span class="math inline">\(r,s\)</span> nguyên dương, <span
+class="math inline">\(r\le s\)</span>, <span
+class="math inline">\(r+s\le12\)</span>, <span
+class="math inline">\(rs\le12\)</span>.</p></div><div class="sol-step"><p><span class="math inline">\(r=1\)</span>: <span
+class="math inline">\(s=1;\dots;11\)</span> (<span
+class="math inline">\(11\)</span> cặp). <span
+class="math inline">\(r=2\)</span>: <span
+class="math inline">\(s=2;\dots;6\)</span> (<span
+class="math inline">\(5\)</span> cặp). <span
+class="math inline">\(r=3\)</span>: <span
+class="math inline">\(s=3;4\)</span> (<span
+class="math inline">\(2\)</span> cặp). <span
+class="math inline">\(r\ge4\)</span>: <span
+class="math inline">\(rs\ge16&gt;12\)</span>. Tổng <span
+class="math inline">\(18\)</span> cặp.</p></div><div class="sol-step"><p>Loại cặp có <span class="math inline">\(a=b\)</span>: <span
+class="math inline">\(r=s=2\)</span>, tức <span
+class="math inline">\((4;4)\)</span>. Còn <span
+class="math inline">\(17\)</span> cặp. <span
+class="math inline">\(P=\dfrac{17}{132}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{17}{132}\)</span></p></div></div></article>
+<article class="ex card" data-lesson="4" data-n="6" data-ans="8" data-kind="int"><div class="vd-head"><span class="tag lvC">Bài 6 · C</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Tìm tổng tất cả các số nguyên <span class="math inline">\(m\)</span>
+để phương trình <span class="math inline">\(x^2-mx+m+5=0\)</span> có hai
+nghiệm nguyên.</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 6"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Khử <span class="math inline">\(m\)</span> từ <span
+class="math inline">\(x_1+x_2=m\)</span> và <span
+class="math inline">\(x_1x_2=m+5\)</span>, rồi đưa về dạng <span
+class="math inline">\((x_1-1)(x_2-1)=\)</span> hằng số.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p>Vi-ét: <span class="math inline">\(x_1+x_2=m\)</span>, <span
+class="math inline">\(x_1x_2=m+5\)</span>. Khử <span
+class="math inline">\(m\)</span>: <span
+class="math inline">\(x_1x_2-x_1-x_2=5\)</span>, nên <span
+class="math inline">\((x_1-1)(x_2-1)=6\)</span>.</p></div><div class="sol-step"><p>Các cặp ước của <span class="math inline">\(6\)</span> (có thứ tự
+không quan trọng): <span
+class="math inline">\((1;6),(2;3),(-1;-6),(-2;-3)\)</span>. Khi đó <span
+class="math inline">\(m=x_1+x_2=(x_1-1)+(x_2-1)+2\)</span> nhận các giá
+trị <span class="math inline">\(9;\,7;\,-5;\,-3\)</span>.</p></div><div class="sol-step"><p>Thử lại: <span class="math inline">\(m=9\)</span>: <span
+class="math inline">\(x^2-9x+14\)</span> (nghiệm <span
+class="math inline">\(2;7\)</span>); <span
+class="math inline">\(m=7\)</span>: <span
+class="math inline">\(x^2-7x+12\)</span> (<span
+class="math inline">\(3;4\)</span>); <span
+class="math inline">\(m=-5\)</span>: <span
+class="math inline">\(x^2+5x\)</span> (<span
+class="math inline">\(0;-5\)</span>); <span
+class="math inline">\(m=-3\)</span>: <span
+class="math inline">\(x^2+3x+2\)</span> (<span
+class="math inline">\(-1;-2\)</span>). Tổng <span
+class="math inline">\(9+7-5-3=8\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(8\)</span></p></div></div></article>
+<article class="ex card" data-lesson="4" data-n="7" data-ans="29/200" data-kind="frac"><div class="vd-head"><span class="tag lvC">Bài 7 · C</span><span class="src">Nguồn: Sáng tác (dựa theo ý Ví dụ 7)</span></div><div class="problem"><p>Ba bạn, mỗi bạn chọn ngẫu nhiên một số từ <span
+class="math inline">\(1;2;\dots;10\)</span> (có thể trùng nhau), được
+<span class="math inline">\(a;b;c\)</span>. Lập phương trình <span
+class="math inline">\(ax^2+x(b+ac)+bc=0\)</span>. Tính xác suất để
+phương trình có một nghiệm bằng <span class="math inline">\(-2\)</span>.
+(Nhập phân số tối giản.)</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="text" placeholder="Đáp số (a/b)" aria-label="Đáp số bài 7"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Phân tích <span
+class="math inline">\(ax^2+(b+ac)x+bc=(ax+b)(x+c)\)</span>, rồi bù trừ
+như Ví dụ 7.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(n(\Omega)=10^3=1000\)</span>. Phương
+trình <span class="math inline">\((ax+b)(x+c)=0\)</span> có nghiệm <span
+class="math inline">\(-2\)</span> khi <span
+class="math inline">\(c=2\)</span> hoặc <span
+class="math inline">\(b=2a\)</span>.</p></div><div class="sol-step"><p><span class="math inline">\(|A|\)</span> (<span
+class="math inline">\(c=2\)</span>): <span
+class="math inline">\(10\cdot10=100\)</span>. <span
+class="math inline">\(|B|\)</span> (<span
+class="math inline">\(b=2a\le10\)</span>, <span
+class="math inline">\(a\in\{1;\dots;5\}\)</span>, <span
+class="math inline">\(c\)</span> tùy ý): <span
+class="math inline">\(5\cdot10=50\)</span>. <span
+class="math inline">\(|A\cap B|=5\)</span>.</p></div><div class="sol-step"><p><span class="math inline">\(|A\cup B|=100+50-5=145\)</span>. <span
+class="math inline">\(P=\dfrac{145}{1000}=\dfrac{29}{200}\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{29}{200}\)</span></p></div></div></article>
+<article class="ex card" data-lesson="4" data-n="8" data-ans="82" data-kind="int"><div class="vd-head"><span class="tag lvC">Bài 8 · C</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Cho hai số thực <span class="math inline">\(u,v\)</span> thỏa <span
+class="math inline">\(u+v=4\)</span> và <span
+class="math inline">\(u^3+v^3=28\)</span>. Tính <span
+class="math inline">\(u^4+v^4\)</span>.</p></div><div class="actions"><button class="btn ghost" data-act="hint">Gợi ý</button><button class="btn ghost" data-act="sol">Lời giải</button><span class="check"><input type="text" inputmode="numeric" placeholder="Đáp số" aria-label="Đáp số bài 8"><button class="btn" data-act="check">Kiểm tra</button></span><span class="status" role="status"></span></div><div class="hint hidden"><b>Gợi ý.</b> <p>Tìm <span class="math inline">\(P=uv\)</span> từ <span
+class="math inline">\(u^3+v^3=S^3-3SP\)</span>, rồi tính <span
+class="math inline">\(u^2+v^2\)</span> và <span
+class="math inline">\(u^4+v^4=(u^2+v^2)^2-2P^2\)</span>.</p></div><div class="solution hidden"><b>Lời giải.</b><div class="sol-step"><p><span class="math inline">\(S=4\)</span>. <span
+class="math inline">\(u^3+v^3=S^3-3SP=64-12P=28\)</span>, nên <span
+class="math inline">\(P=3\)</span>. (Kiểm tra: <span
+class="math inline">\(S^2-4P=4\ge0\)</span>, <span
+class="math inline">\(u,v\)</span> thực là <span
+class="math inline">\(1;3\)</span>.)</p></div><div class="sol-step"><p><span class="math inline">\(u^2+v^2=S^2-2P=16-6=10\)</span>.</p></div><div class="sol-step"><p><span
+class="math inline">\(u^4+v^4=(u^2+v^2)^2-2P^2=100-18=82\)</span>.</p></div><div class="sol-step"><b>Đáp số:</b> <p><span class="math inline">\(82\)</span></p></div></div></article>
+<h2 id="b4-nguon" class="part">Nguồn</h2><ul class="src-list"><li><p>Ví dụ 1–3, 5 và Bài 1–8: sáng tác cho tài liệu này (dạng quen thuộc
+của Vi-ét và xác suất, không trích từ sách hay đề).</p></li><li><p>Ví dụ 4 và 6: đề tuyển sinh lớp 10 chuyên Toán của Sở GD&amp;ĐT
+TP.HCM năm học 2026–2027 (thi ngày 02/06/2026), diễn đạt lại theo bản đề
+đăng trên thcs.toanmath.com; lời giải do tài liệu này tự viết và kiểm
+chứng bằng máy.</p></li><li><p>Ví dụ 7: đề chọn học sinh giỏi Toán 9 TP.HCM năm học 2025–2026, Câu 5
+ý 2, diễn đạt lại theo bản đề đăng trên mathvn.com; lời giải do tài liệu
+này tự viết và kiểm chứng bằng máy.</p></li><li><p>Định lí Vi-ét và cách khử tham số là kiến thức chuẩn; cách trình bày,
+ví dụ và phần đếm cặp là của riêng tài liệu này.</p></li></ul>
+ <div class="pager"><a class="btn ghost" href="#buoi-3">← Buổi 3</a> <a class="btn" href="#buoi-5">Buổi 5 (sắp có) →</a></div>
+</div></section><section class="view" id="buoi-5"><div class="lesson"><span class="pill">Buổi 5</span><h1>Dãy truy hồi và modulo</h1><p class="lead">Sₙ = x₁ⁿ + x₂ⁿ, aₙ₊₂ = 4aₙ₊₁ − aₙ, tính tuần hoàn của số dư.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2024–25 Bài 3</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="buoi-6"><div class="lesson"><span class="pill">Buổi 6</span><h1>Chia hết kiểu tích và Vieta Jumping</h1><p class="lead">Mức mở rộng cho tầng chuyên.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2025 Câu 3 (dạng gần)</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="buoi-7"><div class="lesson"><span class="pill">Buổi 7</span><h1>Bất biến, tô màu, trò chơi, cực hạn</h1><p class="lead">Bảng ô, trò chơi, tổng chữ số, nguyên lý cực hạn.</p><div class="box note"><div class="box-title">Sắp có</div><p>Buổi này đang được soạn. Đề thật sẽ dùng: <b>PTNK 2025 Câu 5; PTNK 2026 Câu 5; Chuyên Sở 2025–26 Bài 5b; 2026–27 Bài 5.2</b>.</p><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section><section class="view" id="on-tap"><div class="lesson"><span class="pill">★</span><h1>Ôn tập và đề phân tầng</h1>
 <p class="lead">Bộ đề tổng hợp hai tầng (nền chung và chuyên) sẽ có sau khi hoàn thành các buổi.</p>
 <div class="box note"><div class="box-title">Sắp có</div><p><a href="#buoi-3">Quay lại Buổi 3</a></p></div></div></section></main>
 </div>
