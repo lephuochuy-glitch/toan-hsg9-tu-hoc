@@ -106,6 +106,18 @@ th{background:var(--note)}
  body{font-size:16px}.check{margin-left:0;width:100%}.check input{flex:1}
 }
 @media print{.top,nav#side,#progress,.stepctl,.actions{display:none!important}.view{display:block!important}.step{display:block!important}}
+
+/* ---- lớp giải thích bổ sung dưới mỗi ví dụ ---- */
+details.ext{margin:12px 0 0;border:1px solid var(--line);border-radius:16px;padding:4px 16px;background:var(--note)}
+details.ext>summary{cursor:pointer;font-weight:700;padding:8px 0;list-style:none}
+details.ext>summary::-webkit-details-marker{display:none}
+details.ext>summary::before{content:"▸ ";color:var(--acc)}
+details.ext[open]>summary::before{content:"▾ "}
+details.feyn{background:var(--fix);border-color:var(--fixl)}
+details.exam{background:var(--meth);border-color:var(--methl)}
+details.ext p,details.ext li{margin:6px 0}details.ext ol{padding-left:22px;margin:6px 0 10px}
+details.ext{overflow-x:auto;max-width:100%}
+details.ext .katex{white-space:normal}
 </style>
 </head>
 <body>
@@ -151,6 +163,12 @@ th{background:var(--note)}
 xếp, đếm cặp số, đếm kết quả của một giải đấu. Buổi này dạy cách đếm
 <strong>không sót, không trùng</strong> bằng vài câu hỏi cố định, thay
 vì thuộc công thức.</p></p>
+ <aside class="box note"><div class="box-title">Cách đọc mỗi ví dụ</div><p>Mỗi ví dụ có ba lớp: <strong>(1)</strong> lời giải từng bước (dùng
+công thức tổ hợp, để kiểm tra nhanh đáp số); <strong>(2)</strong> giải
+thích kiểu Feynman (nói bằng lời thường, như dạy lại cho một bạn nhỏ
+hơn); <strong>(3)</strong> cách trình bày khi đi thi lớp 9 (chỉ dùng quy
+tắc nhân, chia trường hợp, liệt kê, đếm ngược, không cần công thức tổ
+hợp). Đi thi, em trình bày theo lớp (3).</p></aside>
  <div class="chips">
   <span class="chip">⏱ 90 phút</span><span class="chip">📘 6 ví dụ từng bước</span>
   <span class="chip">🧪 3 công cụ</span><span class="chip">📝 8 bài luyện</span>
@@ -206,7 +224,61 @@ class="math inline">\(2\cdot 4\cdot 4=32\)</span> số.</p></div><div class="ste
 class="math inline">\(20+32=52\)</span> số chẵn.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
 <li><span class="math inline">\(100\)</span> số; (b) <span
 class="math inline">\(52\)</span> số.</li>
-</ol></div></div></article>
+</ol></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Hãy tưởng tượng ba ô trống: <strong>[trăm] [chục] [đơn vị]</strong>.
+Ta điền từng ô một. Mỗi lần điền, chỉ tự hỏi một câu: <em>“Lúc này còn
+mấy chữ số được phép dùng?”</em>. Rồi nhân các con số đó lại.</p></p><p><p>Ô trăm không được là <span class="math inline">\(0\)</span> (vì <span
+class="math inline">\(052\)</span> không phải số có ba chữ số), nên có
+<span class="math inline">\(5\)</span> lựa chọn. Ô chục mất đi chữ số
+vừa dùng, nhưng <em>được</em> dùng <span
+class="math inline">\(0\)</span>, nên vẫn còn <span
+class="math inline">\(5\)</span>. Ô đơn vị còn <span
+class="math inline">\(4\)</span>.</p></p><p><p>Câu số chẵn có hai ô bị “khóa”: ô cuối phải chẵn, ô đầu không được
+bằng <span class="math inline">\(0\)</span>. Hai điều kiện cùng dính đến
+chữ số <span class="math inline">\(0\)</span> nên ta <strong>tách thành
+hai trường hợp</strong> (cuối là <span class="math inline">\(0\)</span>
+hoặc cuối là <span class="math inline">\(2\)</span>, <span
+class="math inline">\(4\)</span>) để mỗi trường hợp đếm gọn.</p></p><p><p>Mẹo: ô nào bị ràng buộc nhiều nhất thì điền
+<strong>trước</strong>.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Gọi số cần lập là <span class="math inline">\(\overline{abc}\)</span>
+với <span class="math inline">\(a\neq 0\)</span> và <span
+class="math inline">\(a,b,c\)</span> đôi một khác nhau.</p></li><li><p><strong>(a)</strong> Chữ số <span class="math inline">\(a\)</span>
+chọn trong <span class="math inline">\(\{1;2;3;4;5\}\)</span>: <span
+class="math inline">\(5\)</span> cách. Với mỗi cách chọn <span
+class="math inline">\(a\)</span>, chữ số <span
+class="math inline">\(b\)</span> chọn trong <span
+class="math inline">\(5\)</span> chữ số còn lại (gồm cả <span
+class="math inline">\(0\)</span>): <span
+class="math inline">\(5\)</span> cách. Với mỗi cách chọn <span
+class="math inline">\(a,b\)</span>, chữ số <span
+class="math inline">\(c\)</span> có <span
+class="math inline">\(4\)</span> cách. Theo quy tắc nhân có <span
+class="math inline">\(5\cdot 5\cdot 4=100\)</span> số.</p></li><li><p><strong>(b)</strong> Số chẵn thì <span
+class="math inline">\(c\in\{0;2;4\}\)</span>. <em>Trường hợp 1:</em>
+<span class="math inline">\(c=0\)</span>. Khi đó <span
+class="math inline">\(a\)</span> có <span
+class="math inline">\(5\)</span> cách, <span
+class="math inline">\(b\)</span> có <span
+class="math inline">\(4\)</span> cách: <span
+class="math inline">\(5\cdot 4=20\)</span> số. <em>Trường hợp 2:</em>
+<span class="math inline">\(c\in\{2;4\}\)</span> (<span
+class="math inline">\(2\)</span> cách). Khi đó <span
+class="math inline">\(a\neq 0\)</span> và <span
+class="math inline">\(a\neq c\)</span> nên <span
+class="math inline">\(a\)</span> có <span
+class="math inline">\(4\)</span> cách; <span
+class="math inline">\(b\)</span> khác <span
+class="math inline">\(a\)</span> và <span
+class="math inline">\(c\)</span> nên có <span
+class="math inline">\(4\)</span> cách: <span
+class="math inline">\(2\cdot 4\cdot 4=32\)</span> số.</p></li><li><p>Hai trường hợp không có số chung nên có <span
+class="math inline">\(20+32=52\)</span> số chẵn.</p></li><li><p><em>Kiểm tra bằng cách đếm số lẻ:</em> <span
+class="math inline">\(c\in\{1;3;5\}\)</span> (<span
+class="math inline">\(3\)</span> cách), <span
+class="math inline">\(a\)</span> có <span
+class="math inline">\(4\)</span> cách, <span
+class="math inline">\(b\)</span> có <span
+class="math inline">\(4\)</span> cách, được <span
+class="math inline">\(48\)</span> số lẻ. Và <span
+class="math inline">\(100-48=52\)</span>, khớp.</p></li></ol></details></article>
 <aside class="box method"><div class="box-title">Cách làm (đếm có ràng buộc)</div><ol><li><p>Tìm vị trí bị ràng buộc nhiều nhất (chữ số <span
 class="math inline">\(0\)</span> đứng đầu, chữ số cuối chẵn) và xử lý nó
 trước.</p></li><li><p>Nếu một lựa chọn làm số cách ở sau thay đổi (như cuối <span
@@ -297,7 +369,40 @@ class="math inline">\(2\)</span>. Số cách để <span
 class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>
 cạnh nhau là <span class="math inline">\(2\cdot 720=1440\)</span>.</p></div><div class="step"><p>"Không cạnh nhau" là phần bù: <span
 class="math inline">\(5040-1440=3600\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(1440\)</span> cách (cạnh nhau); <span
-class="math inline">\(3600\)</span> cách (không cạnh nhau).</p></div></div></article>
+class="math inline">\(3600\)</span> cách (không cạnh nhau).</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Hãy coi <span class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> là một cặp bạn thân dính nhau như sinh
+đôi, đi đâu cũng đi cùng. Khi xếp hàng, ta coi hai bạn là <strong>một
+“cục”</strong>. Lúc đó chỉ còn <span class="math inline">\(6\)</span>
+đơn vị để xếp: cục <span class="math inline">\(AB\)</span> và <span
+class="math inline">\(5\)</span> người kia.</p></p><p><p>Nhưng trong cục, <span class="math inline">\(A\)</span> đứng bên trái
+hay <span class="math inline">\(B\)</span> đứng bên trái đều được, nên
+mỗi cách xếp phải <strong>nhân đôi</strong>.</p></p><p><p>Câu “không đứng cạnh nhau” khó đếm trực tiếp. Cách khôn hơn là lấy
+<em>tất cả</em> các cách xếp, rồi bỏ đi các cách <em>đứng cạnh
+nhau</em>. Đó là mẹo <strong>đếm phần còn lại</strong>.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Xếp <span class="math inline">\(7\)</span> người vào <span
+class="math inline">\(7\)</span> vị trí: người thứ nhất có <span
+class="math inline">\(7\)</span> cách, người thứ hai <span
+class="math inline">\(6\)</span> cách, …, người cuối <span
+class="math inline">\(1\)</span> cách. Tổng cộng <span
+class="math inline">\(7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1=5040\)</span>
+cách.</p></li><li><p><strong><span class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> cạnh nhau.</strong> Hai người chiếm hai
+vị trí liền nhau; có <span class="math inline">\(6\)</span> cặp vị trí
+liền nhau (vị trí <span class="math inline">\(1\)</span>–<span
+class="math inline">\(2\)</span>, <span
+class="math inline">\(2\)</span>–<span class="math inline">\(3\)</span>,
+…, <span class="math inline">\(6\)</span>–<span
+class="math inline">\(7\)</span>). Với mỗi cặp vị trí, <span
+class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> đổi chỗ cho nhau được: <span
+class="math inline">\(2\)</span> cách. Năm người còn lại xếp vào <span
+class="math inline">\(5\)</span> vị trí còn lại: <span
+class="math inline">\(5\cdot4\cdot3\cdot2\cdot1=120\)</span> cách. Vậy
+có <span class="math inline">\(6\cdot2\cdot120=1440\)</span> cách.</p></li><li><p><strong><span class="math inline">\(A\)</span> và <span
+class="math inline">\(B\)</span> không cạnh nhau.</strong> Lấy tất cả
+trừ đi các cách cạnh nhau: <span
+class="math inline">\(5040-1440=3600\)</span> cách.</p></li><li><p>(Cách trình bày này đếm theo <em>vị trí</em>, khác cách “buộc thành
+khối” ở lời giải trên; hai cách cho cùng kết quả nên đáp số đáng
+tin.)</p></li></ol></details></article>
 <article class="vd card" id="vd3"><div class="vd-head"><span class="tag">Ví dụ 3</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Một nhóm có <span class="math inline">\(10\)</span> người. (a) Chọn
 <span class="math inline">\(3\)</span> người đi dự lễ: có bao nhiêu
 cách? (b) Chọn một trưởng đoàn, một phó đoàn, một thư ký: có bao nhiêu
@@ -313,7 +418,32 @@ nhóm <span class="math inline">\(3\)</span> người cho <span
 class="math inline">\(3!\)</span> cách phân chức vụ.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
 <li><span class="math inline">\(120\)</span> cách; (b) <span
 class="math inline">\(720\)</span> cách.</li>
-</ol></div></div></article>
+</ol></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Hai câu hỏi dùng cùng <span class="math inline">\(10\)</span> người,
+chỉ khác đúng một chuyện: <strong>có phân vai không?</strong></p></p><p><p>Câu (b) phân ba vai khác nhau. Trưởng đoàn có <span
+class="math inline">\(10\)</span> lựa chọn, phó đoàn còn <span
+class="math inline">\(9\)</span>, thư ký còn <span
+class="math inline">\(8\)</span>. Nhân lại được <span
+class="math inline">\(720\)</span>.</p></p><p><p>Câu (a) chỉ chọn ba bạn đi cùng nhau, không phân vai. Ba bạn An,
+Bình, Chi đi dự lễ là <em>một nhóm</em> dù ta gọi tên ai trước. Trong
+<span class="math inline">\(720\)</span> cách ở câu (b), cùng một nhóm
+ba người bị đếm nhiều lần, vì ba người đó có thể nhận ba chức vụ theo
+<span class="math inline">\(3\cdot2\cdot1=6\)</span> cách. Muốn đếm mỗi
+nhóm một lần, ta <strong>chia <span class="math inline">\(720\)</span>
+cho <span class="math inline">\(6\)</span></strong>, được <span
+class="math inline">\(120\)</span>.</p></p><p><p>Ký hiệu <span class="math inline">\(C_{10}^3\)</span> chỉ là cách
+viết gọn của phép chia này.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p><strong>(b)</strong> Chọn trưởng đoàn: <span
+class="math inline">\(10\)</span> cách. Chọn phó đoàn trong <span
+class="math inline">\(9\)</span> người còn lại: <span
+class="math inline">\(9\)</span> cách. Chọn thư ký trong <span
+class="math inline">\(8\)</span> người còn lại: <span
+class="math inline">\(8\)</span> cách. Có <span
+class="math inline">\(10\cdot9\cdot8=720\)</span> cách.</p></li><li><p><strong>(a)</strong> Xét một nhóm <span
+class="math inline">\(3\)</span> người cố định. Phân ba chức vụ cho nhóm
+đó có <span class="math inline">\(3\cdot2\cdot1=6\)</span> cách. Vậy
+trong <span class="math inline">\(720\)</span> cách ở câu (b), mỗi nhóm
+<span class="math inline">\(3\)</span> người được đếm đúng <span
+class="math inline">\(6\)</span> lần.</p></li><li><p>Số nhóm <span class="math inline">\(3\)</span> người là <span
+class="math inline">\(720:6=120\)</span>.</p></li></ol></details></article>
 <aside class="box fix"><div class="box-title">Ghi chú sửa</div><p>Nhiều tài liệu dạy mẹo "tổ hợp là chọn, chỉnh hợp là xếp". Mẹo này
 sai khi đề không dùng chữ "chọn" hay "xếp" (ví dụ "lập ban gồm trưởng
 ban và phó ban"). Câu hỏi đáng tin cậy là: <strong>hoán đổi hai phần tử
@@ -328,7 +458,26 @@ class="math inline">\(\{a,b,c\}\)</span> và <span
 class="math inline">\(\{d,e,f\}\)</span>" và cách chia "<span
 class="math inline">\(\{d,e,f\}\)</span> và <span
 class="math inline">\(\{a,b,c\}\)</span>" là <strong>một</strong>. Mỗi
-cách chia bị đếm <span class="math inline">\(2\)</span> lần.</p></div><div class="step"><p>Vậy có <span class="math inline">\(20:2=10\)</span> cách.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(10\)</span> cách.</p></div></div></article>
+cách chia bị đếm <span class="math inline">\(2\)</span> lần.</p></div><div class="step"><p>Vậy có <span class="math inline">\(20:2=10\)</span> cách.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(10\)</span> cách.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Chỉ cần nhìn vào <strong>một bạn</strong>, gọi là An. An chắc chắn
+nằm trong một nhóm nào đó. Nhóm có An cần thêm hai bạn nữa, chọn từ
+<span class="math inline">\(5\)</span> bạn còn lại. Ba bạn còn lại tự
+động thành nhóm kia.</p></p><p><p>Vì nhóm không có tên, ta không cần phân biệt “nhóm của An” hay “nhóm
+kia”. Mỗi cách chọn hai bạn đi cùng An cho đúng một cách chia. Đây là
+mẹo <strong>“ghim” một người để khỏi đếm trùng</strong>.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Bạn An thuộc đúng một nhóm. Gọi đó là nhóm thứ nhất; nhóm thứ hai gồm
+<span class="math inline">\(3\)</span> bạn còn lại và hoàn toàn xác
+định.</p></li><li><p>Chọn <span class="math inline">\(2\)</span> bạn cùng nhóm với An
+trong <span class="math inline">\(5\)</span> bạn còn lại. Chọn lần lượt:
+bạn thứ nhất <span class="math inline">\(5\)</span> cách, bạn thứ hai
+<span class="math inline">\(4\)</span> cách, được <span
+class="math inline">\(5\cdot4=20\)</span>. Nhưng hai bạn <span
+class="math inline">\(B,C\)</span> chọn theo thứ tự “<span
+class="math inline">\(B\)</span> rồi <span
+class="math inline">\(C\)</span>” hay “<span
+class="math inline">\(C\)</span> rồi <span
+class="math inline">\(B\)</span>” là một, nên mỗi cặp bị đếm <span
+class="math inline">\(2\)</span> lần: <span
+class="math inline">\(20:2=10\)</span>.</p></li><li><p>Mỗi cách chọn cặp bạn cùng An ứng với đúng một cách chia. Vậy có
+<span class="math inline">\(10\)</span> cách.</p></li></ol></details></article>
 <aside class="box mynote"><div class="box-title">Ghi chú của em</div><p>viết lại bằng lời của em, không nhìn bài. Vì sao ở Ví dụ 4 phải chia
 cho <span class="math inline">\(2\)</span>, còn ở Ví dụ 3(a) lại chia
 cho <span class="math inline">\(3!\)</span>?</p><textarea data-note="note1" rows="3" placeholder="Viết lại bằng lời của em..."></textarea><div class="muted small">Ghi chú được lưu trong trình duyệt của em.</div></aside>
@@ -363,7 +512,56 @@ C|=6\)</span> (chia hết cho <span
 class="math inline">\(15\)</span>).</p></div><div class="step"><p>Chia hết cho cả <span class="math inline">\(2,3,5\)</span> là chia
 hết cho <span class="math inline">\(30\)</span>: <span
 class="math inline">\(|A\cap B\cap C|=3\)</span>.</p></div><div class="step"><p>Áp dụng: <span
-class="math inline">\(50+33+20-16-10-6+3=74\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(74\)</span> số.</p></div></div></article>
+class="math inline">\(50+33+20-16-10-6+3=74\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(74\)</span> số.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Nếu đếm các số chia hết cho <span class="math inline">\(2\)</span>,
+rồi cho <span class="math inline">\(3\)</span>, rồi cho <span
+class="math inline">\(5\)</span> và cộng lại thì <strong>một số chia hết
+cho nhiều số sẽ bị đếm nhiều lần</strong>. Ví dụ <span
+class="math inline">\(6\)</span> chia hết cho cả <span
+class="math inline">\(2\)</span> và <span
+class="math inline">\(3\)</span> nên bị đếm hai lần, số <span
+class="math inline">\(30\)</span> bị đếm ba lần.</p></p><p><p>Hình dung ba vòng tròn chồng lên nhau (sơ đồ Ven). Cộng cả ba vòng
+thì phần chung của hai vòng bị tính hai lần, nên trừ đi một lần. Nhưng
+phần ở chính giữa (chung cả ba vòng) bị cộng ba lần rồi lại bị trừ ba
+lần, hóa ra không còn được tính, nên phải <strong>cộng lại một
+lần</strong>.</p></p><p><p>Muốn kiểm tra nhanh: đếm số <strong>không</strong> chia hết cho <span
+class="math inline">\(2\)</span>, <span
+class="math inline">\(3\)</span>, <span class="math inline">\(5\)</span>
+rồi lấy <span class="math inline">\(100\)</span> trừ đi.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Số các số từ <span class="math inline">\(1\)</span> đến <span
+class="math inline">\(100\)</span> chia hết cho <span
+class="math inline">\(2\)</span> là <span
+class="math inline">\(50\)</span>; cho <span
+class="math inline">\(3\)</span> là <span
+class="math inline">\(33\)</span> (vì <span
+class="math inline">\(99=3\cdot33\)</span>); cho <span
+class="math inline">\(5\)</span> là <span
+class="math inline">\(20\)</span>.</p></li><li><p>Chia hết cho cả <span class="math inline">\(2\)</span> và <span
+class="math inline">\(3\)</span> tức là chia hết cho <span
+class="math inline">\(6\)</span>: có <span
+class="math inline">\(16\)</span> số (vì <span
+class="math inline">\(96=6\cdot16\)</span>). Chia hết cho <span
+class="math inline">\(10\)</span>: <span
+class="math inline">\(10\)</span> số. Chia hết cho <span
+class="math inline">\(15\)</span>: <span
+class="math inline">\(6\)</span> số (vì <span
+class="math inline">\(90=15\cdot6\)</span>). Chia hết cho <span
+class="math inline">\(30\)</span>: <span
+class="math inline">\(3\)</span> số.</p></li><li><p>Gọi <span class="math inline">\(A,B,C\)</span> lần lượt là tập các số
+chia hết cho <span class="math inline">\(2,3,5\)</span>. Theo quy tắc bù
+trừ: <span class="math inline">\(|A\cup B\cup
+C|=50+33+20-16-10-6+3=74\)</span>.</p></li><li><p><em>Kiểm tra bằng đếm ngược:</em> trong mỗi khối <span
+class="math inline">\(30\)</span> số liên tiếp có đúng <span
+class="math inline">\(8\)</span> số không chia hết cho <span
+class="math inline">\(2,3,5\)</span> (đó là <span
+class="math inline">\(1,7,11,13,17,19,23,29\)</span> và các số hơn kém
+<span class="math inline">\(30\)</span>). Ba khối <span
+class="math inline">\(1\)</span>–<span class="math inline">\(90\)</span>
+cho <span class="math inline">\(24\)</span> số; trong <span
+class="math inline">\(91\)</span>–<span
+class="math inline">\(100\)</span> còn <span
+class="math inline">\(91\)</span> và <span
+class="math inline">\(97\)</span>. Tổng <span
+class="math inline">\(26\)</span> số. Và <span
+class="math inline">\(100-26=74\)</span>, khớp.</p></li></ol></details></article>
 <aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Chỉ cộng <span class="math inline">\(50+33+20=103\)</span>, lớn hơn
 cả <span class="math inline">\(100\)</span>, là dấu hiệu đã đếm trùng.
 Khi tổng các phần lớn hơn toàn bộ, em cần bù trừ.</p></aside>
@@ -422,7 +620,40 @@ M_6Y_4,\ M_7Y_5\)</span>. Các trận giữa <span
 class="math inline">\(5\)</span> đội yếu: hòa hết. Điểm <span
 class="math inline">\(5\)</span> đội yếu là <span
 class="math inline">\(6,6,5,5,5\)</span>, tổng <span
-class="math inline">\(27\)</span>. Thỏa đề.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(n=12\)</span>.</p></div></div></article>
+class="math inline">\(27\)</span>. Thỏa đề.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(n=12\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Mỗi trận đấu luôn “phát” đúng <span class="math inline">\(2\)</span>
+điểm cho hai đội: thắng thì <span class="math inline">\(2-0\)</span>,
+hòa thì <span class="math inline">\(1-1\)</span>. Vì vậy <strong>tổng
+điểm cả giải không phụ thuộc kết quả từng trận</strong>, chỉ phụ thuộc
+số trận. Có <span class="math inline">\(\frac{n(n-1)}2\)</span> trận nên
+tổng điểm là <span class="math inline">\(n(n-1)\)</span>.</p></p><p><p>Phương trình <span class="math inline">\((n-5)x+27=n(n-1)\)</span> có
+hai ẩn, nhưng <span class="math inline">\(n,x\)</span> là số nguyên. Ta
+biến nó thành <strong>tích bằng <span
+class="math inline">\(7\)</span></strong>. Mà <span
+class="math inline">\(7\)</span> là số nguyên tố, chỉ có ước <span
+class="math inline">\(1\)</span> và <span
+class="math inline">\(7\)</span>, nên số trường hợp rất ít.</p></p><p><p>Tìm được <span class="math inline">\(n=12\)</span> vẫn chưa xong.
+Phải <strong>dựng ra một giải đấu thật</strong> có đúng điểm như vậy.
+Nếu không dựng được thì đáp số chỉ là “số thỏa phương trình” chứ chưa
+chắc là đáp án của bài toán.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Có <span class="math inline">\(\dfrac{n(n-1)}{2}\)</span> trận, mỗi
+trận hai đội được tổng cộng <span class="math inline">\(2\)</span> điểm
+nên tổng điểm của giải là <span
+class="math inline">\(n(n-1)\)</span>.</p></li><li><p>Gọi <span class="math inline">\(x\)</span> là điểm của mỗi đội trong
+nhóm <span class="math inline">\(n-5\)</span> đội. Khi đó <span
+class="math inline">\((n-5)x+27=n(n-1)\)</span>. Vì <span
+class="math inline">\(n^2-n-27=(n-5)(n+4)-7\)</span> nên <span
+class="math inline">\((n-5)(n+4-x)=7\)</span>.</p></li><li><p>Vì <span class="math inline">\(n-5\)</span> là số nguyên dương và là
+ước của <span class="math inline">\(7\)</span> nên <span
+class="math inline">\(n-5=1\)</span> hoặc <span
+class="math inline">\(n-5=7\)</span>. Trường hợp <span
+class="math inline">\(n-5=1\)</span> chỉ có một đội trong nhóm “các đội
+bằng điểm nhau”, nên loại. Vậy <span class="math inline">\(n=12\)</span>
+và <span class="math inline">\(x=15\)</span>.</p></li><li><p><strong>Phải kiểm tra giải tồn tại</strong> (phần này thường bị bỏ
+sót và mất điểm): trình bày bảng kết quả cụ thể như ở bước <span
+class="math inline">\(7\)</span> của lời giải trên, chỉ ra <span
+class="math inline">\(7\)</span> đội mạnh đều được <span
+class="math inline">\(15\)</span> điểm và <span
+class="math inline">\(5\)</span> đội yếu được tổng <span
+class="math inline">\(27\)</span> điểm.</p></li></ol></details></article>
 <aside class="box real"><div class="box-title">Đề thật</div><p>Ví dụ 6 là Câu 5.1 của đề HSG Toán 9 TP.HCM 2025–2026. Tài liệu hướng
 dẫn kèm đề chỉ thử lại <span class="math inline">\(x=15\)</span>. Bước
 dựng giải (bước cuối ở trên) là phần tôi bổ sung, vì bài "tìm <span
@@ -596,6 +827,12 @@ nghiệm nguyên), rồi tính xác suất bằng tỉ số của hai phép đ�
 dạy đếm bằng <strong>vách ngăn</strong>, tính xác suất bằng <strong>biến
 cố đối</strong>, và tránh một sai lầm rất hay gặp: coi mọi cách chia đều
 có khả năng xảy ra như nhau.</p></p>
+ <aside class="box note"><div class="box-title">Cách đọc mỗi ví dụ</div><p>Mỗi ví dụ có ba lớp: <strong>(1)</strong> lời giải từng bước (dùng
+công thức tổ hợp, để kiểm tra nhanh đáp số); <strong>(2)</strong> giải
+thích kiểu Feynman (nói bằng lời thường, như dạy lại cho một bạn nhỏ
+hơn); <strong>(3)</strong> cách trình bày khi đi thi lớp 9 (chỉ dùng quy
+tắc nhân, chia trường hợp, liệt kê, đếm ngược, không cần công thức tổ
+hợp). Đi thi, em trình bày theo lớp (3).</p></aside>
  <div class="chips">
   <span class="chip">⏱ 90 phút</span><span class="chip">📘 7 ví dụ từng bước</span>
   <span class="chip">🧪 2 công cụ</span><span class="chip">📝 8 bài luyện</span>
@@ -652,7 +889,36 @@ class="math inline">\(x_1+x_2+x_3+x_4=10\)</span>.</p></div><div class="step"><p
 class="math inline">\(3\)</span> vách: hàng có <span
 class="math inline">\(10+3=13\)</span> vị trí.</p></div><div class="step"><p>Chọn <span class="math inline">\(3\)</span> vị trí cho vách: <span
 class="math inline">\(C_{13}^3=\dfrac{13\cdot 12\cdot
-11}{3!}=286\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(286\)</span> cách.</p></div></div></article>
+11}{3!}=286\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(286\)</span> cách.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Xếp <span class="math inline">\(10\)</span> viên kẹo thành một hàng
+ngang: <span
+class="math inline">\(\star\star\star\star\star\star\star\star\star\star\)</span>.
+Muốn chia cho <span class="math inline">\(4\)</span> bạn thì ta chỉ cần
+<strong>đặt <span class="math inline">\(3\)</span> vách ngăn</strong> để
+cắt hàng thành <span class="math inline">\(4\)</span> đoạn: đoạn thứ
+nhất cho bạn thứ nhất, và cứ thế. Ví dụ <span
+class="math inline">\(\star\star\,|\,\star\star\star\star\,|\,\star\,|\,\star\star\star\)</span>
+nghĩa là các bạn nhận <span class="math inline">\(2,4,1,3\)</span>
+viên.</p></p><p><p>Hai vách đứng liền nhau thì bạn ở giữa nhận <span
+class="math inline">\(0\)</span> viên, vách đứng đầu hàng thì bạn đầu
+nhận <span class="math inline">\(0\)</span> viên. Vậy mỗi cách chia ứng
+với đúng một cách chọn <span class="math inline">\(3\)</span> chỗ cho
+vách trong <span class="math inline">\(13\)</span> vị trí (cả sao lẫn
+vách). Đó là lý do ra <span class="math inline">\(C_{13}^3\)</span>.</p></p><p><p>Khi chưa học công thức tổ hợp, em vẫn đếm được bằng cách chia theo
+từng lớp (xem bên dưới).</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Gọi <span class="math inline">\(k\)</span> là số kẹo của bạn thứ tư
+(<span class="math inline">\(k=0;1;\dots;10\)</span>). Còn <span
+class="math inline">\(s=10-k\)</span> viên chia cho ba bạn đầu.</p></li><li><p>Đếm số cách chia <span class="math inline">\(s\)</span> viên cho ba
+bạn (được nhận <span class="math inline">\(0\)</span>): bạn thứ ba nhận
+<span class="math inline">\(j\)</span> viên (<span
+class="math inline">\(j=0;1;\dots;s\)</span>), khi đó hai bạn còn lại
+chia <span class="math inline">\(s-j\)</span> viên, mà bạn thứ nhất nhận
+<span class="math inline">\(0;1;\dots;s-j\)</span> nên có <span
+class="math inline">\(s-j+1\)</span> cách. Tổng <span
+class="math inline">\((s+1)+s+\dots+2+1=\dfrac{(s+1)(s+2)}{2}\)</span>
+cách.</p></li><li><p>Với <span class="math inline">\(s=0;1;2;\dots;10\)</span> ta được
+<span class="math inline">\(1;3;6;10;15;21;28;36;45;55;66\)</span>
+cách.</p></li><li><p>Cộng lại: <span
+class="math inline">\(1+3+6+10+15+21+28+36+45+55+66=286\)</span> cách.
+Khớp với <span class="math inline">\(C_{13}^3=286\)</span>.</p></li></ol></details></article>
 <article class="vd card" id="b2-vd2"><div class="vd-head"><span class="tag">Ví dụ 2</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Vẫn <span class="math inline">\(10\)</span> chiếc kẹo giống nhau và
 <span class="math inline">\(4\)</span> bạn, nhưng <strong>mỗi bạn nhận
 ít nhất <span class="math inline">\(1\)</span> chiếc</strong>. Có bao
@@ -662,7 +928,24 @@ class="math inline">\(6\)</span> chiếc để chia tự do.</p></div><div class
 0\)</span>. Khi đó <span
 class="math inline">\(y_1+y_2+y_3+y_4=10-4=6\)</span>.</p></div><div class="step"><p>Số nghiệm không âm của phương trình này là <span
 class="math inline">\(C_{6+3}^{3}=C_9^3=\dfrac{9\cdot 8\cdot
-7}{3!}=84\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(84\)</span> cách.</p></div></div></article>
+7}{3!}=84\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(84\)</span> cách.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Câu này giống ví dụ trước, chỉ thêm luật “bạn nào cũng phải có kẹo”.
+Cách xử lý đơn giản nhất: <strong>phát trước cho mỗi bạn đúng <span
+class="math inline">\(1\)</span> viên</strong> để ai cũng thỏa luật. Hết
+<span class="math inline">\(4\)</span> viên, còn <span
+class="math inline">\(6\)</span> viên.</p></p><p><p>Sau đó <span class="math inline">\(6\)</span> viên còn lại chia tự do
+(ai cũng được <span class="math inline">\(0\)</span> thêm). Bài toán trở
+về dạng ví dụ <span class="math inline">\(1\)</span>, chỉ nhỏ hơn.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Phát trước cho mỗi bạn <span class="math inline">\(1\)</span> viên.
+Còn <span class="math inline">\(10-4=6\)</span> viên chia cho <span
+class="math inline">\(4\)</span> bạn, bạn nào cũng có thể nhận thêm
+<span class="math inline">\(0\)</span> viên.</p></li><li><p>Làm như ví dụ <span class="math inline">\(1\)</span> với <span
+class="math inline">\(6\)</span> viên: gọi <span
+class="math inline">\(k\)</span> là số viên thêm của bạn thứ tư (<span
+class="math inline">\(k=0;\dots;6\)</span>), <span
+class="math inline">\(s=6-k\)</span> viên chia cho ba bạn đầu có <span
+class="math inline">\(\dfrac{(s+1)(s+2)}{2}\)</span> cách.</p></li><li><p>Với <span class="math inline">\(s=0;1;\dots;6\)</span> ta được <span
+class="math inline">\(1;3;6;10;15;21;28\)</span>. Cộng lại: <span
+class="math inline">\(84\)</span> cách. Khớp với <span
+class="math inline">\(C_9^3=84\)</span>.</p></li></ol></details></article>
 <aside class="box method"><div class="box-title">Cách làm (chia kẹo có điều kiện &quot;ít nhất&quot;)</div><ol><li><p>Đặt <span class="math inline">\(y_i=x_i-m_i\)</span> với <span
 class="math inline">\(m_i\)</span> là mức tối thiểu của người thứ <span
 class="math inline">\(i\)</span>.</p></li><li><p>Tính tổng mới <span
@@ -692,7 +975,43 @@ class="math inline">\(|A_i|=C_6^2=15\)</span>.</p></div><div class="step"><p>Hai
 chiếc cần ít nhất <span class="math inline">\(12&gt;10\)</span> chiếc,
 không xảy ra: <span class="math inline">\(|A_i\cap A_j|=0\)</span>.</p></div><div class="step"><p>Bù trừ: số cách vi phạm là <span class="math inline">\(3\cdot
 15-0=45\)</span>.</p></div><div class="step"><p>Số cách chia thỏa đề: <span
-class="math inline">\(66-45=21\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(21\)</span> cách.</p></div></div></article>
+class="math inline">\(66-45=21\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(21\)</span> cách.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Có hai cách nghĩ. Cách của lời giải trên: đếm <em>tất cả</em> rồi
+<strong>trừ các cách vi phạm</strong> (có bạn nhận từ <span
+class="math inline">\(6\)</span> viên trở lên).</p></p><p><p>Cách thứ hai dễ hiểu hơn khi số nhỏ: <strong>liệt kê luôn</strong>.
+Tổng chỉ có <span class="math inline">\(10\)</span> viên mà mỗi bạn
+không quá <span class="math inline">\(5\)</span> viên, nên các bộ số rất
+ít. Ta liệt kê theo số viên của bạn thứ nhất, rồi xem hai bạn còn lại
+phải nhận bao nhiêu.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Gọi số viên của ba bạn là <span
+class="math inline">\((a;b;c)\)</span> với <span
+class="math inline">\(a+b+c=10\)</span> và <span
+class="math inline">\(0\le a,b,c\le5\)</span>. Liệt kê theo <span
+class="math inline">\(a\)</span> (khi đó <span
+class="math inline">\(b+c=10-a\)</span> và <span
+class="math inline">\(b,c\le5\)</span>):</p></li><li><p><span class="math inline">\(a=0\)</span>: <span
+class="math inline">\(b+c=10\)</span> chỉ có <span
+class="math inline">\((5;5)\)</span>: <span
+class="math inline">\(1\)</span> cách. <span
+class="math inline">\(\;a=1\)</span>: <span
+class="math inline">\(b+c=9\)</span> có <span
+class="math inline">\((4;5),(5;4)\)</span>: <span
+class="math inline">\(2\)</span> cách. <span
+class="math inline">\(\;a=2\)</span>: <span
+class="math inline">\(b+c=8\)</span> có <span
+class="math inline">\((3;5),(4;4),(5;3)\)</span>: <span
+class="math inline">\(3\)</span> cách.</p></li><li><p><span class="math inline">\(a=3\)</span>: <span
+class="math inline">\(b+c=7\)</span> có <span
+class="math inline">\((2;5),\dots,(5;2)\)</span>: <span
+class="math inline">\(4\)</span> cách. <span
+class="math inline">\(\;a=4\)</span>: <span
+class="math inline">\(b+c=6\)</span> có <span
+class="math inline">\((1;5),\dots,(5;1)\)</span>: <span
+class="math inline">\(5\)</span> cách. <span
+class="math inline">\(\;a=5\)</span>: <span
+class="math inline">\(b+c=5\)</span> có <span
+class="math inline">\((0;5),\dots,(5;0)\)</span>: <span
+class="math inline">\(6\)</span> cách.</p></li><li><p>Tổng cộng <span class="math inline">\(1+2+3+4+5+6=21\)</span> cách.
+Khớp với <span class="math inline">\(66-45=21\)</span> ở lời giải
+trên.</p></li></ol></details></article>
 <aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Quên rằng mỗi biến cũng bị giới hạn <strong>trên</strong>. Đếm <span
 class="math inline">\(C_{12}^2=66\)</span> rồi dừng lại là đếm cả cách
 chia <span class="math inline">\((10;0;0)\)</span>, trong đó một bạn
@@ -737,7 +1056,48 @@ class="math inline">\(0\)</span>.</p></div><div class="step"><p>Cùng nhóm: <sp
 class="math inline">\(C_6^3+C_7^3+C_7^3=20+35+35=90\)</span>. Mỗi nhóm
 một số: <span class="math inline">\(6\cdot 7\cdot 7=294\)</span>. Vậy
 <span class="math inline">\(n(A)=384\)</span>.</p></div><div class="step"><p><span
-class="math inline">\(P(A)=\dfrac{384}{1140}=\dfrac{32}{95}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{32}{95}\)</span>.</p></div></div></article>
+class="math inline">\(P(A)=\dfrac{384}{1140}=\dfrac{32}{95}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{32}{95}\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Chia <span class="math inline">\(20\)</span> số vào <strong>ba
+“phòng”</strong> theo số dư khi chia cho <span
+class="math inline">\(3\)</span>: phòng <span
+class="math inline">\(0\)</span> (các số <span
+class="math inline">\(3,6,\dots,18\)</span>: <span
+class="math inline">\(6\)</span> số), phòng <span
+class="math inline">\(1\)</span> (<span
+class="math inline">\(1,4,\dots,19\)</span>: <span
+class="math inline">\(7\)</span> số), phòng <span
+class="math inline">\(2\)</span> (<span
+class="math inline">\(2,5,\dots,20\)</span>: <span
+class="math inline">\(7\)</span> số).</p></p><p><p>Tổng ba số chia hết cho <span class="math inline">\(3\)</span> khi
+“số dư cộng lại” chia hết cho <span class="math inline">\(3\)</span>. Có
+hai kiểu: <strong>cả ba số ở cùng một phòng</strong> (<span
+class="math inline">\(0+0+0\)</span>, <span
+class="math inline">\(1+1+1=3\)</span>, <span
+class="math inline">\(2+2+2=6\)</span>) hoặc <strong>mỗi phòng đúng một
+số</strong> (<span class="math inline">\(0+1+2=3\)</span>). Các kiểu
+khác như <span class="math inline">\(0+0+1\)</span> hay <span
+class="math inline">\(1+1+2\)</span> đều không chia hết.</p></p><p><p>Chọn <span class="math inline">\(3\)</span> số “cùng lúc” nghĩa là
+không quan tâm thứ tự, nên mỗi bộ ba bị đếm <span
+class="math inline">\(6\)</span> lần nếu ta chọn lần lượt. Cho nên ta
+chia cho <span class="math inline">\(6\)</span>.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p><strong>Số cách chọn:</strong> chọn lần lượt <span
+class="math inline">\(3\)</span> số khác nhau: <span
+class="math inline">\(20\cdot19\cdot18=6840\)</span>. Mỗi bộ ba số bị
+đếm <span class="math inline">\(3\cdot2\cdot1=6\)</span> lần nên <span
+class="math inline">\(n(\Omega)=6840:6=1140\)</span>.</p></li><li><p>Gọi <span class="math inline">\(A\)</span> là biến cố “tổng chia hết
+cho <span class="math inline">\(3\)</span>”. Các số dư của ba số có thể
+là <span
+class="math inline">\(\{0,0,0\},\{1,1,1\},\{2,2,2\},\{0,1,2\}\)</span>
+(tổng dư <span class="math inline">\(0,3,6,3\)</span> đều chia hết cho
+<span class="math inline">\(3\)</span>). Các kiểu còn lại <span
+class="math inline">\(\{0,0,1\},\{0,0,2\},\{1,1,0\},\{1,1,2\},\{2,2,0\},\{2,2,1\}\)</span>
+có tổng dư <span class="math inline">\(1,2,2,4,4,5\)</span> đều không
+chia hết cho <span class="math inline">\(3\)</span>.</p></li><li><p>Ba số cùng phòng <span class="math inline">\(0\)</span>: <span
+class="math inline">\(6\cdot5\cdot4:6=20\)</span> bộ. Cùng phòng <span
+class="math inline">\(1\)</span>: <span
+class="math inline">\(7\cdot6\cdot5:6=35\)</span> bộ. Cùng phòng <span
+class="math inline">\(2\)</span>: <span
+class="math inline">\(35\)</span> bộ. Mỗi phòng một số: <span
+class="math inline">\(6\cdot7\cdot7=294\)</span> bộ.</p></li><li><p><span class="math inline">\(n(A)=20+35+35+294=384\)</span> và <span
+class="math inline">\(P(A)=\dfrac{384}{1140}=\dfrac{32}{95}\)</span>.</p></li></ol></details></article>
 <article class="vd card" id="b2-vd5"><div class="vd-head"><span class="tag">Ví dụ 5</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Năm người được chọn ngẫu nhiên. Coi mỗi người sinh vào một trong
 <span class="math inline">\(12\)</span> tháng với khả năng như nhau, các
 người độc lập. Tính xác suất để <strong>có ít nhất hai người cùng tháng
@@ -749,7 +1109,29 @@ tháng sinh <strong>đôi một khác nhau</strong>.</p></div><div class="step">
 9\cdot 8=95040\)</span>, nên <span
 class="math inline">\(P(\overline{A})=\dfrac{95040}{248832}=\dfrac{55}{144}\)</span>.</p></div><div class="step"><p><span
 class="math inline">\(P(A)=1-\dfrac{55}{144}=\dfrac{89}{144}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{89}{144}\)</span> (khoảng <span
-class="math inline">\(0{,}62\)</span>).</p></div></div></article>
+class="math inline">\(0{,}62\)</span>).</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>“Ít nhất hai người cùng tháng sinh” gồm rất nhiều kiểu (hai người
+trùng, ba người trùng, hai cặp trùng, …). Đếm hết thì rất rối. Ngược
+lại, “<strong>không ai trùng</strong>” chỉ có một kiểu: năm người, năm
+tháng khác nhau.</p></p><p><p>Vì vậy ta tính xác suất “không ai trùng” rồi lấy <span
+class="math inline">\(1\)</span> trừ đi. Đó là mẹo <strong>“đếm
+ngược”</strong> dùng cho mọi câu có chữ “ít nhất”.</p></p><p><p>Cách tưởng tượng: người thứ nhất tùy chọn tháng (<span
+class="math inline">\(12\)</span> cách), người thứ hai phải tránh tháng
+của người trước (<span class="math inline">\(11\)</span> cách), …, người
+thứ năm còn <span class="math inline">\(8\)</span> cách.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Mỗi người có <span class="math inline">\(12\)</span> cách chọn tháng
+sinh, có <span class="math inline">\(5\)</span> người, theo quy tắc nhân
+<span class="math inline">\(n(\Omega)=12^5=248832\)</span>.</p></li><li><p>Gọi <span class="math inline">\(A\)</span> là biến cố “có ít nhất hai
+người cùng tháng sinh”, khi đó <span
+class="math inline">\(\overline{A}\)</span> là “năm người sinh ở năm
+tháng đôi một khác nhau”.</p></li><li><p>Người thứ nhất có <span class="math inline">\(12\)</span> cách, người
+thứ hai <span class="math inline">\(11\)</span> cách, người thứ ba <span
+class="math inline">\(10\)</span> cách, người thứ tư <span
+class="math inline">\(9\)</span> cách, người thứ năm <span
+class="math inline">\(8\)</span> cách: <span
+class="math inline">\(n(\overline{A})=12\cdot11\cdot10\cdot9\cdot8=95040\)</span>.
+Rút gọn (chia cả hai số cho <span class="math inline">\(1728\)</span>):
+<span
+class="math inline">\(P(\overline{A})=\dfrac{95040}{248832}=\dfrac{55}{144}\)</span>.</p></li><li><p><span
+class="math inline">\(P(A)=1-P(\overline{A})=1-\dfrac{55}{144}=\dfrac{89}{144}\)</span>.</p></li></ol></details></article>
 <aside class="box note"><div class="box-title">Giả thiết mô hình</div><p>Đề nói "coi mỗi tháng như nhau", nên ta mới được dùng <span
 class="math inline">\(12^5\)</span> kết quả đồng khả năng. Thực tế số
 người sinh mỗi tháng không đều; khi đề không nêu giả thiết, em cần tự
@@ -790,7 +1172,31 @@ lại. <span class="math inline">\(|A\cap B\cap C|=0\)</span> vì mỗi viên
 phải có người nhận.</p></div><div class="step"><p>Bù trừ: số kết quả có bạn không nhận gì là <span
 class="math inline">\(3\cdot 64-3\cdot 1+0=189\)</span>. Số kết quả
 thuận lợi: <span class="math inline">\(729-189=540\)</span>.</p></div><div class="step"><p><span
-class="math inline">\(P=\dfrac{540}{729}=\dfrac{20}{27}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{20}{27}\)</span>.</p></div></div></article>
+class="math inline">\(P=\dfrac{540}{729}=\dfrac{20}{27}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{20}{27}\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Mỗi viên kẹo “tự chọn” một trong ba bạn, nên một kết quả giống như
+một dãy <span class="math inline">\(6\)</span> chữ cái, mỗi chữ là A, B
+hoặc C. Ví dụ AABCCA nghĩa là viên <span
+class="math inline">\(1,2,6\)</span> về An, viên <span
+class="math inline">\(3\)</span> về Bình, viên <span
+class="math inline">\(4,5\)</span> về Chi. Có <span
+class="math inline">\(3^6=729\)</span> dãy.</p></p><p><p>Câu “<strong>mỗi bạn nhận ít nhất một viên</strong>” khó đếm trực
+tiếp. Ta đếm ngược: những dãy mà <em>có một bạn trắng tay</em>.</p></p><p><p>Dãy mà An trắng tay: chỉ dùng chữ B, C nên có <span
+class="math inline">\(2^6=64\)</span> dãy. Cộng cho ba bạn được <span
+class="math inline">\(3\cdot64=192\)</span>. Nhưng dãy chỉ toàn B (An và
+Chi đều trắng tay) bị đếm hai lần, nên phải trừ bớt. Đó là bù trừ.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Mỗi viên có <span class="math inline">\(3\)</span> cách chọn người
+nhận, <span class="math inline">\(6\)</span> viên nên <span
+class="math inline">\(n(\Omega)=3^6=729\)</span> kết quả đồng khả
+năng.</p></li><li><p>Gọi <span class="math inline">\(A,B,C\)</span> là các biến cố “An
+(Bình, Chi) không nhận viên nào”. Khi An không nhận, mỗi viên chỉ có
+<span class="math inline">\(2\)</span> cách: <span
+class="math inline">\(|A|=2^6=64\)</span>; tương tự <span
+class="math inline">\(|B|=|C|=64\)</span>.</p></li><li><p>An và Bình cùng không nhận thì mọi viên về Chi: <span
+class="math inline">\(|A\cap B|=1\)</span>; tương tự hai cặp còn lại. Cả
+ba cùng không nhận là không thể: <span class="math inline">\(|A\cap
+B\cap C|=0\)</span>.</p></li><li><p>Số kết quả có bạn trắng tay: <span
+class="math inline">\(3\cdot64-3\cdot1+0=189\)</span>. Số kết quả thuận
+lợi: <span class="math inline">\(729-189=540\)</span>.</p></li><li><p><span
+class="math inline">\(P=\dfrac{540}{729}=\dfrac{20}{27}\)</span> (chia
+cả hai số cho <span class="math inline">\(27\)</span>).</p></li></ol></details></article>
 <aside class="box fix"><div class="box-title">Ghi chú sửa</div><p>Cách làm sai quen thuộc: "Chia <span class="math inline">\(6\)</span>
 kẹo giống nhau cho <span class="math inline">\(3\)</span> bạn có <span
 class="math inline">\(C_8^2=28\)</span> cách, trong đó mỗi bạn nhận ít
@@ -846,7 +1252,51 @@ class="math inline">\(b\ge 6\)</span> nên <span
 class="math inline">\(a\ge 12&gt;9\)</span>, không có bộ nào. Vậy <span
 class="math inline">\(n(A)=7\)</span>: <span
 class="math inline">\((4;2;1),(6;2;1),(8;2;1),(6;3;1),(9;3;1),(8;4;1),(8;4;2)\)</span>.</p></div><div class="step"><p><span
-class="math inline">\(P(A)=\dfrac{7}{504}=\dfrac{1}{72}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{1}{72}\)</span>.</p></div></div></article>
+class="math inline">\(P(A)=\dfrac{7}{504}=\dfrac{1}{72}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{1}{72}\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Ba số phải “chia hết dây chuyền”: số của Phúc là bội của số Lộc, số
+của Lộc là bội của số Thọ. Mà ba số khác nhau nên <strong>mỗi bước phải
+ít nhất gấp đôi</strong> (vì bội nhỏ nhất khác chính nó là gấp <span
+class="math inline">\(2\)</span> lần).</p></p><p><p>Vậy số lớn nhất ít nhất gấp <span class="math inline">\(4\)</span>
+lần số nhỏ nhất. Số lớn nhất không vượt quá <span
+class="math inline">\(9\)</span> nên số nhỏ nhất chỉ có thể là <span
+class="math inline">\(1\)</span> hoặc <span
+class="math inline">\(2\)</span>. Còn rất ít khả năng, ta liệt kê
+hết.</p></p><p><p>Ý tưởng chung: khi điều kiện “ép” các số rất chặt thì <strong>đừng
+dùng công thức, hãy liệt kê có tổ chức</strong>.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Gọi <span class="math inline">\((a;b;c)\)</span> là các số của Phúc,
+Lộc, Thọ. Ba số đôi một khác nhau, chọn lần lượt có thứ tự: <span
+class="math inline">\(n(\Omega)=9\cdot8\cdot7=504\)</span>.</p></li><li><p>Cần <span class="math inline">\(b\mid a\)</span>, <span
+class="math inline">\(c\mid b\)</span>. Vì <span
+class="math inline">\(a\neq b\)</span> nên <span
+class="math inline">\(a\ge 2b\)</span>, và vì <span
+class="math inline">\(b\neq c\)</span> nên <span
+class="math inline">\(b\ge 2c\)</span>. Suy ra <span
+class="math inline">\(a\ge 2b\ge 4c\)</span>. Mà <span
+class="math inline">\(a\le 9\)</span> nên <span
+class="math inline">\(4c\le 9\)</span>, tức <span
+class="math inline">\(c\in\{1;2\}\)</span>.</p></li><li><p><em>Với <span class="math inline">\(c=1\)</span>:</em> <span
+class="math inline">\(b\ge2\)</span> và <span
+class="math inline">\(2b\le a\le9\)</span> nên <span
+class="math inline">\(b\in\{2;3;4\}\)</span>. <span
+class="math inline">\(b=2\)</span>: <span
+class="math inline">\(a\in\{4;6;8\}\)</span> (bội của <span
+class="math inline">\(2\)</span> từ <span
+class="math inline">\(4\)</span> đến <span
+class="math inline">\(9\)</span>): <span
+class="math inline">\(3\)</span> bộ. <span
+class="math inline">\(b=3\)</span>: <span
+class="math inline">\(a\in\{6;9\}\)</span>: <span
+class="math inline">\(2\)</span> bộ. <span
+class="math inline">\(b=4\)</span>: <span
+class="math inline">\(a=8\)</span>: <span
+class="math inline">\(1\)</span> bộ. Cộng: <span
+class="math inline">\(6\)</span> bộ.</p></li><li><p><em>Với <span class="math inline">\(c=2\)</span>:</em> <span
+class="math inline">\(b\)</span> là bội của <span
+class="math inline">\(2\)</span>, <span
+class="math inline">\(b\ge4\)</span> và <span
+class="math inline">\(2b\le9\)</span> nên <span
+class="math inline">\(b=4\)</span>, khi đó <span
+class="math inline">\(a=8\)</span>: <span
+class="math inline">\(1\)</span> bộ.</p></li><li><p><span class="math inline">\(n(A)=6+1=7\)</span> và <span
+class="math inline">\(P(A)=\dfrac{7}{504}=\dfrac{1}{72}\)</span>.</p></li></ol></details></article>
 <aside class="box real"><div class="box-title">Đề thật</div><p>Hướng dẫn chấm của Sở lấy <span
 class="math inline">\(n(\Omega)=9\cdot 8\cdot 7=504\)</span> (ba số đôi
 một khác nhau) và <span class="math inline">\(n(A)=7\)</span>, đáp số
@@ -997,6 +1447,12 @@ hiện ra. Buổi này luyện ba kiểu chọn lồng quen thuộc: theo <stron
 dư</strong>, theo <strong>loại</strong> (màu, nhóm), và theo <strong>cấu
 hình</strong> (tam giác, vòng 5), rồi dùng tất cả để giải một đề thật
 của Trường PTNK.</p></p>
+ <aside class="box note"><div class="box-title">Cách đọc mỗi ví dụ</div><p>Mỗi ví dụ có ba lớp: <strong>(1)</strong> lời giải từng bước (dùng
+công thức tổ hợp, để kiểm tra nhanh đáp số); <strong>(2)</strong> giải
+thích kiểu Feynman (nói bằng lời thường, như dạy lại cho một bạn nhỏ
+hơn); <strong>(3)</strong> cách trình bày khi đi thi lớp 9 (chỉ dùng quy
+tắc nhân, chia trường hợp, liệt kê, đếm ngược, không cần công thức tổ
+hợp). Đi thi, em trình bày theo lớp (3).</p></aside>
  <div class="chips">
   <span class="chip">⏱ 90 phút</span><span class="chip">📘 7 ví dụ từng bước</span>
   <span class="chip">🧪 2 công cụ</span><span class="chip">📝 8 bài luyện</span>
@@ -1068,7 +1524,25 @@ học sinh sinh trong tháng đó.</p></div><div class="step"><p>Nhận xét: kh
 vì <span class="math inline">\(41=5\cdot 4+7\cdot 3\)</span>, tức có thể
 chia <span class="math inline">\(41\)</span> em sao cho tháng nào cũng
 có nhiều nhất <span class="math inline">\(4\)</span> em.</p></div><div class="step ans"><b>Đáp số:</b> <p>Có ít nhất <span class="math inline">\(4\)</span> học sinh cùng tháng
-sinh (<span class="math inline">\(=\lceil 41/12\rceil\)</span>).</p></div></div></article>
+sinh (<span class="math inline">\(=\lceil 41/12\rceil\)</span>).</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Hình dung <span class="math inline">\(12\)</span> căn phòng, mỗi
+phòng ứng với một tháng sinh, và <span class="math inline">\(41\)</span>
+bạn học sinh bước vào phòng đúng với tháng sinh của mình.</p></p><p><p>Nếu mỗi phòng chỉ chứa nhiều nhất <span
+class="math inline">\(3\)</span> bạn thì cả <span
+class="math inline">\(12\)</span> phòng chứa được nhiều nhất <span
+class="math inline">\(12\cdot3=36\)</span> bạn. Nhưng có tới <span
+class="math inline">\(41\)</span> bạn, nên <strong>ít nhất <span
+class="math inline">\(5\)</span> bạn phải “tràn” vào các phòng đã đủ
+<span class="math inline">\(3\)</span> bạn</strong>. Vậy có phòng chứa
+từ <span class="math inline">\(4\)</span> bạn trở lên.</p></p><p><p>Cách lập luận “giả sử không đúng rồi dẫn đến vô lý” gọi là
+<strong>phản chứng</strong>. Đây là cách trình bày chuẩn của nguyên lý
+Dirichlet.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Có <span class="math inline">\(12\)</span> tháng sinh. Giả sử trái
+lại: không có tháng nào có ít nhất <span
+class="math inline">\(4\)</span> học sinh, tức mỗi tháng có nhiều nhất
+<span class="math inline">\(3\)</span> học sinh.</p></li><li><p>Khi đó số học sinh không vượt quá <span
+class="math inline">\(12\cdot3=36\)</span>. Điều này mâu thuẫn với giả
+thiết có <span class="math inline">\(41\)</span> học sinh.</p></li><li><p>Vậy giả sử sai, tức là có ít nhất một tháng có ít nhất <span
+class="math inline">\(4\)</span> học sinh cùng sinh trong tháng đó.
+<span class="math inline">\(\square\)</span></p></li></ol></details></article>
 <aside class="box method"><div class="box-title">Cách làm (bài Dirichlet)</div><ol><li><p>Gọi tên thỏ (các đối tượng đề cho) và lồng (tiêu chí phân loại).</p></li><li><p>Đếm: số thỏ <span class="math inline">\(&gt;k(m-1)\)</span> thì có
 lồng chứa ít nhất <span class="math inline">\(m\)</span> thỏ.</p></li><li><p>Hai thỏ cùng lồng phải thỏa điều kiện của đề.</p></li></ol></aside>
 <article class="vd card" id="b3-vd2"><div class="vd-head"><span class="tag">Ví dụ 2</span><span class="src">Nguồn: Sáng tác</span></div><div class="problem"><p>Một túi có <span class="math inline">\(10\)</span> viên bi đỏ, <span
@@ -1099,7 +1573,32 @@ người xui nhất phải lấy hết <span class="math inline">\(14\)</span> v
 không phải màu đỏ trước.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
 <li><span class="math inline">\(10\)</span> viên; b) <span
 class="math inline">\(18\)</span> viên.</li>
-</ol></div></div></article>
+</ol></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Chữ “<strong>chắc chắn</strong>” nghĩa là: dù người lấy bi <em>xui
+đến mức nào</em> thì vẫn đạt điều kiện. Vì vậy ta phải nghĩ như người
+xui nhất: lấy mãi mà vẫn chưa đủ.</p></p><p><p>Câu a): người xui nhất lấy mỗi màu đúng <span
+class="math inline">\(3\)</span> viên (đủ <span
+class="math inline">\(9\)</span> viên mà chưa có <span
+class="math inline">\(4\)</span> viên cùng màu). Viên tiếp theo chắc
+chắn làm một màu đủ <span class="math inline">\(4\)</span> viên.</p></p><p><p>Câu b): bi đỏ là “mục tiêu”. Người xui nhất sẽ lấy hết bi xanh và
+vàng trước (<span class="math inline">\(14\)</span> viên), rồi mới lấy
+<span class="math inline">\(3\)</span> viên đỏ. Cần thêm một viên nữa
+nên là <span class="math inline">\(18\)</span>.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p><strong>a)</strong> Trường hợp xấu nhất: lấy <span
+class="math inline">\(3\)</span> bi đỏ, <span
+class="math inline">\(3\)</span> bi xanh, <span
+class="math inline">\(3\)</span> bi vàng (<span
+class="math inline">\(9\)</span> viên) mà chưa có <span
+class="math inline">\(4\)</span> viên cùng màu. Khi lấy thêm viên thứ
+<span class="math inline">\(10\)</span>, viên này thuộc một trong ba màu
+nên màu đó đủ <span class="math inline">\(4\)</span> viên. Vậy cần lấy
+ít nhất <span class="math inline">\(10\)</span> viên (lấy <span
+class="math inline">\(9\)</span> viên thì chưa chắc chắn, nên <span
+class="math inline">\(10\)</span> là nhỏ nhất).</p></li><li><p><strong>b)</strong> Trường hợp xấu nhất: lấy hết <span
+class="math inline">\(8+6=14\)</span> viên không phải màu đỏ, rồi <span
+class="math inline">\(3\)</span> viên đỏ: <span
+class="math inline">\(17\)</span> viên mà chưa đủ <span
+class="math inline">\(4\)</span> viên đỏ. Khi lấy viên thứ <span
+class="math inline">\(18\)</span> thì chắc chắn là viên đỏ thứ tư. Vậy
+cần lấy ít nhất <span class="math inline">\(18\)</span> viên.</p></li></ol></details></article>
 <aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Lấy công thức <span class="math inline">\(k(m-1)+1\)</span> cho mọi
 bài. Công thức đúng khi <strong>mỗi lồng đủ chỗ</strong> (<span
 class="math inline">\(m-1\)</span> vật). Nếu có màu ít bi hơn <span
@@ -1145,7 +1644,46 @@ class="math inline">\(7-r\)</span> (hai dư khác nhau trong cùng một
 lồng) thì tổng có dư <span class="math inline">\(r+(7-r)=7\)</span>,
 chia hết cho <span class="math inline">\(7\)</span>.</p></div><div class="step"><p>Với <span class="math inline">\(4\)</span> số thì chưa chắc: bốn số
 có dư <span class="math inline">\(0,1,2,3\)</span> không có cặp nào
-thỏa. Vậy con số <span class="math inline">\(5\)</span> là tốt nhất.</p></div><div class="step ans"><b>Đáp số:</b> <p>a), b) được chứng minh như trên.</p></div></div></article>
+thỏa. Vậy con số <span class="math inline">\(5\)</span> là tốt nhất.</p></div><div class="step ans"><b>Đáp số:</b> <p>a), b) được chứng minh như trên.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Số dư khi chia cho <span class="math inline">\(6\)</span> chỉ có
+<span class="math inline">\(6\)</span> giá trị: <span
+class="math inline">\(0,1,2,3,4,5\)</span>. Đó là <span
+class="math inline">\(6\)</span> “lồng”. Bảy số là <span
+class="math inline">\(7\)</span> “thỏ”. Hai số cùng dư thì hiệu của
+chúng chia hết cho <span class="math inline">\(6\)</span> (giống hai
+người cùng đứng cách bội của <span class="math inline">\(6\)</span> một
+đoạn bằng nhau).</p></p><p><p>Câu b) chỉ có <span class="math inline">\(5\)</span> số nhưng có
+<span class="math inline">\(7\)</span> số dư, nên chưa dùng thẳng được.
+Mẹo: <strong>ghép các lồng thành đôi</strong>. Số dư <span
+class="math inline">\(1\)</span> và <span
+class="math inline">\(6\)</span> ghép chung vì <span
+class="math inline">\(1+6=7\)</span>. Hai số trong cùng lồng <span
+class="math inline">\(\{1;6\}\)</span> hoặc cùng dư (hiệu chia hết cho
+<span class="math inline">\(7\)</span>) hoặc dư <span
+class="math inline">\(1\)</span> và <span
+class="math inline">\(6\)</span> (tổng chia hết cho <span
+class="math inline">\(7\)</span>).</p></p><p><p>Ghép xong còn <span class="math inline">\(4\)</span> lồng: <span
+class="math inline">\(\{0\},\{1;6\},\{2;5\},\{3;4\}\)</span>. Năm số vào
+bốn lồng nên có hai số chung lồng.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p><strong>a)</strong> Số dư khi chia một số nguyên cho <span
+class="math inline">\(6\)</span> nhận một trong <span
+class="math inline">\(6\)</span> giá trị <span
+class="math inline">\(0;1;2;3;4;5\)</span>. Có <span
+class="math inline">\(7\)</span> số nên theo nguyên lý Dirichlet có hai
+số cùng số dư khi chia cho <span class="math inline">\(6\)</span>. Hiệu
+của hai số đó chia hết cho <span class="math inline">\(6\)</span>. <span
+class="math inline">\(\square\)</span></p></li><li><p><strong>b)</strong> Xét <span class="math inline">\(4\)</span> nhóm
+số dư khi chia cho <span class="math inline">\(7\)</span>: <span
+class="math inline">\(\{0\}\)</span>, <span
+class="math inline">\(\{1;6\}\)</span>, <span
+class="math inline">\(\{2;5\}\)</span>, <span
+class="math inline">\(\{3;4\}\)</span>. Mỗi số trong <span
+class="math inline">\(5\)</span> số thuộc đúng một nhóm. Theo Dirichlet
+có hai số cùng nhóm.</p></li><li><p>Nếu hai số đó cùng số dư thì hiệu chia hết cho <span
+class="math inline">\(7\)</span>. Nếu chúng có số dư khác nhau thì số dư
+là <span class="math inline">\(r\)</span> và <span
+class="math inline">\(7-r\)</span>, tổng có dư <span
+class="math inline">\(r+(7-r)=7\)</span>, chia hết cho <span
+class="math inline">\(7\)</span>. Cả hai trường hợp đều đúng. <span
+class="math inline">\(\square\)</span></p></li></ol></details></article>
 <aside class="box note"><div class="box-title">Ghép lồng</div><p>Số lồng quyết định số thỏ cần có. Ở câu b), ghép hai lớp dư "đối
 nhau" <span class="math inline">\(r\)</span> và <span
 class="math inline">\(m-r\)</span> vào một lồng làm giảm số lồng từ
@@ -1176,7 +1714,39 @@ class="math inline">\(9\)</span> số <span
 class="math inline">\(1,1,\dots,1\)</span> có mọi khối liên tiếp tổng từ
 <span class="math inline">\(1\)</span> đến <span
 class="math inline">\(9\)</span>, không chia hết cho <span
-class="math inline">\(10\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p>Luôn chọn được (chứng minh trên).</p></div></div></article>
+class="math inline">\(10\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p>Luôn chọn được (chứng minh trên).</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Hình dung chiếc <strong>đồng hồ có <span
+class="math inline">\(10\)</span> vạch</strong> (<span
+class="math inline">\(0\)</span> đến <span
+class="math inline">\(9\)</span>). Mỗi lần cộng thêm một số <span
+class="math inline">\(a_k\)</span>, kim đồng hồ đi tới một vạch mới. Vị
+trí kim sau <span class="math inline">\(k\)</span> số là số dư của <span
+class="math inline">\(S_k\)</span> khi chia cho <span
+class="math inline">\(10\)</span>.</p></p><p><p>Nếu kim có lúc <strong>quay về đúng vạch cũ</strong> (hai tổng tiền
+tố cùng dư), thì phần đã đi giữa hai lần đó là một số vòng tròn, tức là
+tổng các số ở giữa chia hết cho <span
+class="math inline">\(10\)</span>.</p></p><p><p>Ta có <span class="math inline">\(10\)</span> lần dừng nhưng nếu
+không lần nào rơi đúng vạch <span class="math inline">\(0\)</span> thì
+chỉ có <span class="math inline">\(9\)</span> vạch để chọn. <span
+class="math inline">\(10\)</span> lần dừng vào <span
+class="math inline">\(9\)</span> vạch thì chắc chắn có hai lần trùng
+nhau.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Đặt <span class="math inline">\(S_k=a_1+a_2+\cdots+a_k\)</span>
+(<span class="math inline">\(k=1;\dots;10\)</span>). Xét số dư của <span
+class="math inline">\(S_1,\dots,S_{10}\)</span> khi chia cho <span
+class="math inline">\(10\)</span>.</p></li><li><p><em>Trường hợp 1:</em> có <span class="math inline">\(S_k\)</span>
+chia hết cho <span class="math inline">\(10\)</span>. Khi đó các số
+<span class="math inline">\(a_1,\dots,a_k\)</span> là các số liên tiếp
+cần tìm.</p></li><li><p><em>Trường hợp 2:</em> không có <span
+class="math inline">\(S_k\)</span> nào chia hết cho <span
+class="math inline">\(10\)</span>. Khi đó <span
+class="math inline">\(10\)</span> số <span
+class="math inline">\(S_k\)</span> có số dư thuộc <span
+class="math inline">\(\{1;2;\dots;9\}\)</span>. Theo Dirichlet có hai
+chỉ số <span class="math inline">\(i&lt;j\)</span> mà <span
+class="math inline">\(S_i,S_j\)</span> cùng số dư, nên <span
+class="math inline">\(S_j-S_i=a_{i+1}+\cdots+a_j\)</span> chia hết cho
+<span class="math inline">\(10\)</span>.</p></li><li><p>Cả hai trường hợp đều chọn được các số liên tiếp có tổng chia hết cho
+<span class="math inline">\(10\)</span>. <span
+class="math inline">\(\square\)</span></p></li></ol></details></article>
 <aside class="box method"><div class="box-title">Cách làm (chứng minh chia hết bằng Dirichlet)</div><ol><li><p>Lập các số cần so sánh (số đề cho, hoặc tổng tiền tố) và lập lớp số
 dư làm lồng.</p></li><li><p>Nếu có lồng “đặc biệt” (ví dụ dư <span
 class="math inline">\(0\)</span>) thì xét riêng, giảm số lồng.</p></li><li><p>Hai số cùng lồng thì hiệu (hoặc tổng) chia hết, và đó chính là điều
@@ -1208,7 +1778,34 @@ class="math inline">\(i&lt;j\)</span>.</p></div><div class="step"><p>Khi đó <s
 class="math inline">\(50\)</span> số <span
 class="math inline">\(51,52,\dots,100\)</span> không có số nào chia hết
 cho số khác (số lớn nhất chia số bé nhất cho thương nhỏ hơn <span
-class="math inline">\(2\)</span>).</p></div><div class="step ans"><b>Đáp số:</b> <p>Có hai số mà một số chia hết số kia.</p></div></div></article>
+class="math inline">\(2\)</span>).</p></div><div class="step ans"><b>Đáp số:</b> <p>Có hai số mà một số chia hết số kia.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Mỗi số nguyên dương đều “tách” được thành <strong>một lũy thừa của
+<span class="math inline">\(2\)</span> nhân với một số lẻ</strong>. Ví
+dụ <span class="math inline">\(12=4\cdot3\)</span>, <span
+class="math inline">\(40=8\cdot5\)</span>, <span
+class="math inline">\(75=1\cdot75\)</span>. Số lẻ đó là “họ” của số.</p></p><p><p>Trong <span class="math inline">\(1\)</span> đến <span
+class="math inline">\(100\)</span> có <span
+class="math inline">\(50\)</span> số lẻ nên có <span
+class="math inline">\(50\)</span> họ, ví dụ họ của <span
+class="math inline">\(3\)</span> gồm <span
+class="math inline">\(3,6,12,24,48,96\)</span>. Hai số trong cùng một họ
+luôn <strong>bé chia hết cho lớn</strong> (vì chỉ khác nhau lũy thừa của
+<span class="math inline">\(2\)</span>).</p></p><p><p>Chọn <span class="math inline">\(51\)</span> số mà chỉ có <span
+class="math inline">\(50\)</span> họ thì chắc chắn có hai số cùng
+họ.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Mỗi số nguyên dương <span class="math inline">\(n\le100\)</span> viết
+được dưới dạng <span class="math inline">\(n=2^k\cdot m\)</span> với
+<span class="math inline">\(k\ge0\)</span> và <span
+class="math inline">\(m\)</span> là số lẻ, <span
+class="math inline">\(1\le m\le99\)</span>. Có <span
+class="math inline">\(50\)</span> giá trị của <span
+class="math inline">\(m\)</span>. Ta xếp các số có cùng <span
+class="math inline">\(m\)</span> vào một nhóm; có <span
+class="math inline">\(50\)</span> nhóm.</p></li><li><p>Có <span class="math inline">\(51\)</span> số được chọn, theo nguyên
+lý Dirichlet có hai số cùng nhóm, tức <span class="math inline">\(a=2^i
+m\)</span> và <span class="math inline">\(b=2^j m\)</span> với <span
+class="math inline">\(i&lt;j\)</span>.</p></li><li><p>Khi đó <span class="math inline">\(b=a\cdot2^{j-i}\)</span> nên <span
+class="math inline">\(a\)</span> là ước của <span
+class="math inline">\(b\)</span>. <span
+class="math inline">\(\square\)</span></p></li></ol></details></article>
 <article class="vd card" id="b3-vd6"><div class="vd-head"><span class="tag">Ví dụ 6</span><span class="src">Nguồn: Sáng tác (dạng kinh điển)</span></div><div class="problem"><p>Trong một nhóm <span class="math inline">\(6\)</span> người, hai
 người bất kỳ hoặc quen nhau hoặc lạ nhau. Chứng minh có <span
 class="math inline">\(3\)</span> người đôi một quen nhau, hoặc <span
@@ -1220,7 +1817,23 @@ class="math inline">\(3\)</span> người B, C, D đều quen An (trường hợ
 lạ làm tương tự).</p></div><div class="step"><p>Nếu hai trong ba người B, C, D quen nhau, ví dụ B quen C, thì An, B,
 C đôi một quen nhau.</p></div><div class="step"><p>Nếu không, B, C, D đôi một lạ nhau, đó là <span
 class="math inline">\(3\)</span> người đôi một lạ.</p></div><div class="step ans"><b>Đáp số:</b> <p>Luôn có <span class="math inline">\(3\)</span> người đôi một quen
-hoặc đôi một lạ.</p></div></div></article>
+hoặc đôi một lạ.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Hình dung một buổi tiệc <span class="math inline">\(6\)</span> người.
+Ta chọn một người, gọi là An. Với mỗi người trong <span
+class="math inline">\(5\)</span> người còn lại, chỉ có hai khả năng:
+<strong>quen An</strong> hoặc <strong>lạ An</strong>. Năm người vào hai
+nhóm nên có nhóm từ <span class="math inline">\(3\)</span> người trở
+lên.</p></p><p><p>Giả sử <span class="math inline">\(3\)</span> người B, C, D đều quen
+An. Xét ba người này: nếu có <strong>hai người quen nhau</strong> thì
+cùng An tạo thành ba người đôi một quen. Nếu <strong>không có hai người
+nào quen nhau</strong> thì B, C, D đôi một lạ. Dù thế nào cũng có ba
+người “cùng phe”.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Chọn một người, gọi là An. Năm người còn lại mỗi người hoặc quen An
+hoặc lạ An. Theo Dirichlet có ít nhất <span
+class="math inline">\(3\)</span> người cùng quen An hoặc cùng lạ An.</p></li><li><p>Xét trường hợp có <span class="math inline">\(3\)</span> người B, C,
+D cùng quen An (trường hợp cùng lạ An làm tương tự).</p></li><li><p>Nếu trong B, C, D có hai người quen nhau, chẳng hạn B quen C, thì An,
+B, C đôi một quen nhau. Nếu không có hai người nào trong B, C, D quen
+nhau thì B, C, D đôi một lạ nhau. Vậy luôn có <span
+class="math inline">\(3\)</span> người đôi một quen hoặc đôi một lạ.
+<span class="math inline">\(\square\)</span></p></li></ol></details></article>
 <aside class="box note"><div class="box-title">Sáu là con số nhỏ nhất</div><p>Với <span class="math inline">\(5\)</span> người thì chưa chắc. Xếp
 <span class="math inline">\(5\)</span> người ở <span
 class="math inline">\(5\)</span> đỉnh một hình ngũ giác, hai người kề
@@ -1272,7 +1885,38 @@ class="math inline">\(H_2\)</span>. Ta được <strong>cặp thứ hai</strong>
 nằm trong <span class="math inline">\(\{1;3;13;12;24\}\)</span>.</p></div><div class="step"><p>Hai tập <span class="math inline">\(\{6;19;30\}\)</span> và <span
 class="math inline">\(\{1;3;13;12;24\}\)</span> không có thẻ chung nên
 hai cặp tìm được là bốn thẻ khác nhau trong <span
-class="math inline">\(H_2\)</span>, tổng mỗi cặp là số chính phương.</p></div><div class="step ans"><b>Đáp số:</b> <p>Điều cần chứng minh.</p></div></div></article>
+class="math inline">\(H_2\)</span>, tổng mỗi cặp là số chính phương.</p></div><div class="step ans"><b>Đáp số:</b> <p>Điều cần chứng minh.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Gọi hai thẻ là “<strong>bạn</strong>” nếu tổng hai số trên thẻ là số
+chính phương. Hộp đã kiểm tra là hộp “không có hai bạn ngồi chung”. Ta
+phải chứng minh hộp còn lại <em>buộc phải</em> có hai cặp bạn.</p></p><p><p>Ý tưởng: tìm một <strong>nhóm thẻ đôi một là bạn</strong> (ba thẻ
+<span class="math inline">\(6,19,30\)</span>). Ba thẻ vào hai hộp thì có
+hai thẻ chung hộp. Hai thẻ đó là bạn nên hộp đó không thể là hộp đã kiểm
+tra.</p></p><p><p>Làm lần nữa với một <strong>vòng năm thẻ</strong> <span
+class="math inline">\(1,3,13,12,24\)</span> (hai thẻ kề nhau là bạn).
+Năm thẻ vào hai hộp thì có hộp từ <span class="math inline">\(3\)</span>
+thẻ, mà ba thẻ trên vòng năm luôn có hai thẻ kề nhau. Hai lần dùng hai
+tập thẻ khác nhau nên được hai cặp riêng biệt.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Gọi <span class="math inline">\(H_1\)</span> là hộp đã kiểm tra,
+<span class="math inline">\(H_2\)</span> là hộp còn lại. Hai thẻ là
+“bạn” nếu tổng hai số ghi trên chúng là số chính phương. Hộp <span
+class="math inline">\(H_1\)</span> không chứa hai thẻ nào là bạn.</p></li><li><p>Ba thẻ <span class="math inline">\(6,19,30\)</span> đôi một là bạn
+(<span class="math inline">\(6+19=25\)</span>, <span
+class="math inline">\(6+30=36\)</span>, <span
+class="math inline">\(19+30=49\)</span>). Ba thẻ vào hai hộp nên có hai
+thẻ cùng hộp; chúng là bạn nên không ở <span
+class="math inline">\(H_1\)</span>, tức ở <span
+class="math inline">\(H_2\)</span>. Ta có cặp thứ nhất trong <span
+class="math inline">\(\{6;19;30\}\)</span>.</p></li><li><p>Xét năm thẻ <span class="math inline">\(1,3,13,12,24\)</span> theo
+vòng: <span class="math inline">\(1+3=4\)</span>, <span
+class="math inline">\(3+13=16\)</span>, <span
+class="math inline">\(13+12=25\)</span>, <span
+class="math inline">\(12+24=36\)</span>, <span
+class="math inline">\(24+1=25\)</span> đều là số chính phương. Năm thẻ
+vào hai hộp nên có hộp chứa ít nhất <span
+class="math inline">\(3\)</span> thẻ. Ba thẻ bất kỳ trên vòng năm thẻ
+luôn có hai thẻ kề nhau, chúng là bạn nên hộp đó là <span
+class="math inline">\(H_2\)</span>. Ta có cặp thứ hai trong <span
+class="math inline">\(\{1;3;13;12;24\}\)</span>.</p></li><li><p>Hai tập thẻ không có thẻ chung nên hai cặp là bốn thẻ khác nhau trong
+<span class="math inline">\(H_2\)</span> và mỗi cặp có tổng là số chính
+phương. <span class="math inline">\(\square\)</span></p></li></ol></details></article>
 <aside class="box real"><div class="box-title">Đề thật</div><p><strong>Cách tìm cấu hình.</strong> Nối hai số trong <span
 class="math inline">\(\{1;\dots;31\}\)</span> khi tổng là số chính
 phương (<span class="math inline">\(4,9,16,25,36,49\)</span>). Đồ thị
@@ -1488,6 +2132,12 @@ nguyên</strong> bằng khử tham số, và <strong>đếm cặp</strong> <span
 class="math inline">\((a;b)\)</span> rồi chia cho số cặp có thể để tính
 xác suất (nối với Buổi 1 và 2). Ba đề thật gần đây của TP.HCM đều thuộc
 loại này.</p></p>
+ <aside class="box note"><div class="box-title">Cách đọc mỗi ví dụ</div><p>Mỗi ví dụ có ba lớp: <strong>(1)</strong> lời giải từng bước (dùng
+công thức tổ hợp, để kiểm tra nhanh đáp số); <strong>(2)</strong> giải
+thích kiểu Feynman (nói bằng lời thường, như dạy lại cho một bạn nhỏ
+hơn); <strong>(3)</strong> cách trình bày khi đi thi lớp 9 (chỉ dùng quy
+tắc nhân, chia trường hợp, liệt kê, đếm ngược, không cần công thức tổ
+hợp). Đi thi, em trình bày theo lớp (3).</p></aside>
  <div class="chips">
   <span class="chip">⏱ 90 phút</span><span class="chip">📘 7 ví dụ từng bước</span>
   <span class="chip">🧪 2 công cụ</span><span class="chip">📝 8 bài luyện</span>
@@ -1554,7 +2204,36 @@ class="math inline">\(x_1^2+3x_2=3x_1+1+3x_2=3S+1=10\)</span>.</li>
 <li><span class="math inline">\(11\)</span>; (b) <span
 class="math inline">\(36\)</span>; (c) <span
 class="math inline">\(10\)</span>.</li>
-</ol></div></div></article>
+</ol></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Vi-ét giống như <strong>đọc nhãn trên hộp mà không cần mở
+hộp</strong>. Nhìn hệ số của <span
+class="math inline">\(x^2-3x-1=0\)</span> là biết ngay <span
+class="math inline">\(x_1+x_2=3\)</span> và <span
+class="math inline">\(x_1x_2=-1\)</span>, không cần giải phương
+trình.</p></p><p><p>Biểu thức mà đổi chỗ <span class="math inline">\(x_1,x_2\)</span> cho
+nhau vẫn không đổi (gọi là <em>đối xứng</em>), như <span
+class="math inline">\(x_1^2+x_2^2\)</span>, luôn viết được qua tổng
+<span class="math inline">\(S\)</span> và tích <span
+class="math inline">\(P\)</span>. Lý do: <span
+class="math inline">\((x_1+x_2)^2=x_1^2+x_2^2+2x_1x_2\)</span>, nên
+<span class="math inline">\(x_1^2+x_2^2=S^2-2P\)</span>.</p></p><p><p>Biểu thức không đối xứng như <span
+class="math inline">\(x_1^2+3x_2\)</span> thì dùng <strong>chính phương
+trình để hạ bậc</strong>: vì <span class="math inline">\(x_1\)</span> là
+nghiệm nên <span class="math inline">\(x_1^2-3x_1-1=0\)</span>, tức
+<span class="math inline">\(x_1^2=3x_1+1\)</span>. Sau đó mọi thứ chỉ
+còn bậc một, quay về <span class="math inline">\(S\)</span> và <span
+class="math inline">\(P\)</span>.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Phương trình có <span
+class="math inline">\(\Delta=(-3)^2-4\cdot1\cdot(-1)=13&gt;0\)</span>
+nên có hai nghiệm phân biệt <span
+class="math inline">\(x_1,x_2\)</span>. Theo Vi-ét: <span
+class="math inline">\(x_1+x_2=3\)</span> và <span
+class="math inline">\(x_1x_2=-1\)</span>.</p></li><li><p><strong>(a)</strong> <span
+class="math inline">\(x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=9+2=11\)</span>.</p></li><li><p><strong>(b)</strong> Từ <span
+class="math inline">\((x_1+x_2)^3=x_1^3+x_2^3+3x_1x_2(x_1+x_2)\)</span>
+suy ra <span
+class="math inline">\(x_1^3+x_2^3=27-3\cdot(-1)\cdot3=27+9=36\)</span>.</p></li><li><p><strong>(c)</strong> Vì <span class="math inline">\(x_1\)</span> là
+nghiệm nên <span class="math inline">\(x_1^2-3x_1-1=0\)</span>, suy ra
+<span class="math inline">\(x_1^2=3x_1+1\)</span>. Do đó <span
+class="math inline">\(x_1^2+3x_2=3x_1+1+3x_2=3(x_1+x_2)+1=10\)</span>.</p></li></ol></details></article>
 <aside class="box method"><div class="box-title">Cách làm (tính biểu thức của nghiệm)</div><ol><li><p>Kiểm tra <span class="math inline">\(\Delta\ge0\)</span>, rồi tính
 <span class="math inline">\(S\)</span> và <span
 class="math inline">\(P\)</span>.</p></li><li><p>Viết biểu thức qua <span class="math inline">\(S,P\)</span> (nếu đối
@@ -1587,7 +2266,37 @@ class="math inline">\(1;3\)</span> và <span
 class="math inline">\(1^2+3^2=10\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
 <li><span class="math inline">\(m\ge\dfrac{1}{2}\)</span>; (b) <span
 class="math inline">\(m=1\)</span>.</li>
-</ol></div></div></article>
+</ol></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Vi-ét chỉ “có hiệu lực” khi <strong>phương trình thật sự có
+nghiệm</strong>. Nếu phương trình vô nghiệm thì không có <span
+class="math inline">\(x_1,x_2\)</span> nào cả, nên chuyện “tổng” hay
+“tích” hai nghiệm không còn nghĩa.</p></p><p><p>Vì vậy thứ tự làm bài tham số luôn là: <strong>(1)</strong> tìm điều
+kiện để có nghiệm; <strong>(2)</strong> dùng Vi-ét; <strong>(3)</strong>
+giải phương trình theo <span class="math inline">\(m\)</span>;
+<strong>(4)</strong> đối chiếu với điều kiện ở bước (1).</p></p><p><p>Ở đây <span class="math inline">\(m=-5\)</span> giải ra đúng từ
+phương trình <span class="math inline">\(m^2+4m-5=0\)</span> nhưng làm
+cho <span class="math inline">\(\Delta&#39;&lt;0\)</span>, nên phải
+loại.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p><strong>(a)</strong> <span
+class="math inline">\(\Delta&#39;=(m+1)^2-(m^2+2)=2m-1\)</span>. Phương
+trình có hai nghiệm khi <span
+class="math inline">\(\Delta&#39;\ge0\)</span>, tức <span
+class="math inline">\(m\ge\dfrac12\)</span>.</p></li><li><p><strong>(b)</strong> Với <span
+class="math inline">\(m\ge\dfrac12\)</span>, theo Vi-ét: <span
+class="math inline">\(x_1+x_2=2(m+1)\)</span> và <span
+class="math inline">\(x_1x_2=m^2+2\)</span>.</p></li><li><p><span
+class="math inline">\(x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=4(m+1)^2-2(m^2+2)=2m^2+8m\)</span>.
+Theo đề <span class="math inline">\(2m^2+8m=10\)</span>, tức <span
+class="math inline">\(m^2+4m-5=0\)</span>, suy ra <span
+class="math inline">\(m=1\)</span> hoặc <span
+class="math inline">\(m=-5\)</span>.</p></li><li><p>Đối chiếu điều kiện <span
+class="math inline">\(m\ge\dfrac12\)</span>: loại <span
+class="math inline">\(m=-5\)</span>, nhận <span
+class="math inline">\(m=1\)</span>. <em>Thử lại:</em> <span
+class="math inline">\(m=1\)</span> cho <span
+class="math inline">\(x^2-4x+3=0\)</span>, nghiệm <span
+class="math inline">\(1\)</span> và <span
+class="math inline">\(3\)</span>, <span
+class="math inline">\(1^2+3^2=10\)</span>. Vậy <span
+class="math inline">\(m=1\)</span>.</p></li></ol></details></article>
 <aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Giải ra hai giá trị của <span class="math inline">\(m\)</span> rồi
 nhận cả hai. Vi-ét chỉ đúng khi <span
 class="math inline">\(\Delta\ge0\)</span>. Với <span
@@ -1623,7 +2332,41 @@ class="math inline">\(-1\)</span>. Vậy <span
 class="math inline">\(\{x_1;x_2\}=\{3;1\}\)</span> và <span
 class="math inline">\(m=x_1+x_2-2=2\)</span>.</p></div><div class="step"><p>Thử lại: <span class="math inline">\(m=2\)</span> cho <span
 class="math inline">\(x^2-4x+3=0\)</span>, nghiệm <span
-class="math inline">\(1;3\)</span> đều nguyên.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(m=2\)</span>.</p></div></div></article>
+class="math inline">\(1;3\)</span> đều nguyên.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(m=2\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Đề nói hai nghiệm là <strong>số nguyên</strong>. Vi-ét cho hai hệ
+thức chứa <span class="math inline">\(m\)</span>. Ta “khử <span
+class="math inline">\(m\)</span>” (giống khử ẩn trong hệ phương trình)
+để được <strong>một hệ thức chỉ chứa <span
+class="math inline">\(x_1,x_2\)</span></strong>: <span
+class="math inline">\(2(x_1+x_2)-x_1x_2=5\)</span>.</p></p><p><p>Hệ thức này biến thành tích bằng hằng số nhờ mẹo <strong>“thêm bớt
+hằng số”</strong> giống phân tích <span
+class="math inline">\(xy-2x-2y\)</span>: <span
+class="math inline">\(x_1x_2-2x_1-2x_2+4=(x_1-2)(x_2-2)\)</span>. Ta
+được <span class="math inline">\((x_1-2)(x_2-2)=-1\)</span>.</p></p><p><p>Hai số nguyên có tích <span class="math inline">\(-1\)</span> chỉ có
+hai kiểu: <span class="math inline">\((1;-1)\)</span> hoặc <span
+class="math inline">\((-1;1)\)</span>. Rất ít nên liệt kê ngay.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Giả sử phương trình có hai nghiệm nguyên <span
+class="math inline">\(x_1,x_2\)</span>. Theo Vi-ét: <span
+class="math inline">\(x_1+x_2=m+2\)</span> và <span
+class="math inline">\(x_1x_2=2m-1\)</span>.</p></li><li><p>Khử <span class="math inline">\(m\)</span>: <span
+class="math inline">\(2(x_1+x_2)-x_1x_2=2m+4-2m+1=5\)</span>. Suy ra
+<span class="math inline">\(x_1x_2-2x_1-2x_2=-5\)</span>, tức <span
+class="math inline">\((x_1-2)(x_2-2)=-1\)</span>.</p></li><li><p>Vì <span class="math inline">\(x_1-2\)</span> và <span
+class="math inline">\(x_2-2\)</span> là hai số nguyên có tích <span
+class="math inline">\(-1\)</span> nên chúng là <span
+class="math inline">\(1\)</span> và <span
+class="math inline">\(-1\)</span> (theo một thứ tự nào đó). Suy ra <span
+class="math inline">\(\{x_1;x_2\}=\{3;1\}\)</span>, <span
+class="math inline">\(m=x_1+x_2-2=2\)</span>.</p></li><li><p><em>Thử lại:</em> <span class="math inline">\(m=2\)</span> cho <span
+class="math inline">\(x^2-4x+3=0\)</span>, hai nghiệm <span
+class="math inline">\(1\)</span> và <span
+class="math inline">\(3\)</span> đều nguyên. Vậy <span
+class="math inline">\(m=2\)</span>.</p></li><li><p><em>Cách kiểm tra khác:</em> <span
+class="math inline">\(\Delta=(m+2)^2-4(2m-1)=(m-2)^2+4\)</span> phải là
+số chính phương. Hai số chính phương hơn kém nhau <span
+class="math inline">\(4\)</span> chỉ có thể là <span
+class="math inline">\(0\)</span> và <span
+class="math inline">\(4\)</span>, nên <span
+class="math inline">\(m-2=0\)</span>, tức <span
+class="math inline">\(m=2\)</span>.</p></li></ol></details></article>
 <aside class="box method"><div class="box-title">Cách làm (nghiệm nguyên bằng Vi-ét)</div><ol><li><p>Viết <span class="math inline">\(S,P\)</span> theo <span
 class="math inline">\(m\)</span> rồi khử <span
 class="math inline">\(m\)</span> để có hệ thức giữa <span
@@ -1665,7 +2408,39 @@ bạn không mâu thuẫn.</p></div><div class="step"><p>Phương trình của t
 class="math inline">\(\Delta=b^2-4ac=36a^2-4a\cdot16a=-28a^2&lt;0\)</span>
 vì <span class="math inline">\(a\neq0\)</span>. Vậy phương trình vô
 nghiệm.</p></div><div class="step ans"><b>Đáp số:</b> <p>Phương trình của thầy vô nghiệm, vì <span
-class="math inline">\(\Delta=-28a^2&lt;0\)</span>.</p></div></div></article>
+class="math inline">\(\Delta=-28a^2&lt;0\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Mỗi bạn giải <strong>đúng</strong> phương trình mình chép, nên “tổng
+hai nghiệm” và “tích hai nghiệm” của bạn đó cho biết ngay <strong>tỉ số
+các hệ số</strong>, không cần biết từng hệ số.</p></p><p><p>Phúc chép đúng <span class="math inline">\(a\)</span> và <span
+class="math inline">\(b\)</span>, chỉ đổi dấu <span
+class="math inline">\(c\)</span>. Vì vậy dữ kiện của Phúc nói cho ta
+<span class="math inline">\(\dfrac ba=-6\)</span> và <span
+class="math inline">\(\dfrac ca=16\)</span> của <em>phương trình
+thầy</em>.</p></p><p><p>Điều cần chứng minh là <span
+class="math inline">\(b^2-4ac&lt;0\)</span>. Chia cho <span
+class="math inline">\(a^2\)</span> thì <span
+class="math inline">\(\dfrac{\Delta}{a^2}=\left(\dfrac
+ba\right)^2-4\cdot\dfrac ca=36-64&lt;0\)</span>. Dữ kiện của Hạnh chỉ để
+kiểm tra hai bạn không mâu thuẫn nhau.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Gọi phương trình của thầy là <span
+class="math inline">\(ax^2+bx+c=0\)</span>. Phúc giải đúng phương trình
+<span class="math inline">\(ax^2+bx-c=0\)</span> có hai nghiệm <span
+class="math inline">\(-2\)</span> và <span
+class="math inline">\(8\)</span>. Theo Vi-ét: <span
+class="math inline">\(-\dfrac ba=-2+8=6\)</span> nên <span
+class="math inline">\(b=-6a\)</span>; và <span
+class="math inline">\(\dfrac{-c}{a}=(-2)\cdot8=-16\)</span> nên <span
+class="math inline">\(c=16a\)</span>.</p></li><li><p>Phương trình của thầy có <span
+class="math inline">\(\Delta=b^2-4ac=36a^2-4a\cdot16a=-28a^2\)</span>.
+Vì <span class="math inline">\(a\neq0\)</span> nên <span
+class="math inline">\(\Delta&lt;0\)</span>, phương trình vô nghiệm.
+<span class="math inline">\(\square\)</span></p></li><li><p><em>Kiểm tra dữ kiện của Hạnh:</em> Hạnh giải <span
+class="math inline">\(a&#39;x^2+bx+c=0\)</span> có nghiệm <span
+class="math inline">\(4\)</span> và <span
+class="math inline">\(8\)</span> nên <span
+class="math inline">\(b=-12a&#39;\)</span>, <span
+class="math inline">\(c=32a&#39;\)</span>. So với <span
+class="math inline">\(b=-6a\)</span>, <span
+class="math inline">\(c=16a\)</span> ta được cùng một điều kiện <span
+class="math inline">\(a=2a&#39;\)</span>, hai bạn không mâu thuẫn.</p></li></ol></details></article>
 <aside class="box note"><div class="box-title">Nhận xét</div><p>Với câu chữ ở trên, chỉ cần dữ kiện của Phúc: <span
 class="math inline">\(\dfrac{b}{a}=-6\)</span> và <span
 class="math inline">\(\dfrac{c}{a}=16\)</span> đã cho <span
@@ -1744,7 +2519,59 @@ class="math inline">\((2;1),(3;2),(4;3),(5;4),(6;5),(4;4),(5;6)\)</span>:
 class="math inline">\(P=\dfrac{7}{36}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <ol type="a">
 <li><span class="math inline">\(\dfrac{19}{36}\)</span>; (b) <span
 class="math inline">\(\dfrac{7}{36}\)</span>.</li>
-</ol></div></div></article>
+</ol></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>“Phương trình có nghiệm nguyên” nghĩa là phân tích được thành <span
+class="math inline">\(x^2-ax+b=(x-r)(x-s)\)</span> với <span
+class="math inline">\(r,s\)</span> nguyên, và khi đó <span
+class="math inline">\(a=r+s\)</span>, <span
+class="math inline">\(b=rs\)</span>. Thay vì thử từng cặp <span
+class="math inline">\((a;b)\)</span>, ta <strong>đi ngược</strong>: chọn
+<span class="math inline">\(r,s\)</span> trước rồi tính <span
+class="math inline">\(a,b\)</span>.</p></p><p><p>Gieo xúc xắc nên <span class="math inline">\(a,b\)</span> chỉ từ
+<span class="math inline">\(1\)</span> đến <span
+class="math inline">\(6\)</span>. Điều này <strong>chặn</strong> <span
+class="math inline">\(r+s\)</span> và <span
+class="math inline">\(rs\)</span> nên số cặp <span
+class="math inline">\((r;s)\)</span> rất ít, liệt kê được hết.</p></p><p><p>“Có nghiệm” (thực) và “có nghiệm nguyên” là hai chuyện khác nhau: có
+nghiệm chỉ cần <span class="math inline">\(\Delta\ge0\)</span>, còn
+nghiệm nguyên đòi hỏi nhiều hơn.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Gieo hai lần, kết quả là cặp có thứ tự <span
+class="math inline">\((a;b)\)</span> với <span
+class="math inline">\(a,b\in\{1;\dots;6\}\)</span>, <span
+class="math inline">\(n(\Omega)=6\cdot6=36\)</span>, các kết quả đồng
+khả năng.</p></li><li><p><strong>(a)</strong> Phương trình có nghiệm khi <span
+class="math inline">\(\Delta=a^2-4b\ge0\)</span>, tức <span
+class="math inline">\(b\le\dfrac{a^2}4\)</span>. Xét từng <span
+class="math inline">\(a\)</span>: <span
+class="math inline">\(a=1\)</span> không có <span
+class="math inline">\(b\)</span>; <span
+class="math inline">\(a=2\)</span> có <span
+class="math inline">\(b=1\)</span>; <span
+class="math inline">\(a=3\)</span> có <span
+class="math inline">\(b\in\{1;2\}\)</span>; <span
+class="math inline">\(a=4\)</span> có <span
+class="math inline">\(b\in\{1;2;3;4\}\)</span>; <span
+class="math inline">\(a=5\)</span> có <span
+class="math inline">\(b\in\{1;\dots;6\}\)</span> (vì <span
+class="math inline">\(\frac{25}4=6{,}25\)</span>); <span
+class="math inline">\(a=6\)</span> có <span
+class="math inline">\(b\in\{1;\dots;6\}\)</span>. Tổng <span
+class="math inline">\(0+1+2+4+6+6=19\)</span> cặp. <span
+class="math inline">\(P=\dfrac{19}{36}\)</span>.</p></li><li><p><strong>(b)</strong> Vì <span class="math inline">\(a,b&gt;0\)</span>
+nên nếu có nghiệm nguyên thì phương trình viết được <span
+class="math inline">\(x^2+ax+b=(x+r)(x+s)\)</span> với <span
+class="math inline">\(r,s\)</span> nguyên dương, <span
+class="math inline">\(a=r+s\le6\)</span>, <span
+class="math inline">\(b=rs\le6\)</span>. Với <span
+class="math inline">\(r\le s\)</span>: <span
+class="math inline">\((1;1),(1;2),(1;3),(1;4),(1;5),(2;2),(2;3)\)</span>
+thỏa; còn <span class="math inline">\((1;6)\)</span> cho <span
+class="math inline">\(a=7\)</span> và <span
+class="math inline">\((2;4)\)</span> cho <span
+class="math inline">\(b=8\)</span> nên loại; <span
+class="math inline">\(r\ge3\)</span> thì <span
+class="math inline">\(rs\ge9&gt;6\)</span>.</p></li><li><p>Các cặp <span class="math inline">\((a;b)\)</span> tương ứng: <span
+class="math inline">\((2;1),(3;2),(4;3),(5;4),(6;5),(4;4),(5;6)\)</span>,
+được <span class="math inline">\(7\)</span> cặp. <span
+class="math inline">\(P=\dfrac7{36}\)</span>.</p></li></ol></details></article>
 <article class="vd card" id="b4-vd6"><div class="vd-head"><span class="tag">Ví dụ 6</span><span class="tag real">Đề thật</span><span class="src">Nguồn: Đề tuyển sinh lớp 10 chuyên Toán, Sở GD&amp;ĐT TP.HCM, năm học 2026–2027 (thi ngày 02/06/2026), một bài về xác suất (đã diễn đạt lại)</span></div><div class="problem"><p>Một hộp chứa <span class="math inline">\(15\)</span> thẻ ghi các số
 <span class="math inline">\(1;2;\dots;15\)</span>. An rút một thẻ, rồi
 Bình rút một thẻ (không hoàn lại). Gọi <span
@@ -1785,7 +2612,52 @@ nên loại các cặp có <span class="math inline">\(a=b\)</span>: <span
 class="math inline">\(r+s=rs\Rightarrow(r-1)(s-1)=1\Rightarrow
 r=s=2\)</span>, cho <span class="math inline">\((a;b)=(4;4)\)</span>.
 Còn <span class="math inline">\(22\)</span> cặp.</p></div><div class="step"><p><span
-class="math inline">\(P=\dfrac{22}{210}=\dfrac{11}{105}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{11}{105}\)</span>.</p></div></div></article>
+class="math inline">\(P=\dfrac{22}{210}=\dfrac{11}{105}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{11}{105}\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Chữ <strong>“không hoàn lại”</strong> là chìa khóa: An rút thẻ nào
+thì thẻ đó không còn trong hộp, nên Bình không thể rút trùng số. Vì vậy
+<span class="math inline">\(a\neq b\)</span> và số kết quả là <span
+class="math inline">\(15\cdot14=210\)</span>, không phải <span
+class="math inline">\(15\cdot15\)</span>.</p></p><p><p>Phần còn lại giống ví dụ <span class="math inline">\(5\)</span>: đi
+ngược, chọn <span class="math inline">\(r,s\)</span> nguyên dương rồi
+<span class="math inline">\(a=r+s\)</span>, <span
+class="math inline">\(b=rs\)</span>, và đếm các cặp còn <span
+class="math inline">\(\le15\)</span>.</p></p><p><p>Cuối cùng nhớ <strong>loại các cặp không hợp lệ</strong>: cặp <span
+class="math inline">\(r=s=2\)</span> cho <span
+class="math inline">\((a;b)=(4;4)\)</span>, hai thẻ phải khác nhau nên
+không xảy ra.</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>An rút <span class="math inline">\(15\)</span> cách, Bình rút từ
+<span class="math inline">\(14\)</span> thẻ còn lại: <span
+class="math inline">\(n(\Omega)=15\cdot14=210\)</span>, mỗi kết quả là
+cặp có thứ tự <span class="math inline">\((a;b)\)</span> với <span
+class="math inline">\(a\neq b\)</span>, đồng khả năng.</p></li><li><p>Phương trình <span class="math inline">\(x^2-ax+b=0\)</span> có
+nghiệm nguyên khi và chỉ khi <span
+class="math inline">\(x^2-ax+b=(x-r)(x-s)\)</span> với <span
+class="math inline">\(r,s\)</span> nguyên, <span
+class="math inline">\(a=r+s\)</span>, <span
+class="math inline">\(b=rs\)</span>. Vì <span
+class="math inline">\(a,b&gt;0\)</span> nên <span
+class="math inline">\(r,s\)</span> nguyên dương; cần <span
+class="math inline">\(r+s\le15\)</span>, <span
+class="math inline">\(rs\le15\)</span>.</p></li><li><p>Với <span class="math inline">\(r\le s\)</span>: <span
+class="math inline">\(r=1\)</span> thì <span
+class="math inline">\(s=1;\dots;14\)</span> (<span
+class="math inline">\(14\)</span> cặp); <span
+class="math inline">\(r=2\)</span> thì <span
+class="math inline">\(s=2;\dots;7\)</span> (<span
+class="math inline">\(6\)</span> cặp); <span
+class="math inline">\(r=3\)</span> thì <span
+class="math inline">\(s=3;4;5\)</span> (<span
+class="math inline">\(3\)</span> cặp); <span
+class="math inline">\(r\ge4\)</span> thì <span
+class="math inline">\(rs\ge16&gt;15\)</span>. Tổng <span
+class="math inline">\(23\)</span> cặp <span
+class="math inline">\((r;s)\)</span>, ứng với <span
+class="math inline">\(23\)</span> cặp <span
+class="math inline">\((a;b)\)</span> khác nhau.</p></li><li><p>Loại cặp có <span class="math inline">\(a=b\)</span>: <span
+class="math inline">\(r+s=rs\)</span> tức <span
+class="math inline">\((r-1)(s-1)=1\)</span> nên <span
+class="math inline">\(r=s=2\)</span>, cặp <span
+class="math inline">\((4;4)\)</span>. Còn <span
+class="math inline">\(22\)</span> cặp. <span
+class="math inline">\(P=\dfrac{22}{210}=\dfrac{11}{105}\)</span>.</p></li></ol></details></article>
 <aside class="box err"><div class="box-title">Lỗi hay gặp</div><p>Quên loại cặp <span class="math inline">\((4;4)\)</span>, hoặc lấy
 mẫu <span class="math inline">\(15^2=225\)</span> như thể rút có hoàn
 lại. Đề ghi “không hoàn lại” nên <span class="math inline">\(a\neq
@@ -1822,7 +2694,41 @@ class="math inline">\(|A\cap B|=6\)</span> (<span
 class="math inline">\(c=3\)</span> và <span
 class="math inline">\(a\in\{1;\dots;6\}\)</span>).</p></div><div class="step"><p>Bù trừ (Buổi 1): <span class="math inline">\(|A\cup
 B|=324+108-6=426\)</span>.</p></div><div class="step"><p><span
-class="math inline">\(P=\dfrac{426}{5832}=\dfrac{71}{972}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{71}{972}\)</span>.</p></div></div></article>
+class="math inline">\(P=\dfrac{426}{5832}=\dfrac{71}{972}\)</span>.</p></div><div class="step ans"><b>Đáp số:</b> <p><span class="math inline">\(\dfrac{71}{972}\)</span>.</p></div></div><details class="ext feyn"><summary>🧒 Giải thích kiểu Feynman (nói bằng lời thường)</summary><p><p>Đề nhìn rất rối, nhưng bên trong <strong>ẩn một phép phân
+tích</strong>: <span
+class="math inline">\(ax^2+(b+ac)x+bc=(ax+b)(x+c)\)</span>. Nhân ra kiểm
+tra được: <span
+class="math inline">\((ax+b)(x+c)=ax^2+acx+bx+bc\)</span>.</p></p><p><p>Khi thấy hai nhân tử, ta biết ngay nghiệm: <span
+class="math inline">\(x=-c\)</span> hoặc <span
+class="math inline">\(x=-\dfrac ba\)</span>. Không cần <span
+class="math inline">\(\Delta\)</span> hay Vi-ét.</p></p><p><p>Nghiệm bằng <span class="math inline">\(-3\)</span> khi <span
+class="math inline">\(c=3\)</span> <strong>hoặc</strong> <span
+class="math inline">\(b=3a\)</span>. “Hoặc” nghĩa là hai tập có thể
+chung nhau, nên phải <strong>trừ phần chung</strong> (bù trừ ở Buổi
+<span class="math inline">\(1\)</span>).</p></p></details><details class="ext exam"><summary>✍️ Cách trình bày khi đi thi (lớp 9)</summary><ol><li><p>Mỗi bạn chọn <span class="math inline">\(18\)</span> cách, ba bạn
+phân biệt nên <span class="math inline">\(n(\Omega)=18^3=5832\)</span>
+bộ <span class="math inline">\((a;b;c)\)</span>, đồng khả năng.</p></li><li><p>Ta có <span
+class="math inline">\(ax^2+(b+ac)x+bc=(ax+b)(x+c)\)</span> nên phương
+trình có nghiệm <span class="math inline">\(x=-3\)</span> khi và chỉ khi
+<span class="math inline">\((b-3a)(c-3)=0\)</span>, tức <span
+class="math inline">\(c=3\)</span> hoặc <span
+class="math inline">\(b=3a\)</span>.</p></li><li><p>Gọi <span class="math inline">\(A\)</span>: “<span
+class="math inline">\(c=3\)</span>”, có <span
+class="math inline">\(18\cdot18=324\)</span> bộ (<span
+class="math inline">\(a,b\)</span> tùy ý). Gọi <span
+class="math inline">\(B\)</span>: “<span
+class="math inline">\(b=3a\)</span>”; vì <span
+class="math inline">\(b\le18\)</span> nên <span
+class="math inline">\(a\in\{1;\dots;6\}\)</span>, <span
+class="math inline">\(b\)</span> xác định, <span
+class="math inline">\(c\)</span> tùy ý: <span
+class="math inline">\(6\cdot18=108\)</span> bộ. Cả hai: <span
+class="math inline">\(c=3\)</span> và <span
+class="math inline">\(b=3a\)</span>: <span
+class="math inline">\(6\)</span> bộ.</p></li><li><p>Theo bù trừ: <span class="math inline">\(|A\cup
+B|=324+108-6=426\)</span>. Vậy <span
+class="math inline">\(P=\dfrac{426}{5832}=\dfrac{71}{972}\)</span> (chia
+cả hai số cho <span class="math inline">\(6\)</span>).</p></li></ol></details></article>
 <aside class="box real"><div class="box-title">Đề thật</div><p>Ví dụ 4 và 6 nằm trong đề chuyên Toán của Sở GD&amp;ĐT TP.HCM năm học
 2026–2027 (thi ngày 02/06/2026). Ví dụ 7 là đề chọn HSG Toán 9 TP.HCM
 năm học 2025–2026. Các đề đều được diễn đạt lại từ bản đề đăng công
